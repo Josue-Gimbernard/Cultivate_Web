@@ -4,6 +4,8 @@ Private preview website and Railway-ready Flask app for Cultivate.
 
 This repo owns the web experience, UI system, owner preview, UI kitchen sink, UX lab, and web-specific agent memory for the Cultivate brand.
 
+Repo, GitHub, SSH account, verification, and Railway-readiness rules live in `memory/06-repo-and-deploy-operations.md`.
+
 ## Start
 
 ```powershell

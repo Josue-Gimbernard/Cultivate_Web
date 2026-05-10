@@ -19,6 +19,7 @@ This is not the Company repo. Company strategy and source docs live at `M:\Culti
 | `tests/` | Route and preview contract checks |
 | `_system/` | Local helper notes/scripts |
 | `archive/` | Superseded historical material |
+| `memory/06-repo-and-deploy-operations.md` | GitHub repo setup, SSH account strategy, verification, Railway readiness, and push rules |
 
 ## Startup Sequence
 
@@ -53,7 +54,8 @@ Chat history is not durable source of truth.
 - The rich private-preview routes are `/review-command-center`, `/owner-brief`, `/next-actions`, `/day-at-cultivate`, `/spaces`, `/brand-voice`, `/membership-model`, `/family-journey`, `/launch-roadmap`, `/faq-lab`, `/source-evidence`, `/public-draft-hub`, `/draft-home`, `/draft-about`, `/draft-cohort`, `/draft-faq`, `/approval-matrix`, `/founding-family-interest`, `/owner-decisions`, `/owner-walkthrough`, `/ecosystem-map`, `/founding-cohort`, `/cohort-blueprint`, `/impact-signals`, and `/launch-readiness`.
 - Keep CSS tokenized. Add component styles before one-off page patches when a pattern repeats.
 - Railway config may be edited for deploy readiness, but do not add real secrets.
-- Git initialization is deferred until the founder configures the new email.
+- Git is initialized and pushed to `git@github.com:Josue-Gimbernard/Cultivate_Web.git`.
+- Use `memory/06-repo-and-deploy-operations.md` before changing remotes, SSH auth, deploy behavior, commits, or pushes.
 
 ## Verification
 
@@ -65,6 +67,8 @@ For app changes:
 
 - Run `python -m compileall app.py`.
 - Run `python -m unittest discover -s tests`.
+- Run `npm.cmd run lint:colors`.
+- Run `node --check static\js\main.js`.
 
 ## Closeout
 

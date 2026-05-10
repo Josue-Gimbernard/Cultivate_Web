@@ -86,3 +86,16 @@ The first pushed commit includes:
 - Route tests and color-token lint
 - Web memory and skills
 
+Documentation updates were also pushed on 2026-05-10:
+
+- `1b9b5ff Document web repo operations and deployment rules`
+
+## Known Local Git Warning
+
+`git status` may print:
+
+```text
+warning: unable to access 'C:\Users\gimbo/.config/git/ignore': Permission denied
+```
+
+This warning comes from a global Git ignore path and has not blocked commits or pushes. Do not change global Git configuration casually because miniBIOTA also uses this machine. Prefer repo-local configuration for Cultivate.
