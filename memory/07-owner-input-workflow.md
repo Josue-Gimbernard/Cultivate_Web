@@ -13,8 +13,9 @@ Open these in order:
 1. `/owner-walkthrough`
 2. `/owner-input-packet`
 3. `/owner-review-worksheet`
-4. `/approval-matrix`
-5. `/next-actions`
+4. `/owner-answer-log`
+5. `/approval-matrix`
+6. `/next-actions`
 
 ## What To Collect
 
@@ -44,13 +45,14 @@ Use the worksheet statuses this way:
 
 After the meeting, update files in this order:
 
-1. `app.py` data lists for approvals, decisions, assumptions, draft copy, and action items.
-2. Route templates only after the data model has the approved wording.
-3. `memory/02-site-strategy.md` with the new current recommendation.
-4. `memory/04-route-architecture.md` only if routes or data ownership changed.
-5. `memory/05-owner-preview-rules.md` if a new rule or boundary emerged.
-6. Tests for any new route, approved text, or changed claim boundary.
+1. `memory/08-owner-answer-log.md` with the answer, status, date, and next update.
+2. `app.py` data lists for approvals, decisions, assumptions, draft copy, and action items.
+3. Route templates only after the data model has the approved wording.
+4. `memory/02-site-strategy.md` with the new current recommendation.
+5. `memory/04-route-architecture.md` only if routes or data ownership changed.
+6. `memory/05-owner-preview-rules.md` if a new rule or boundary emerged.
+7. Tests for any new route, approved text, or changed claim boundary.
 
 ## Guardrail
 
-Owner answers are not automatically public copy. They become public-ready only after the approval matrix marks the claim ready and the draft page no longer depends on unresolved launch, pricing, intake, operational, or privacy details.
+Owner answers are not automatically public copy. They become public-ready only after the answer log records the owner decision, the approval matrix marks the claim ready, and the draft page no longer depends on unresolved launch, pricing, intake, operational, or privacy details.

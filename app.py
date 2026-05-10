@@ -1293,6 +1293,13 @@ REVIEW_SURFACES = [
         "owner_review_worksheet",
     ),
     ReviewSurface(
+        "Planning",
+        "Owner Answer Log",
+        "You need a durable ledger of owner answers before changing public drafts.",
+        "What has actually been approved?",
+        "owner_answer_log",
+    ),
+    ReviewSurface(
         "Safety",
         "FAQ / Concern Lab",
         "You need careful responses to sensitive parent questions.",
@@ -1521,6 +1528,7 @@ DIRECTORY_NAV = (
             NavItem("Readiness", "launch_readiness"),
             NavItem("Input Packet", "owner_input_packet"),
             NavItem("Worksheet", "owner_review_worksheet"),
+            NavItem("Answer Log", "owner_answer_log"),
         ),
     ),
     NavSection(
@@ -1967,6 +1975,12 @@ def create_app() -> Flask:
     def owner_review_worksheet():
         return render_template(
             "owner_review_worksheet.html", input_items=OWNER_INPUT_ITEMS
+        )
+
+    @app.get("/owner-answer-log")
+    def owner_answer_log():
+        return render_template(
+            "owner_answer_log.html", input_items=OWNER_INPUT_ITEMS
         )
 
     @app.get("/owner-walkthrough")

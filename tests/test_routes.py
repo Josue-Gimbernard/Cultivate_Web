@@ -49,6 +49,7 @@ class RouteTests(unittest.TestCase):
             "/launch-readiness",
             "/owner-input-packet",
             "/owner-review-worksheet",
+            "/owner-answer-log",
             "/ui-kitchen-sink",
             "/ux-lab",
         ]:
@@ -90,6 +91,7 @@ class RouteTests(unittest.TestCase):
             "/launch-readiness": b"Show the vision. Protect the promises.",
             "/owner-input-packet": b"Collect the answers",
             "/owner-review-worksheet": b"Capture owner answers",
+            "/owner-answer-log": b"Track what has actually been approved",
         }
         for route, text in expectations.items():
             with self.subTest(route=route):
@@ -242,6 +244,18 @@ class RouteTests(unittest.TestCase):
             b"Validate",
             b"founder origin story",
             b"Update approvals before public drafts",
+        ]:
+            with self.subTest(text=text):
+                self.assertIn(text, response.data)
+
+    def test_owner_answer_log_starts_pending(self):
+        response = self.client.get("/owner-answer-log")
+        for text in [
+            b"Pending owner answers",
+            b"Pending owner answer",
+            b"Not approved for public use",
+            b"memory/08-owner-answer-log.md",
+            b"Update approval matrix",
         ]:
             with self.subTest(text=text):
                 self.assertIn(text, response.data)

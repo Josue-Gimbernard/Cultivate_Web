@@ -37,4 +37,5 @@ last_updated: 2026-05-10
 - Use `/owner-decisions` to drive approval conversations; it is not family-facing copy.
 - Use `/owner-input-packet` when the next step is collecting owner-only answers; do not treat unanswered packet items as approved claims.
 - Use `/owner-review-worksheet` for meeting notes only; update approvals and assumptions before changing public drafts.
+- Use `/owner-answer-log` as the durable record after owner review; only logged and approved answers may unlock public copy changes.
 - Keep `/owner-walkthrough` as an internal presentation mode for owner review meetings; focus mode and speaker notes should guide decisions, not imply public launch readiness.

@@ -108,7 +108,7 @@ Current risk levels:
 
 `/owner-input-packet` turns the remaining owner-dependent blockers into a meeting packet. It asks for the founder story, public category line, first-cohort audience, schedule, pricing stance, day-one space availability, high-risk future-vision handling, teen contribution boundaries, intake/privacy process, proof assets, and public CTA.
 
-`/owner-review-worksheet` is the printable companion for capturing answers during the meeting. Use these pages after the owner walkthrough and before editing draft public pages. Owner answers should update the approval matrix and assumptions review first.
+`/owner-review-worksheet` is the printable companion for capturing answers during the meeting. `/owner-answer-log` is the pending ledger that should be updated after the meeting. Use these pages after the owner walkthrough and before editing draft public pages. Owner answers should update the answer log, approval matrix, and assumptions review first.
 
 ## Safe Without Owner Completion
 
@@ -157,6 +157,7 @@ Lead with the ecosystem and founding cohort direction. Keep childcare, cafe, Fox
 - `/owner-decisions`: meeting-ready dashboard of key decisions, recommendations, risk, and unlocks.
 - `/owner-input-packet`: meeting packet for collecting owner-only answers before public copy changes.
 - `/owner-review-worksheet`: printable answer tracker for marking approved, revise, hold, or validate during owner review.
+- `/owner-answer-log`: pending/approved answer ledger that bridges owner notes to site updates.
 - `/owner-walkthrough`: guided presentation flow with focus mode and speaker notes for reviewing the concept with the owner.
 - `/ecosystem-map`: click-through map of spaces, dependencies, and phases.
 - `/founding-cohort`: recommended first safe launch shape.
