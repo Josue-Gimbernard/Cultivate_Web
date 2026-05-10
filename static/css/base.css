@@ -196,6 +196,7 @@ p {
   display: grid;
   min-height: 100vh;
   place-items: center;
+  padding: var(--space-5);
 }
 
 .access-panel {
@@ -205,6 +206,13 @@ p {
   box-shadow: var(--shadow-soft);
   max-width: 30rem;
   padding: var(--space-7);
+  width: min(100%, 30rem);
+}
+
+.access-panel h1 {
+  font-size: clamp(3.2rem, 8vw, 4.35rem);
+  line-height: 0.95;
+  margin-bottom: var(--space-4);
 }
 
 @media (max-width: 760px) {
