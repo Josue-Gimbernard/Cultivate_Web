@@ -161,6 +161,16 @@ class OwnerInputItem:
 
 
 @dataclass(frozen=True)
+class PostMeetingUpdate:
+    step: str
+    title: str
+    update_target: str
+    why_it_matters: str
+    guardrail: str
+    support_route: str
+
+
+@dataclass(frozen=True)
 class PublicDraftItem:
     page: str
     purpose: str
