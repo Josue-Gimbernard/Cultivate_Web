@@ -180,6 +180,16 @@ class OwnerReviewPrepItem:
 
 
 @dataclass(frozen=True)
+class OwnerMeetingScriptStep:
+    timebox: str
+    title: str
+    say: str
+    show_route: str
+    capture: str
+    avoid: str
+
+
+@dataclass(frozen=True)
 class PublicDraftItem:
     page: str
     purpose: str
@@ -1229,6 +1239,58 @@ OWNER_REVIEW_PREP_ITEMS = [
 ]
 
 
+OWNER_MEETING_SCRIPT = [
+    OwnerMeetingScriptStep(
+        "0-2 min",
+        "Open with the purpose.",
+        "This is a private concept review. The goal is to help the full Cultivate vision feel real while deciding what is safe to show families first.",
+        "owner_review_prep",
+        "Confirm the owner understands this is not public launch copy.",
+        "Do not ask for pricing, schedule, or launch commitments in the opening.",
+    ),
+    OwnerMeetingScriptStep(
+        "2-7 min",
+        "Present the emotional center.",
+        "Cultivate is strongest when it is framed as a whole-family place for belonging, real-life skills, parent breathing room, and community contribution.",
+        "owner_walkthrough",
+        "Watch for language the owner repeats or corrects.",
+        "Do not over-explain every room before the owner feels the concept.",
+    ),
+    OwnerMeetingScriptStep(
+        "7-10 min",
+        "Name the safe first move.",
+        "The recommended first move is a limited founding cohort, not a full-campus launch. That lets Cultivate test rhythm, trust, and demand before promising regulated or operationally heavy pieces.",
+        "founding_cohort",
+        "Ask whether the first-cohort frame feels right, too small, or too broad.",
+        "Do not describe enrollment as open or the cohort as already approved.",
+    ),
+    OwnerMeetingScriptStep(
+        "10-13 min",
+        "Protect the promise boundaries.",
+        "The full ecosystem can stay visible, but pricing, dates, childcare, cafe, Foxtail, paid teen work, rentals, and full-campus availability need owner approval or validation before public use.",
+        "what_cultivate_is",
+        "Mark any boundary the owner wants to revise.",
+        "Do not soften the high-risk items into public promises during the meeting.",
+    ),
+    OwnerMeetingScriptStep(
+        "13-20 min",
+        "Move into owner answers.",
+        "Now we need the answers only you can give: story, category wording, first cohort scope, schedule, pricing stance, day-one spaces, intake process, proof assets, and CTA.",
+        "owner_input_packet",
+        "Use the worksheet to mark Approved, Revise, Hold, or Validate.",
+        "Do not rely on memory; write the answer or status down.",
+    ),
+    OwnerMeetingScriptStep(
+        "20-25 min",
+        "Close with the update path.",
+        "After this meeting, answers go into the answer log first, then approvals and assumptions, then private draft pages. Public copy only moves after the gate is clear.",
+        "post_meeting_update_plan",
+        "Confirm the next artifact: revised copy, validation checklist, or held decision.",
+        "Do not end with a vague next step.",
+    ),
+]
+
+
 PUBLIC_DRAFT_ITEMS = [
     PublicDraftItem(
         "Home",
@@ -1429,6 +1491,13 @@ REVIEW_SURFACES = [
         "You want to make the meeting polished before the owner sees the site.",
         "Are we ready to present?",
         "owner_review_prep",
+    ),
+    ReviewSurface(
+        "Planning",
+        "Owner Meeting Script",
+        "You want facilitator notes for presenting the preview cleanly.",
+        "What should we say in the meeting?",
+        "owner_meeting_script",
     ),
     ReviewSurface(
         "Safety",
@@ -1662,6 +1731,7 @@ DIRECTORY_NAV = (
             NavItem("Answer Log", "owner_answer_log"),
             NavItem("Update Plan", "post_meeting_update_plan"),
             NavItem("Prep", "owner_review_prep"),
+            NavItem("Script", "owner_meeting_script"),
         ),
     ),
     NavSection(
@@ -2126,6 +2196,12 @@ def create_app() -> Flask:
     def owner_review_prep():
         return render_template(
             "owner_review_prep.html", prep_items=OWNER_REVIEW_PREP_ITEMS
+        )
+
+    @app.get("/owner-meeting-script")
+    def owner_meeting_script():
+        return render_template(
+            "owner_meeting_script.html", script_steps=OWNER_MEETING_SCRIPT
         )
 
     @app.get("/owner-walkthrough")

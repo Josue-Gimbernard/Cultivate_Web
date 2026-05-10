@@ -42,6 +42,7 @@ The owner decisions dashboard includes a risk snapshot before the individual dec
 The owner input packet turns the remaining owner-dependent blockers into meeting questions:
 
 - `http://127.0.0.1:8080/owner-review-prep?access=cultivate-preview`
+- `http://127.0.0.1:8080/owner-meeting-script?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-input-packet?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-review-worksheet?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-answer-log?access=cultivate-preview`
@@ -72,6 +73,7 @@ Additional private rooms:
 - `http://127.0.0.1:8080/founding-family-interest?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-decisions?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-review-prep?access=cultivate-preview`
+- `http://127.0.0.1:8080/owner-meeting-script?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-input-packet?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-review-worksheet?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-answer-log?access=cultivate-preview`

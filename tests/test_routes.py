@@ -52,6 +52,7 @@ class RouteTests(unittest.TestCase):
             "/owner-answer-log",
             "/post-meeting-update-plan",
             "/owner-review-prep",
+            "/owner-meeting-script",
             "/ui-kitchen-sink",
             "/ux-lab",
         ]:
@@ -96,6 +97,7 @@ class RouteTests(unittest.TestCase):
             "/owner-answer-log": b"Track what has actually been approved",
             "/post-meeting-update-plan": b"Turn owner answers into site changes",
             "/owner-review-prep": b"Get the preview ready",
+            "/owner-meeting-script": b"Present the preview",
         }
         for route, text in expectations.items():
             with self.subTest(route=route):
@@ -286,6 +288,19 @@ class RouteTests(unittest.TestCase):
             b"Close with the answer log and update plan",
             b"Command Center",
             b"Update Plan",
+        ]:
+            with self.subTest(text=text):
+                self.assertIn(text, response.data)
+
+    def test_owner_meeting_script_guides_facilitation(self):
+        response = self.client.get("/owner-meeting-script")
+        for text in [
+            b"Warm vision. Clear boundaries",
+            b"This is a private concept review",
+            b"Do not rely on memory",
+            b"pricing, dates, childcare, cafe, Foxtail",
+            b"End with a recorded answer",
+            b"Show this page",
         ]:
             with self.subTest(text=text):
                 self.assertIn(text, response.data)

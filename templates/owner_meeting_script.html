@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}Owner Meeting Script{% endblock %}
+{% block content %}
+<section class="walkthrough-hero">
+  <div>
+    <p class="eyebrow">Owner meeting script</p>
+    <h1>Present the preview with calm, careful language.</h1>
+    <p>This private script gives the facilitator a clean meeting path: what to say, what to show, what to capture, and what to avoid promising.</p>
+    <div class="walkthrough-hero__actions">
+      <a class="button button--primary" href="{{ url_for('owner_walkthrough') }}">Open walkthrough</a>
+      <a class="button button--quiet" href="{{ url_for('owner_review_worksheet') }}">Open worksheet</a>
+    </div>
+  </div>
+  <aside class="walkthrough-brief">
+    <span>Facilitator rule</span>
+    <strong>Warm vision. Clear boundaries.</strong>
+    <p>Let the owner feel the concept before asking for operational decisions.</p>
+  </aside>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner script-intro">
+    <div>
+      <p class="eyebrow">Meeting shape</p>
+      <h2>Use this when you are leading the owner through the site.</h2>
+      <p>The script is intentionally short. It keeps the meeting focused on confidence, first-launch shape, owner-only answers, and a careful update path.</p>
+    </div>
+    <div class="script-intro__links">
+      <a href="{{ url_for('owner_review_prep') }}">Prep Checklist</a>
+      <a href="{{ url_for('owner_input_packet') }}">Input Packet</a>
+      <a href="{{ url_for('owner_answer_log') }}">Answer Log</a>
+      <a href="{{ url_for('post_meeting_update_plan') }}">Update Plan</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-band">
+  <div class="section-inner script-list">
+    {% for step in script_steps %}
+    <article class="script-card">
+      <header>
+        <span>{{ step.timebox }}</span>
+        <h2>{{ step.title }}</h2>
+      </header>
+      <div class="script-card__grid">
+        <div>
+          <h3>Say</h3>
+          <p>{{ step.say }}</p>
+        </div>
+        <div>
+          <h3>Capture</h3>
+          <p>{{ step.capture }}</p>
+        </div>
+        <div>
+          <h3>Avoid</h3>
+          <p>{{ step.avoid }}</p>
+        </div>
+      </div>
+      <a href="{{ url_for(step.show_route) }}">Show this page</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner walkthrough-close">
+    <div>
+      <p class="eyebrow">Close the loop</p>
+      <h2>End with a recorded answer or a deliberate hold.</h2>
+      <p>The script is successful when the owner leaves with confidence and the repo has a clear next artifact to update: answer log, approval matrix, validation checklist, or private draft copy.</p>
+    </div>
+    <div class="walkthrough-close__links">
+      <a href="{{ url_for('owner_review_worksheet') }}">Worksheet</a>
+      <a href="{{ url_for('owner_answer_log') }}">Answer Log</a>
+      <a href="{{ url_for('approval_matrix') }}">Approval Matrix</a>
+      <a href="{{ url_for('next_actions') }}">Next Actions</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
