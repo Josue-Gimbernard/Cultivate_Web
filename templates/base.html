@@ -44,7 +44,7 @@
         <span class="brand-mark__seed"></span>
         <span>
           <strong>Cultivate</strong>
-          <small>Private Preview</small>
+          <small>{{ owner_name }}'s Private Preview</small>
         </span>
       </a>
       <nav class="site-nav" aria-label="Preview navigation">
@@ -80,7 +80,7 @@
       {% endif %}
     </main>
     <footer class="site-footer">
-      <span>Private planning surface. Not public launch copy.</span>
+      <span>Private planning surface for {{ owner_name }}. Not public launch copy.</span>
       <span>Real Skills for Real Life</span>
     </footer>
     <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>

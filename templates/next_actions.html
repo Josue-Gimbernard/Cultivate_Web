@@ -5,7 +5,7 @@
   <div>
     <p class="eyebrow">Next actions board</p>
     <h1>Turn the preview into a practical work queue.</h1>
-    <p>This private board names the next approvals, validations, web builds, and evidence artifacts needed before Cultivate moves toward public-facing pages.</p>
+    <p>{{ owner_name }}, this private board names the next approvals, validations, web builds, and evidence artifacts needed before Cultivate moves toward public-facing pages.</p>
   </div>
   <aside class="actions-hero__note">
     <span>Working rule</span>
@@ -19,7 +19,7 @@
     <div class="actions-snapshot__heading">
       <p class="eyebrow">Action lanes</p>
       <h2>Make the next work visible.</h2>
-      <p>Each lane should end with an artifact the owner can approve, review, or use for the next build pass.</p>
+      <p>Each lane should end with an artifact Brooke can approve, review, or use for the next build pass.</p>
     </div>
     <div class="actions-lane-grid">
       {% for lane in action_lane_summaries %}
@@ -79,7 +79,7 @@
     <div>
       <p class="eyebrow">Recommended next build</p>
       <h2>After approval, draft the private public-safe Home page.</h2>
-      <p>The strategy layer is now strong enough to support a first public-page draft, but it should stay gated until the owner approves category, scope, and claims.</p>
+      <p>The strategy layer is now strong enough to support a first public-page draft, but it should stay gated until Brooke approves category, scope, and claims.</p>
     </div>
     <div class="actions-close__links">
       <a href="{{ url_for('owner_brief') }}">Owner Brief</a>

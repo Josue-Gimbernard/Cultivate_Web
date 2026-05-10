@@ -6,7 +6,7 @@ last_updated: 2026-05-10
 
 ## Current Mode
 
-Private owner preview.
+Private owner preview for Brooke.
 
 ## Current Repo State
 
@@ -49,6 +49,12 @@ The main owner-review pages now include a reusable guided-review band:
 This is registered in `app.py` as `GUIDED_REVIEW_STEPS` and rendered through `templates/_guided_review.html`. Use this path when preparing a first owner review so the site feels like a composed sequence rather than a route catalog.
 
 The preview homepage has been reduced to a compact hero and curated review suite. Detailed route browsing belongs in the header `All rooms` directory and `/review-command-center`.
+
+## Owner Personalization
+
+The preview now speaks directly to Brooke across the main review path, support rooms, draft packet, approval flow, and shared footer. Keep future copy personal and decision-oriented: use Brooke when the site is asking her to feel the vision, approve a claim, hold a risk, or choose the next build artifact.
+
+Do not use personalization to invent owner facts. Brooke-facing copy can name decisions, responsibilities, and approval gates, but it should not create founder story, pricing, schedule, launch timing, proof assets, childcare/cafe/Foxtail commitments, paid teen roles, rentals, or Wilds availability without an answer in the owner answer log.
 
 ## Public Draft Packet
 

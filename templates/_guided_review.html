@@ -3,7 +3,7 @@
     <div class="guided-review__copy">
       <p class="eyebrow">Guided owner review</p>
       <h2 id="guided-review-title">{{ guided_current.label }}. {{ guided_current.title }}</h2>
-      <p>{{ guided_current.summary }}</p>
+      <p>{{ owner_name }}'s path: {{ guided_current.summary }}</p>
     </div>
     <ol class="guided-review__steps" aria-label="Owner review sequence">
       {% for step in guided_review_steps %}

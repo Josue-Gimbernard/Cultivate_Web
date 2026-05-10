@@ -4,8 +4,8 @@
 <section class="walkthrough-hero">
   <div>
     <p class="eyebrow">Owner walkthrough</p>
-    <h1>A guided private presentation for the first big review.</h1>
-    <p>This page turns the preview into a calm meeting flow: vision first, first launch second, proof points next, decisions last.</p>
+    <h1>A guided private presentation for {{ owner_name }}'s first big review.</h1>
+    <p>This page turns the preview into a calm meeting flow for Brooke: vision first, first launch second, proof points next, decisions last.</p>
     <div class="walkthrough-hero__actions">
       <a class="button button--primary" href="#walkthrough-stage">Start walkthrough</a>
       <a class="button button--quiet" href="{{ url_for('family_journey') }}">Family journey map</a>
@@ -14,7 +14,7 @@
   <aside class="walkthrough-brief">
     <span>Best use</span>
     <strong>15-minute owner review</strong>
-    <p>Move one panel at a time, then jump into the deeper page when a decision needs more context.</p>
+    <p>Move one panel at a time, then jump into the deeper page when Brooke wants more context.</p>
   </aside>
 </section>
 
@@ -85,7 +85,7 @@
     <div>
       <p class="eyebrow">Meeting close</p>
       <h2>End with a short approval list.</h2>
-      <p>The walkthrough should create clarity on what can be shown, what needs validation, and which page becomes the next owner-facing artifact.</p>
+      <p>The walkthrough should give Brooke clarity on what can be shown, what needs validation, and which page becomes the next owner-facing artifact.</p>
     </div>
     <div class="walkthrough-close__links">
       <a href="{{ url_for('family_journey') }}">Family journey map</a>

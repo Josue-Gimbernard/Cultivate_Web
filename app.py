@@ -6,6 +6,9 @@ from dataclasses import dataclass
 from flask import Flask, redirect, render_template, request, session, url_for
 
 
+OWNER_NAME = "Brooke"
+
+
 @dataclass(frozen=True)
 class Space:
     name: str
@@ -665,10 +668,10 @@ WALKTHROUGH_SLIDES = [
     WalkthroughSlide(
         "01 / Opening",
         "Cultivate is a village for the whole homeschool family.",
-        "The owner should feel the complete ecosystem first: kids, teens, parents, work, food, outdoor rhythm, and community all supporting one another.",
+        "Brooke should feel the complete ecosystem first: kids, teens, parents, work, food, outdoor rhythm, and community all supporting one another.",
         "The strongest source-doc language is not about a single program. It is about a family campus where real skills become part of ordinary life.",
-        "Start with the full emotional picture, then quickly show the safer first launch lane.",
-        "Set the frame: this is the owner's private concept room, not public copy yet.",
+        "Start with Brooke's full emotional picture, then quickly show the safer first launch lane.",
+        "Set the frame: this is Brooke's private concept room, not public copy yet.",
         "owner_preview",
     ),
     WalkthroughSlide(
@@ -676,17 +679,17 @@ WALKTHROUGH_SLIDES = [
         "Launch the rhythm before launching the full campus.",
         "The founding cohort gives Cultivate a credible first version without forcing childcare, cafe, partner, employment, or facility promises too early.",
         "The current recommendation is a limited term anchored by The Summit, The Stepping Stones, The Grove, and The Commons.",
-        "Ask for approval on cohort label, audience, term length, and whether the interest page can move from draft to real intake.",
+        "Ask Brooke for approval on cohort label, audience, term length, and whether the interest page can move from draft to real intake.",
         "Keep this crisp: the first launch is a proof of rhythm, not a smaller dream.",
         "founding_cohort",
     ),
     WalkthroughSlide(
         "03 / Experience",
         "Make the day feel calm, useful, and alive.",
-        "The site needs to help the owner imagine families arriving, kids settling, teens contributing, parents breathing, and the day ending with visible evidence of growth.",
+        "The site needs to help Brooke imagine families arriving, kids settling, teens contributing, parents breathing, and the day ending with visible evidence of growth.",
         "The day-in-the-life page turns the abstract ecosystem into a lived rhythm without promising a final operating schedule.",
         "Use the story to check whether the experience feels like Cultivate before polishing public copy.",
-        "Watch for the owner's face here. If the day feels right, the rest gets easier.",
+        "Watch what Brooke lights up around here. If the day feels right, the rest gets easier.",
         "day_at_cultivate",
     ),
     WalkthroughSlide(
@@ -694,7 +697,7 @@ WALKTHROUGH_SLIDES = [
         "Every space has a job, and every job has a launch stance.",
         "The named spaces are a strength, but they need careful boundaries: some are cohort-ready, some are discovery work, and some belong to the longer-range campus.",
         "The space panels separate first version from future version so the full vision stays inspiring without becoming accidental day-one scope.",
-        "Confirm which spaces should appear in owner-facing preview, family-facing preview, and internal planning only.",
+        "Confirm with Brooke which spaces should appear in owner-facing preview, family-facing preview, and internal planning only.",
         "Name the risk kindly: beautiful spaces can accidentally sound like promises.",
         "spaces",
     ),
@@ -703,14 +706,14 @@ WALKTHROUGH_SLIDES = [
         "The brand should feel warm, practical, inclusive, and careful.",
         "Cultivate can sound big-hearted without sounding vague, clinical, or overpromised. The safest copy names the experience and avoids regulated claims.",
         "The Brand Voice Lab gives usable phrase pairs so future pages can stay consistent as the repo grows.",
-        "Use this as the copy filter before anything leaves private preview.",
-        "This is the guardrail that keeps warmth from turning into overclaiming.",
+        "Use this as Brooke's copy filter before anything leaves private preview.",
+        "This is the guardrail that keeps Brooke's warmth from turning into overclaiming.",
         "brand_voice",
     ),
     WalkthroughSlide(
         "06 / Decisions",
         "The next meeting should end with shape, not a pile of maybes.",
-        "A strong owner walkthrough should turn excitement into clear decisions: launch shape, naming, age scope, cafe stance, partnership timing, and interest page readiness.",
+        "A strong walkthrough should turn Brooke's excitement into clear decisions: launch shape, naming, age scope, cafe stance, partnership timing, and interest page readiness.",
         "The Owner Decision Dashboard frames each choice by recommendation, risk, and what it unlocks.",
         "Close by selecting what gets approved, what stays internal, and what needs validation next.",
         "End with a short approval list. The win is clarity, not solving every future phase.",
@@ -763,7 +766,7 @@ JOURNEY_STEPS = [
     JourneyStep(
         "Grow",
         "The first cohort teaches Cultivate what to build next.",
-        "The owner can decide what moves from vision to validated plan: childcare, cafe, teen work, rentals, outdoor campus, and partnership conversations.",
+        "Brooke can decide what moves from vision to validated plan: childcare, cafe, teen work, rentals, outdoor campus, and partnership conversations.",
         "The roadmap should turn excitement into sequenced decisions instead of sprawling scope.",
         "Owner decision dashboard and launch readiness.",
         "Which validated signal unlocks the next stage?",
@@ -777,7 +780,7 @@ ROADMAP_PHASES = [
         "Private owner review",
         "Use the website as a polished concept room for alignment, not as public launch copy.",
         "Owner walkthrough, family journey, decisions, readiness, and source-safe language.",
-        "Owner confirms what feels true, what needs changing, and what should remain internal.",
+        "Brooke confirms what feels true, what needs changing, and what should remain internal.",
         "Approved direction for first public-facing draft pages.",
     ),
     RoadmapPhase(
@@ -809,7 +812,7 @@ ROADMAP_PHASES = [
         "Expansion decisions",
         "Move only validated pieces toward fuller operations and keep the vision sequenced.",
         "Childcare, cafe, outdoor campus, rentals, partnership conversations, and membership model.",
-        "The owner has evidence, constraints, and capacity to choose the next responsible build.",
+        "Brooke has evidence, constraints, and capacity to choose the next responsible build.",
         "Phase-two roadmap with approved public claims.",
     ),
 ]
@@ -849,7 +852,7 @@ CONCERN_ITEMS = [
         "How much will it cost?",
         "Pricing is not ready for publication. The first step is defining the approved offer, schedule, staffing, facility needs, and founding cohort size.",
         "Publishing placeholder prices or comparing against school, daycare, or coworking pricing.",
-        "The membership model page can stay internal until the owner approves real assumptions.",
+        "The membership model page can stay internal until Brooke approves real assumptions.",
     ),
     ConcernItem(
         "Timeline",
@@ -912,7 +915,7 @@ PAIN_POINTS = [
         "Parents",
         "Homeschool parents often need community, nearby work time, and a sense that they are not carrying the whole rhythm alone.",
         "The Grove and parent-facing rhythm frame Cultivate as a place for connection, contribution, and breathing room.",
-        "Do not promise coworking availability, childcare coverage, or public membership benefits until the owner approves the operating model.",
+        "Do not promise coworking availability, childcare coverage, or public membership benefits until Brooke approves the operating model.",
     ),
     PainPoint(
         "Teens",
@@ -924,7 +927,7 @@ PAIN_POINTS = [
         "Middle kids",
         "Ages 6-12 need a bridge between play and responsibility: projects, confidence, curiosity, and visible progress.",
         "The Stepping Stones gives the first cohort a safe hands-on project lane without depending on the full campus.",
-        "Do not turn the project rhythm into a school, graded curriculum, or fixed public schedule without owner approval.",
+        "Do not turn the project rhythm into a school, graded curriculum, or fixed public schedule without Brooke's approval.",
     ),
     PainPoint(
         "Young children",
@@ -933,7 +936,7 @@ PAIN_POINTS = [
         "Do not advertise childcare, drop-off care, preschool, or teen-helper care until validated.",
     ),
     PainPoint(
-        "The owner",
+        "Brooke",
         "The full vision is strong, but it could become too broad if public language promises every space at once.",
         "The site recommends a limited founding cohort first, then evidence-led expansion decisions.",
         "Do not publish launch dates, prices, capacity, partnerships, rentals, cafe operations, or full-campus availability.",
@@ -958,7 +961,7 @@ GLOSSARY_TERMS = [
         "The Summit",
         "Current working name for the teen space and teen growth lane.",
         "Use as the current site name while preserving The Glade as provenance.",
-        "Do not treat the name as final public language until the owner confirms it.",
+        "Do not treat the name as final public language until Brooke confirms it.",
     ),
     GlossaryTerm(
         "The Stepping Stones",
@@ -1038,31 +1041,31 @@ ASSUMPTION_ITEMS = [
         "Cultivate can be framed as a homeschool family campus.",
         "Owner-updated ecosystem docs describe a whole-family community around real-life skills and belonging.",
         "Used as the private preview category and draft public direction.",
-        "Owner must approve final public category wording.",
+        "Brooke must approve final public category wording.",
     ),
     AssumptionItem(
         "A limited founding cohort is the responsible first move.",
         "Roadmap, readiness, approval, and operations pages all point toward proving rhythm before full-campus promises.",
         "Used across owner brief, next actions, draft homepage, and cohort draft.",
-        "Owner must approve first-cohort label, audience, schedule assumptions, and intake path.",
+        "Brooke must approve first-cohort label, audience, schedule assumptions, and intake path.",
     ),
     AssumptionItem(
         "The Summit is the current teen-space name.",
         "Updated naming direction is reflected in current web memory while The Glade is preserved as earlier-source provenance.",
         "Used on preview pages as the current teen-space label.",
-        "Owner must confirm final public name.",
+        "Brooke must confirm final public name.",
     ),
     AssumptionItem(
         "The Sprout Space, Harvest Cafe, Foxtail, paid teen work, rentals, and The Wilds remain validation-first.",
         "Source docs support the vision, while approval and readiness pages identify operational and regulatory dependencies.",
         "Used as future-vision or internal planning language only.",
-        "Owner must approve when, whether, and how each item can become public copy.",
+        "Brooke must approve when, whether, and how each item can become public copy.",
     ),
     AssumptionItem(
         "Public pages can be drafted privately before they are approved.",
         "The site is gated, has noindex metadata, and marks draft pages as private/unapproved.",
         "Used to build owner-review artifacts without launching claims.",
-        "Owner must approve publishing gate items before public release.",
+        "Brooke must approve publishing gate items before public release.",
     ),
 ]
 
@@ -1071,7 +1074,7 @@ OWNER_INPUT_ITEMS = [
     OwnerInputItem(
         "Story and category",
         "What is the founder origin story we are allowed to tell publicly?",
-        "The current site can explain the need, but only the owner can supply the personal why, timeline, and emotional details.",
+        "The current site can explain the need, but only Brooke can supply the personal why, timeline, and emotional details.",
         "A short founder story, approved words to use, and anything that should stay private.",
         "Public About copy, homepage credibility, and owner bio language.",
         "draft_about",
@@ -1079,7 +1082,7 @@ OWNER_INPUT_ITEMS = [
     OwnerInputItem(
         "Story and category",
         "What should Cultivate call itself in public copy?",
-        "The safest working phrase is homeschool family campus, but the final public category needs owner approval.",
+        "The safest working phrase is homeschool family campus, but the final public category needs Brooke's approval.",
         "One preferred category line plus two words or labels to avoid.",
         "Homepage headline support, FAQ language, and publish-ready navigation.",
         "what_cultivate_is",
@@ -1136,7 +1139,7 @@ OWNER_INPUT_ITEMS = [
         "Intake and privacy",
         "What information can an interest form collect, and who receives it?",
         "The current interest page is disabled because real family data needs a clear process before collection.",
-        "Fields to collect, where responses go, follow-up owner, data-retention stance, and privacy wording.",
+        "Fields to collect, where responses go, who follows up, data-retention stance, and privacy wording.",
         "Enabled interest page, CTA copy, and publish gate clearance.",
         "founding_family_interest",
     ),
@@ -1173,7 +1176,7 @@ POST_MEETING_UPDATES = [
         "Translate the answer into approval status.",
         "APPROVAL_ITEMS in app.py and /approval-matrix",
         "Each approved, held, or validation-needed answer needs a visible publishing gate.",
-        "Only mark a claim ready when the owner answer is specific enough to publish safely.",
+        "Only mark a claim ready when Brooke's answer is specific enough to publish safely.",
         "approval_matrix",
     ),
     PostMeetingUpdate(
@@ -1215,7 +1218,7 @@ OWNER_REVIEW_PREP_ITEMS = [
     OwnerReviewPrepItem(
         "01",
         "Open the private preview with the access code.",
-        "Confirm the owner can reach the gated site before the meeting starts.",
+        "Confirm Brooke can reach the gated site before the meeting starts.",
         "The meeting should feel composed, not technical.",
         "review_command_center",
     ),
@@ -1230,7 +1233,7 @@ OWNER_REVIEW_PREP_ITEMS = [
         "03",
         "Use the walkthrough for the first impression.",
         "Begin with the guided presentation before opening detailed planning pages.",
-        "The owner should feel the vision before debating operations.",
+        "Brooke should feel the vision before debating operations.",
         "owner_walkthrough",
     ),
     OwnerReviewPrepItem(
@@ -1251,7 +1254,7 @@ OWNER_REVIEW_PREP_ITEMS = [
         "06",
         "Close with the answer log and update plan.",
         "Show where answers will be recorded and how they become site changes.",
-        "The owner can see that approvals will be handled carefully after the meeting.",
+        "Brooke can see that approvals will be handled carefully after the meeting.",
         "owner_answer_log",
     ),
 ]
@@ -1261,9 +1264,9 @@ OWNER_MEETING_SCRIPT = [
     OwnerMeetingScriptStep(
         "0-2 min",
         "Open with the purpose.",
-        "This is a private concept review. The goal is to help the full Cultivate vision feel real while deciding what is safe to show families first.",
+        "Brooke: This is a private concept review. The goal is to help the full Cultivate vision feel real while deciding what is safe to show families first.",
         "owner_review_prep",
-        "Confirm the owner understands this is not public launch copy.",
+        "Confirm Brooke understands this is not public launch copy.",
         "Do not ask for pricing, schedule, or launch commitments in the opening.",
     ),
     OwnerMeetingScriptStep(
@@ -1271,8 +1274,8 @@ OWNER_MEETING_SCRIPT = [
         "Present the emotional center.",
         "Cultivate is strongest when it is framed as a whole-family place for belonging, real-life skills, parent breathing room, and community contribution.",
         "owner_walkthrough",
-        "Watch for language the owner repeats or corrects.",
-        "Do not over-explain every room before the owner feels the concept.",
+        "Watch for language Brooke repeats or corrects.",
+        "Do not over-explain every room before Brooke feels the concept.",
     ),
     OwnerMeetingScriptStep(
         "7-10 min",
@@ -1285,9 +1288,9 @@ OWNER_MEETING_SCRIPT = [
     OwnerMeetingScriptStep(
         "10-13 min",
         "Protect the promise boundaries.",
-        "The full ecosystem can stay visible, but pricing, dates, childcare, cafe, Foxtail, paid teen work, rentals, and full-campus availability need owner approval or validation before public use.",
+        "The full ecosystem can stay visible, but pricing, dates, childcare, cafe, Foxtail, paid teen work, rentals, and full-campus availability need Brooke's approval or validation before public use.",
         "what_cultivate_is",
-        "Mark any boundary the owner wants to revise.",
+        "Mark any boundary Brooke wants to revise.",
         "Do not soften the high-risk items into public promises during the meeting.",
     ),
     OwnerMeetingScriptStep(
@@ -1312,14 +1315,14 @@ OWNER_MEETING_SCRIPT = [
 OWNER_MEETING_RECAP_ITEMS = [
     OwnerMeetingRecapItem(
         "Approved",
-        "Record decisions the owner clearly approved.",
-        "No approvals recorded yet. Move items here only after the owner confirms wording or scope.",
+        "Record decisions Brooke clearly approved.",
+        "No approvals recorded yet. Move items here only after Brooke confirms wording or scope.",
         "memory/08-owner-answer-log.md",
         "owner_answer_log",
     ),
     OwnerMeetingRecapItem(
         "Revise",
-        "Capture concepts the owner likes but wants reworded or reshaped.",
+        "Capture concepts Brooke likes but wants reworded or reshaped.",
         "No revision notes recorded yet. Use this for language, naming, audience, or offer changes.",
         "Owner review worksheet",
         "owner_review_worksheet",
@@ -1367,13 +1370,13 @@ OWNER_REVIEW_PACKET_ITEMS = [
         "During",
         "Owner Walkthrough",
         "Present the concept visually before asking for operational decisions.",
-        "Owner confidence and first reactions.",
+        "Brooke's confidence and first reactions.",
         "owner_walkthrough",
     ),
     OwnerReviewPacketItem(
         "During",
         "Owner Input Packet",
-        "Ask the owner-only questions that unblock public copy.",
+        "Ask Brooke the questions that unblock public copy.",
         "Answers needed for story, scope, offer, proof, intake, and CTA.",
         "owner_input_packet",
     ),
@@ -1415,7 +1418,7 @@ OWNER_REVIEW_PACKET_ITEMS = [
     OwnerReviewPacketItem(
         "After",
         "Next Actions",
-        "Turn owner answers into concrete artifacts and work queues.",
+        "Turn Brooke's answers into concrete artifacts and work queues.",
         "A clear next build pass.",
         "next_actions",
     ),
@@ -1427,7 +1430,7 @@ PUBLIC_DRAFT_ITEMS = [
         "Home",
         "Explain Cultivate simply and warmly for families.",
         "Owner preview, brand voice, family journey, and ecosystem map.",
-        "Owner approves the public category, first offer, and claims boundaries.",
+        "Brooke approves the public category, first offer, and claims boundaries.",
         "Draft a public-safe hero, concept summary, and first-cohort call-to-action.",
         "draft_home",
     ),
@@ -1460,7 +1463,7 @@ PUBLIC_DRAFT_ITEMS = [
         "Collect early family interest when the process is ready.",
         "Founding family interest draft, launch roadmap, and privacy rules.",
         "Privacy language, storage process, owner contact, and offer scope are approved.",
-        "Enable a real form only after the owner approves intake operations.",
+        "Enable a real form only after Brooke approves intake operations.",
         "founding_family_interest",
     ),
 ]
@@ -1599,34 +1602,34 @@ REVIEW_SURFACES = [
         "Planning",
         "Owner Input Packet",
         "You need the exact questions that turn the private preview into approved public copy.",
-        "What does the owner need to answer next?",
+        "What does Brooke need to answer next?",
         "owner_input_packet",
     ),
     ReviewSurface(
         "Planning",
         "Owner Review Worksheet",
-        "You want a printable note-taking surface for the owner conversation.",
+        "You want a printable note-taking surface for Brooke's conversation.",
         "Where do the answers get captured?",
         "owner_review_worksheet",
     ),
     ReviewSurface(
         "Planning",
         "Owner Answer Log",
-        "You need a durable ledger of owner answers before changing public drafts.",
+        "You need a durable ledger of Brooke's answers before changing public drafts.",
         "What has actually been approved?",
         "owner_answer_log",
     ),
     ReviewSurface(
         "Planning",
         "Post-Meeting Update Plan",
-        "You need a safe order for converting owner answers into repo changes.",
+        "You need a safe order for converting Brooke's answers into repo changes.",
         "What changes after the meeting?",
         "post_meeting_update_plan",
     ),
     ReviewSurface(
         "Planning",
         "Owner Review Prep",
-        "You want to make the meeting polished before the owner sees the site.",
+        "You want to make the meeting polished before Brooke sees the site.",
         "Are we ready to present?",
         "owner_review_prep",
     ),
@@ -1641,7 +1644,7 @@ REVIEW_SURFACES = [
         "Planning",
         "Owner Meeting Recap",
         "You need a structured summary after the owner review.",
-        "What did we decide, hold, or validate?",
+        "What did Brooke decide, hold, or validate?",
         "owner_meeting_recap",
     ),
     ReviewSurface(
@@ -1784,7 +1787,7 @@ MEETING_TRACKS = (
     MeetingTrack(
         "15 minute review",
         "Impress first, then ask for shape approval.",
-        "Use Walkthrough, Owner Brief, and Approvals when the owner has limited time and needs the cleanest strategic read.",
+        "Use Walkthrough, Owner Brief, and Approvals when Brooke has limited time and needs the cleanest strategic read.",
     ),
     MeetingTrack(
         "Working session",
@@ -1809,7 +1812,7 @@ GUIDED_REVIEW_STEPS = (
     GuidedReviewStep(
         "02",
         "Command",
-        "Choose the right room and keep the owner review focused.",
+        "Choose the right room and keep Brooke's review focused.",
         "review_command_center",
     ),
     GuidedReviewStep(
@@ -1912,7 +1915,7 @@ APPROVAL_ITEMS = [
         "Cultivate is a homeschool family campus in Central Florida.",
         "Ready for owner review",
         "Owner-updated ecosystem source and current site strategy.",
-        "Can become public-facing after owner confirms the exact category language.",
+        "Can become public-facing after Brooke confirms the exact category language.",
         "Approve or revise the category line.",
         "brand_voice",
     ),
@@ -1928,7 +1931,7 @@ APPROVAL_ITEMS = [
         "The Summit is the current teen-space name.",
         "Needs confirmation",
         "Owner-updated naming direction; The Glade preserved as earlier-source provenance.",
-        "Hold public naming until the owner confirms final name.",
+        "Hold public naming until Brooke confirms final name.",
         "Confirm The Summit or choose the final public teen-space name.",
         "owner_decisions",
     ),
@@ -1970,13 +1973,13 @@ APPROVAL_ITEMS = [
 APPROVAL_STATUS_GUIDE = (
     (
         "Ready for owner review",
-        "Strong enough for the owner to approve, revise, or move toward public-safe copy.",
+        "Strong enough for Brooke to approve, revise, or move toward public-safe copy.",
         "Ask for a yes, a wording edit, or a clear hold.",
     ),
     (
         "Needs confirmation",
         "Promising, but a specific naming or category choice still needs owner confirmation.",
-        "Resolve the owner preference before public wording is drafted.",
+        "Resolve Brooke's preference before public wording is drafted.",
     ),
     (
         "Validate first",
@@ -1990,7 +1993,7 @@ APPROVAL_STATUS_GUIDE = (
     ),
     (
         "Blocked for public",
-        "Do not publish until the owner approves the underlying business and operating details.",
+        "Do not publish until Brooke approves the underlying business and operating details.",
         "Leave out of public pages until the block is removed.",
     ),
 )
@@ -2114,7 +2117,7 @@ BRIEF_SECTIONS = [
     BriefSection(
         "Owner decision",
         "The next approval is shape, not launch.",
-        "The owner does not need to approve every future phase now. The important next approval is the first-cohort frame and what can move into public-safe draft copy.",
+        "Brooke does not need to approve every future phase now. The important next approval is the first-cohort frame and what can move into public-safe draft copy.",
         "Owner decisions, review command center, and next actions.",
     ),
 ]
@@ -2124,7 +2127,7 @@ NEXT_ACTIONS = [
     NextAction(
         "Owner approval",
         "Confirm the public category line for Cultivate.",
-        "Everything public depends on whether the owner approves the homeschool family campus framing.",
+        "Everything public depends on whether Brooke approves the homeschool family campus framing.",
         "Approved or revised one-sentence category statement.",
         "brand_voice",
     ),
@@ -2169,7 +2172,7 @@ NEXT_ACTIONS = [
 ACTION_LANE_GUIDE = (
     (
         "Owner approval",
-        "Decisions the owner can make before deeper validation begins.",
+        "Decisions Brooke can make before deeper validation begins.",
         "Ask for approval, revision, or a deliberate hold.",
     ),
     (
@@ -2240,6 +2243,7 @@ def create_app() -> Flask:
             "guided_review_steps": GUIDED_REVIEW_STEPS,
             "primary_nav": PRIMARY_NAV,
             "publish_gates": PUBLISH_GATES,
+            "owner_name": OWNER_NAME,
         }
 
     @app.before_request

@@ -96,12 +96,12 @@ class RouteTests(unittest.TestCase):
             "/impact-signals": b"Decide what to measure",
             "/launch-readiness": b"Show the vision. Protect the promises.",
             "/owner-input-packet": b"Collect the answers",
-            "/owner-review-worksheet": b"Capture owner answers",
+            "/owner-review-worksheet": b"Capture Brooke's answers",
             "/owner-answer-log": b"Track what has actually been approved",
-            "/post-meeting-update-plan": b"Turn owner answers into site changes",
+            "/post-meeting-update-plan": b"Turn Brooke's answers into site changes",
             "/owner-review-prep": b"Get the preview ready",
             "/owner-meeting-script": b"Present the preview",
-            "/owner-meeting-recap": b"Summarize the meeting",
+            "/owner-meeting-recap": b"Summarize Brooke's meeting",
         }
         for route, text in expectations.items():
             with self.subTest(route=route):
@@ -237,8 +237,8 @@ class RouteTests(unittest.TestCase):
             ],
             "/assumptions-review": [
                 b"Assumptions are not approvals",
-                b"Owner must approve final public category wording",
-                b"Owner must approve publishing gate items",
+                b"Brooke must approve final public category wording",
+                b"Brooke must approve publishing gate items",
             ],
         }
         for route, texts in expectations.items():
@@ -302,7 +302,7 @@ class RouteTests(unittest.TestCase):
         response = self.client.get("/owner-review-prep")
         for text in [
             b"Prepare, present, capture, then update",
-            b"Confirm the owner can reach the gated site",
+            b"Confirm Brooke can reach the gated site",
             b"pricing, dates, childcare, cafe, Foxtail",
             b"Close with the answer log and update plan",
             b"Command Center",
@@ -337,6 +337,22 @@ class RouteTests(unittest.TestCase):
         ]:
             with self.subTest(text=text):
                 self.assertIn(text, response.data)
+
+    def test_owner_pages_are_personalized_for_brooke(self):
+        for route in [
+            "/owner-preview",
+            "/owner-review-packet",
+            "/review-command-center",
+            "/owner-brief",
+            "/owner-input-packet",
+            "/owner-review-worksheet",
+            "/owner-answer-log",
+            "/approval-matrix",
+            "/next-actions",
+        ]:
+            with self.subTest(route=route):
+                response = self.client.get(route)
+                self.assertIn(b"Brooke", response.data)
 
     def test_public_draft_hub_cards_link_to_drafts(self):
         response = self.client.get("/public-draft-hub")

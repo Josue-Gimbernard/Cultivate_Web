@@ -5,6 +5,9 @@ last_updated: 2026-05-10
 # Owner Preview Rules
 
 - Make the concept feel real, calm, and high-quality.
+- Speak directly to Brooke on owner-facing and review-support pages so the site feels personal, not generic.
+- Keep Brooke-facing copy decision-oriented: what she needs to feel, approve, revise, hold, validate, or answer next.
+- Do not invent Brooke's story, operating commitments, pricing, schedule, proof, or public promises to make copy feel more personal.
 - Distinguish full vision from first launch.
 - Do not present unvalidated elements as available now.
 - Foxtail is a concept, not a partner.
