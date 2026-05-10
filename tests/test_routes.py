@@ -101,7 +101,7 @@ class RouteTests(unittest.TestCase):
             "/post-meeting-update-plan": b"Turn Brooke's answers into site changes",
             "/owner-review-prep": b"Get the preview ready",
             "/owner-meeting-script": b"Present the preview",
-            "/owner-meeting-recap": b"Summarize Brooke's meeting",
+            "/owner-meeting-recap": b"Summarize the meeting with Brooke",
         }
         for route, text in expectations.items():
             with self.subTest(route=route):
@@ -315,7 +315,7 @@ class RouteTests(unittest.TestCase):
         response = self.client.get("/owner-meeting-script")
         for text in [
             b"Warm vision. Clear boundaries",
-            b"This is a private concept review",
+            b"private version of Cultivate",
             b"Do not rely on memory",
             b"pricing, dates, childcare, cafe, Foxtail",
             b"End with a recorded answer",

@@ -56,6 +56,8 @@ The preview now speaks directly to Brooke across the main review path, support r
 
 Do not use personalization to invent owner facts. Brooke-facing copy can name decisions, responsibilities, and approval gates, but it should not create founder story, pricing, schedule, launch timing, proof assets, childcare/cafe/Foxtail commitments, paid teen roles, rentals, or Wilds availability without an answer in the owner answer log.
 
+The second copy pass reduced repetitive name-dropping and shifted the voice toward a guided private presentation: warm enough to honor Brooke's vision, direct enough to name decisions, and careful enough to keep unapproved promises gated.
+
 ## Public Draft Packet
 
 The gated public-draft pages now behave as one private packet:

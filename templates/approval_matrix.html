@@ -5,7 +5,7 @@
   <div>
     <p class="eyebrow">Approval matrix</p>
     <h1>Separate ready claims from internal assumptions.</h1>
-    <p>{{ owner_name }}, this private matrix tracks sensitive claims, their current approval stance, source basis, and the action needed before anything moves toward public copy.</p>
+    <p>{{ owner_name }}, this is the protection layer. It shows which claims are ready, which need your approval, and which should stay private until the operating path is clearer.</p>
   </div>
   <aside class="approval-hero__note">
     <span>Copy safety</span>
@@ -19,7 +19,7 @@
     <div class="approval-snapshot__heading">
       <p class="eyebrow">Approval snapshot</p>
       <h2>What can move, what must wait.</h2>
-      <p>This summary turns the full claim list into a working agenda for Brooke's conversation.</p>
+      <p>This summary turns the full claim list into a working agenda for the next conversation.</p>
     </div>
     <div class="approval-summary-grid">
       {% for summary in approval_summaries %}
@@ -68,7 +68,7 @@
     <div>
       <p class="eyebrow">How to use this</p>
       <h2>Approval is a publishing gate.</h2>
-      <p>The matrix should be checked before turning Brooke's private preview language into family-facing copy.</p>
+      <p>Check this before turning private preview language into family-facing copy.</p>
     </div>
     <div class="approval-close__links">
       <a href="{{ url_for('source_evidence') }}">Source Evidence Room</a>
