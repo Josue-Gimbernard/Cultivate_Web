@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Assumptions Review{% endblock %}
+{% block content %}
+<section class="info-hero">
+  <div>
+    <p class="eyebrow">Assumptions review</p>
+    <h1>Name what we are treating as true for now.</h1>
+    <p>This private page separates source-supported working assumptions from owner decisions that still need approval before public launch.</p>
+  </div>
+  <aside class="info-hero__note">
+    <span>Review habit</span>
+    <strong>Assumptions are not approvals.</strong>
+    <p>Use this page to keep the preview honest as it becomes more polished.</p>
+  </aside>
+</section>
+
+<section class="section-band">
+  <div class="section-inner assumption-list">
+    {% for item in assumptions %}
+    <article class="assumption-item">
+      <div>
+        <p class="eyebrow">Working assumption</p>
+        <h2>{{ item.assumption }}</h2>
+      </div>
+      <div>
+        <h3>Safe basis</h3>
+        <p>{{ item.safe_basis }}</p>
+      </div>
+      <div>
+        <h3>Current site use</h3>
+        <p>{{ item.current_use }}</p>
+      </div>
+      <footer>
+        <h3>Owner needed</h3>
+        <p>{{ item.owner_needed }}</p>
+      </footer>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner info-close">
+    <div>
+      <p class="eyebrow">Next review</p>
+      <h2>Move assumptions into approvals, validation, or hold.</h2>
+      <p>When the owner confirms a working assumption, update the approval matrix and public draft packet before changing public-facing language.</p>
+    </div>
+    <div class="info-close__links">
+      <a href="{{ url_for('approval_matrix') }}">Approval Matrix</a>
+      <a href="{{ url_for('source_evidence') }}">Source Evidence</a>
+      <a href="{{ url_for('next_actions') }}">Next Actions</a>
+      <a href="{{ url_for('owner_decisions') }}">Owner Decisions</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

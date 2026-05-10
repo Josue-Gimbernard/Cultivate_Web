@@ -104,6 +104,17 @@ Current risk levels:
 - Medium
 - High
 
+## Safe Without Owner Completion
+
+The remaining source-safe informational pages have been added:
+
+- `/why-cultivate`: parent/kid/owner pain points, Cultivate response, and explicit promise boundaries.
+- `/glossary`: shared definitions for brand, spaces, founding cohort, and validation-first terms.
+- `/what-cultivate-is`: safe category comparison for what Cultivate is and is not.
+- `/assumptions-review`: working assumptions, safe basis, current site use, and owner approval needed.
+
+These pages do not replace owner approval. They complete the informational layer that can responsibly be filled without inventing founder story, pricing, schedule, final naming, intake rules, or operating commitments.
+
 ## Goal
 
 Show Cultivate as a complete, warm, professional ecosystem:

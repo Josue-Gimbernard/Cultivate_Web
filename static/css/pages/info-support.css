@@ -1,0 +1,171 @@
+.info-hero {
+  align-items: end;
+  background: linear-gradient(135deg, var(--color-cream-100), var(--color-mint-100));
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.34fr);
+  padding: var(--space-8) max(1rem, calc((100vw - var(--max-page)) / 2));
+}
+
+.info-hero h1 {
+  max-width: 62rem;
+}
+
+.info-hero p {
+  color: var(--color-ink-soft);
+  font-size: 1.2rem;
+  max-width: 46rem;
+  padding-top: var(--space-4);
+}
+
+.info-hero__note,
+.info-close__links {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+.info-hero__note span {
+  color: var(--color-clay-600);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.info-hero__note strong {
+  color: var(--color-teal-900);
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  line-height: 1.05;
+}
+
+.info-hero__note p {
+  font-size: 1rem;
+  padding: 0;
+}
+
+.info-card-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.info-card,
+.glossary-term,
+.assumption-item,
+.comparison-row {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+}
+
+.info-card span {
+  background: var(--color-mint-100);
+  border-radius: 999px;
+  color: var(--color-teal-900);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.65rem;
+  width: fit-content;
+}
+
+.info-card h2,
+.glossary-term h2,
+.assumption-item h2,
+.comparison-row h2 {
+  font-size: 1.65rem;
+}
+
+.info-card div,
+.info-card footer,
+.glossary-term div:not(:first-child),
+.glossary-term footer,
+.assumption-item div:not(:first-child),
+.assumption-item footer,
+.comparison-cell {
+  background: var(--color-cream-100);
+  border: 1px solid rgba(42, 125, 111, 0.14);
+  border-radius: var(--radius-sm);
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+}
+
+.comparison-cell--is {
+  background: var(--color-green-100);
+}
+
+.comparison-cell--not {
+  background: var(--color-cream-100);
+  border-color: rgba(196, 98, 45, 0.22);
+}
+
+.info-card h3,
+.glossary-term h3,
+.assumption-item h3,
+.comparison-cell h3 {
+  font-size: 1.05rem;
+}
+
+.info-card p,
+.glossary-term p,
+.assumption-item p,
+.comparison-row p,
+.info-close p {
+  color: var(--color-ink-soft);
+}
+
+.glossary-list,
+.assumption-list,
+.comparison-stack {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.glossary-term,
+.assumption-item {
+  grid-template-columns: minmax(0, 0.95fr) minmax(16rem, 0.55fr) minmax(16rem, 0.55fr);
+}
+
+.assumption-item {
+  grid-template-columns: minmax(0, 0.9fr) minmax(14rem, 0.45fr) minmax(14rem, 0.45fr) minmax(14rem, 0.45fr);
+}
+
+.comparison-row {
+  grid-template-columns: minmax(0, 0.9fr) minmax(16rem, 0.55fr) minmax(16rem, 0.55fr);
+}
+
+.info-close {
+  align-items: center;
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.4fr);
+}
+
+.info-close__links {
+  box-shadow: none;
+}
+
+.info-close__links a {
+  color: var(--color-teal-700);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .info-hero,
+  .info-close,
+  .glossary-term,
+  .assumption-item,
+  .comparison-row {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}What Cultivate Is / Is Not{% endblock %}
+{% block content %}
+<section class="info-hero">
+  <div>
+    <p class="eyebrow">What Cultivate is / is not</p>
+    <h1>Explain the category without creating accidental promises.</h1>
+    <p>This private page gives the team a careful comparison layer for parent questions, draft public copy, and owner review.</p>
+  </div>
+  <aside class="info-hero__note">
+    <span>Category safety</span>
+    <strong>Warm, but bounded.</strong>
+    <p>The safest language says what Cultivate is becoming while naming what is not approved yet.</p>
+  </aside>
+</section>
+
+<section class="section-band">
+  <div class="section-inner comparison-stack">
+    {% for item in comparisons %}
+    <article class="comparison-row">
+      <div>
+        <p class="eyebrow">{{ item.frame }}</p>
+        <h2>{{ item.why_it_matters }}</h2>
+      </div>
+      <div class="comparison-cell comparison-cell--is">
+        <h3>Is</h3>
+        <p>{{ item.is_text }}</p>
+      </div>
+      <div class="comparison-cell comparison-cell--not">
+        <h3>Is not</h3>
+        <p>{{ item.is_not_text }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner info-close">
+    <div>
+      <p class="eyebrow">Use this for</p>
+      <h2>FAQ, homepage, and owner approval language.</h2>
+      <p>This page can support public drafts, but it should stay private until the owner approves the category line and first offer.</p>
+    </div>
+    <div class="info-close__links">
+      <a href="{{ url_for('faq_lab') }}">FAQ / Concern Lab</a>
+      <a href="{{ url_for('draft_faq') }}">Draft FAQ</a>
+      <a href="{{ url_for('approval_matrix') }}">Approval Matrix</a>
+      <a href="{{ url_for('public_draft_hub') }}">Public Draft Hub</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

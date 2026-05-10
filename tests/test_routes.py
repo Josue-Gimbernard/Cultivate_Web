@@ -29,6 +29,10 @@ class RouteTests(unittest.TestCase):
             "/launch-roadmap",
             "/faq-lab",
             "/source-evidence",
+            "/why-cultivate",
+            "/glossary",
+            "/what-cultivate-is",
+            "/assumptions-review",
             "/public-draft-hub",
             "/draft-home",
             "/draft-about",
@@ -64,6 +68,10 @@ class RouteTests(unittest.TestCase):
             "/launch-roadmap": b"Sequence the work",
             "/faq-lab": b"Answer the hard questions",
             "/source-evidence": b"Show where the website",
+            "/why-cultivate": b"A careful answer to the family need",
+            "/glossary": b"Shared language",
+            "/what-cultivate-is": b"Explain the category",
+            "/assumptions-review": b"Name what we are treating as true",
             "/public-draft-hub": b"Prepare the public site",
             "/draft-home": b"Draft public homepage",
             "/draft-about": b"Draft public About",
@@ -178,6 +186,35 @@ class RouteTests(unittest.TestCase):
         ]:
             with self.subTest(text=text):
                 self.assertIn(text, response.data)
+
+    def test_safe_without_owner_support_pages(self):
+        expectations = {
+            "/why-cultivate": [
+                b"Need, response, boundary",
+                b"Do not promise coworking availability",
+                b"Do not advertise childcare",
+            ],
+            "/glossary": [
+                b"Founding cohort",
+                b"The Summit",
+                b"Do not publish as available childcare",
+            ],
+            "/what-cultivate-is": [
+                b"Is not",
+                b"A licensed school, daycare",
+                b"full-campus availability",
+            ],
+            "/assumptions-review": [
+                b"Assumptions are not approvals",
+                b"Owner must approve final public category wording",
+                b"Owner must approve publishing gate items",
+            ],
+        }
+        for route, texts in expectations.items():
+            response = self.client.get(route)
+            for text in texts:
+                with self.subTest(route=route, text=text):
+                    self.assertIn(text, response.data)
 
     def test_public_draft_hub_cards_link_to_drafts(self):
         response = self.client.get("/public-draft-hub")

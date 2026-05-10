@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Why This Matters{% endblock %}
+{% block content %}
+<section class="info-hero">
+  <div>
+    <p class="eyebrow">Why Cultivate</p>
+    <h1>A careful answer to the family need underneath the concept.</h1>
+    <p>This private page explains the source-safe pain points Cultivate is responding to without inventing public claims, dates, prices, or approved services.</p>
+  </div>
+  <aside class="info-hero__note">
+    <span>Safe without owner</span>
+    <strong>Need, response, boundary.</strong>
+    <p>Use this as credibility context, not as final public marketing copy.</p>
+  </aside>
+</section>
+
+<section class="section-band">
+  <div class="section-inner info-card-grid">
+    {% for point in pain_points %}
+    <article class="info-card">
+      <span>{{ point.audience }}</span>
+      <h2>{{ point.tension }}</h2>
+      <div>
+        <h3>Cultivate response</h3>
+        <p>{{ point.cultivate_response }}</p>
+      </div>
+      <footer>
+        <h3>Boundary</h3>
+        <p>{{ point.boundary }}</p>
+      </footer>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner info-close">
+    <div>
+      <p class="eyebrow">Use this for</p>
+      <h2>Public narrative only after category approval.</h2>
+      <p>The page gives the emotional and practical case for Cultivate, but the public version still needs the owner’s story, category language, and first-offer scope.</p>
+    </div>
+    <div class="info-close__links">
+      <a href="{{ url_for('what_cultivate_is') }}">What Cultivate Is / Is Not</a>
+      <a href="{{ url_for('glossary') }}">Glossary</a>
+      <a href="{{ url_for('approval_matrix') }}">Approval Matrix</a>
+      <a href="{{ url_for('draft_home') }}">Draft Home</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

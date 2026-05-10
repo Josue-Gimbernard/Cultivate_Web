@@ -119,6 +119,38 @@ class EvidenceItem:
 
 
 @dataclass(frozen=True)
+class PainPoint:
+    audience: str
+    tension: str
+    cultivate_response: str
+    boundary: str
+
+
+@dataclass(frozen=True)
+class GlossaryTerm:
+    term: str
+    plain_meaning: str
+    use_on_site: str
+    avoid_saying: str
+
+
+@dataclass(frozen=True)
+class ComparisonItem:
+    frame: str
+    is_text: str
+    is_not_text: str
+    why_it_matters: str
+
+
+@dataclass(frozen=True)
+class AssumptionItem:
+    assumption: str
+    safe_basis: str
+    current_use: str
+    owner_needed: str
+
+
+@dataclass(frozen=True)
 class PublicDraftItem:
     page: str
     purpose: str
@@ -818,6 +850,166 @@ EVIDENCE_ITEMS = [
 ]
 
 
+PAIN_POINTS = [
+    PainPoint(
+        "Parents",
+        "Homeschool parents often need community, nearby work time, and a sense that they are not carrying the whole rhythm alone.",
+        "The Grove and parent-facing rhythm frame Cultivate as a place for connection, contribution, and breathing room.",
+        "Do not promise coworking availability, childcare coverage, or public membership benefits until the owner approves the operating model.",
+    ),
+    PainPoint(
+        "Teens",
+        "Teens need belonging, useful responsibility, and a reason to practice real-life skills with people who see them.",
+        "The Summit frames teen growth around contribution, mentorship, creativity, hospitality, and readiness for life beyond the home.",
+        "Do not imply paid jobs, employment, unsupervised responsibility, or childcare supervision.",
+    ),
+    PainPoint(
+        "Middle kids",
+        "Ages 6-12 need a bridge between play and responsibility: projects, confidence, curiosity, and visible progress.",
+        "The Stepping Stones gives the first cohort a safe hands-on project lane without depending on the full campus.",
+        "Do not turn the project rhythm into a school, graded curriculum, or fixed public schedule without owner approval.",
+    ),
+    PainPoint(
+        "Young children",
+        "Younger siblings affect whether families can participate, but early-childhood care carries licensing and staffing realities.",
+        "The Sprout Space stays visible as a future family-support vision while the first cohort avoids childcare promises.",
+        "Do not advertise childcare, drop-off care, preschool, or teen-helper care until validated.",
+    ),
+    PainPoint(
+        "The owner",
+        "The full vision is strong, but it could become too broad if public language promises every space at once.",
+        "The site recommends a limited founding cohort first, then evidence-led expansion decisions.",
+        "Do not publish launch dates, prices, capacity, partnerships, rentals, cafe operations, or full-campus availability.",
+    ),
+]
+
+
+GLOSSARY_TERMS = [
+    GlossaryTerm(
+        "Cultivate",
+        "A private working concept for a homeschool family campus in Central Florida.",
+        "Use as the parent brand for the whole ecosystem.",
+        "Do not define it as a school, daycare, coworking center, cafe, or public venue until approved.",
+    ),
+    GlossaryTerm(
+        "Founding cohort",
+        "A limited first version used to test rhythm, demand, trust, and operational fit before the full campus.",
+        "Use as the safest first-launch recommendation.",
+        "Do not imply enrollment is open, dates are set, or the offer is approved.",
+    ),
+    GlossaryTerm(
+        "The Summit",
+        "Current working name for the teen space and teen growth lane.",
+        "Use as the current site name while preserving The Glade as provenance.",
+        "Do not treat the name as final public language until the owner confirms it.",
+    ),
+    GlossaryTerm(
+        "The Stepping Stones",
+        "Hands-on project and confidence-building lane for middle kids.",
+        "Use as a first-cohort-ready concept when paired with approved scope.",
+        "Do not define exact ages, schedule, curriculum, or outcomes without owner approval.",
+    ),
+    GlossaryTerm(
+        "The Grove",
+        "Parent landing place for work, connection, contribution, and community rhythm.",
+        "Use as parent-support language in private preview and careful public drafts.",
+        "Do not promise coworking, childcare coverage, or membership access rules yet.",
+    ),
+    GlossaryTerm(
+        "The Commons",
+        "Flexible workshop and gathering space concept.",
+        "Use as a shared rhythm and workshop frame for the first version.",
+        "Do not publish rental, event, or capacity claims yet.",
+    ),
+    GlossaryTerm(
+        "The Sprout Space",
+        "Future early-childhood support vision.",
+        "Use only as validation-first future vision.",
+        "Do not publish as available childcare, preschool, or drop-off care.",
+    ),
+    GlossaryTerm(
+        "The Harvest Cafe",
+        "Future hospitality and food-service learning vision.",
+        "Use only as future vision unless operations are approved.",
+        "Do not publish cafe opening, food sales, teen-run operation, or Foxtail partnership claims.",
+    ),
+    GlossaryTerm(
+        "The Wilds",
+        "Future outdoor campus vision.",
+        "Use as north-star atmosphere and validation path.",
+        "Do not present outdoor campus elements as day-one facilities.",
+    ),
+]
+
+
+COMPARISON_ITEMS = [
+    ComparisonItem(
+        "Category",
+        "A developing homeschool family campus concept.",
+        "A licensed school, daycare, coworking chain, public cafe, or event venue.",
+        "This keeps the public category warm but careful until the operating model is approved.",
+    ),
+    ComparisonItem(
+        "First launch",
+        "A limited founding cohort is the safest recommended first step.",
+        "A full campus launch with every space operating at once.",
+        "The first version should validate culture, demand, and logistics before adding regulated pieces.",
+    ),
+    ComparisonItem(
+        "Teen contribution",
+        "A learning path for responsibility, mentorship, hospitality, creativity, and contribution.",
+        "A public promise of paid jobs, employment, or teen supervision of children.",
+        "Teen language needs to stay clearly educational and supervised.",
+    ),
+    ComparisonItem(
+        "Parent support",
+        "A community rhythm that may include parent workspace, connection, and contribution.",
+        "A guaranteed coworking membership, childcare substitute, or drop-off solution.",
+        "Parent relief matters, but public copy must not overstate the available service.",
+    ),
+    ComparisonItem(
+        "Future spaces",
+        "A visible long-range ecosystem that can be validated in sequence.",
+        "A promise of childcare, cafe, outdoor campus, rentals, partnerships, or full-campus availability now.",
+        "The full vision can inspire without becoming a public commitment.",
+    ),
+]
+
+
+ASSUMPTION_ITEMS = [
+    AssumptionItem(
+        "Cultivate can be framed as a homeschool family campus.",
+        "Owner-updated ecosystem docs describe a whole-family community around real-life skills and belonging.",
+        "Used as the private preview category and draft public direction.",
+        "Owner must approve final public category wording.",
+    ),
+    AssumptionItem(
+        "A limited founding cohort is the responsible first move.",
+        "Roadmap, readiness, approval, and operations pages all point toward proving rhythm before full-campus promises.",
+        "Used across owner brief, next actions, draft homepage, and cohort draft.",
+        "Owner must approve first-cohort label, audience, schedule assumptions, and intake path.",
+    ),
+    AssumptionItem(
+        "The Summit is the current teen-space name.",
+        "Updated naming direction is reflected in current web memory while The Glade is preserved as earlier-source provenance.",
+        "Used on preview pages as the current teen-space label.",
+        "Owner must confirm final public name.",
+    ),
+    AssumptionItem(
+        "The Sprout Space, Harvest Cafe, Foxtail, paid teen work, rentals, and The Wilds remain validation-first.",
+        "Source docs support the vision, while approval and readiness pages identify operational and regulatory dependencies.",
+        "Used as future-vision or internal planning language only.",
+        "Owner must approve when, whether, and how each item can become public copy.",
+    ),
+    AssumptionItem(
+        "Public pages can be drafted privately before they are approved.",
+        "The site is gated, has noindex metadata, and marks draft pages as private/unapproved.",
+        "Used to build owner-review artifacts without launching claims.",
+        "Owner must approve publishing gate items before public release.",
+    ),
+]
+
+
 PUBLIC_DRAFT_ITEMS = [
     PublicDraftItem(
         "Home",
@@ -999,6 +1191,20 @@ REVIEW_SURFACES = [
         "source_evidence",
     ),
     ReviewSurface(
+        "Safety",
+        "Assumptions Review",
+        "You want to see which working assumptions are safe and which need owner approval.",
+        "What are we treating as true for now?",
+        "assumptions_review",
+    ),
+    ReviewSurface(
+        "Safety",
+        "What Cultivate Is / Is Not",
+        "You need public category clarity without overpromising regulated services.",
+        "How do we explain Cultivate carefully?",
+        "what_cultivate_is",
+    ),
+    ReviewSurface(
         "Future public",
         "Public Draft Hub",
         "You want to plan public pages before they are approved to publish.",
@@ -1039,6 +1245,20 @@ REVIEW_SURFACES = [
         "You need copy to stay warm, grounded, and careful around unapproved promises.",
         "What should Cultivate sound like?",
         "brand_voice",
+    ),
+    ReviewSurface(
+        "Build system",
+        "Glossary",
+        "You need shared definitions for names, spaces, and public-safe terms.",
+        "What do these words mean right now?",
+        "glossary",
+    ),
+    ReviewSurface(
+        "Build system",
+        "Why Cultivate",
+        "You need a source-safe credibility layer for family pain points and the responsible first step.",
+        "Why does this model matter?",
+        "why_cultivate",
     ),
     ReviewSurface(
         "Build system",
@@ -1192,12 +1412,16 @@ DIRECTORY_NAV = (
             NavItem("Decisions", "owner_decisions"),
             NavItem("FAQ Lab", "faq_lab"),
             NavItem("Evidence", "source_evidence"),
+            NavItem("Assumptions", "assumptions_review"),
+            NavItem("Is / Is Not", "what_cultivate_is"),
         ),
     ),
     NavSection(
         "Build System",
         (
             NavItem("Voice", "brand_voice"),
+            NavItem("Glossary", "glossary"),
+            NavItem("Why", "why_cultivate"),
             NavItem("Offers", "membership_model"),
             NavItem("Interest", "founding_family_interest"),
             NavItem("Kitchen Sink", "ui_kitchen_sink"),
@@ -1634,6 +1858,26 @@ def create_app() -> Flask:
     @app.get("/source-evidence")
     def source_evidence():
         return render_template("source_evidence.html", evidence=EVIDENCE_ITEMS)
+
+    @app.get("/why-cultivate")
+    def why_cultivate():
+        return render_template("why_cultivate.html", pain_points=PAIN_POINTS)
+
+    @app.get("/glossary")
+    def glossary():
+        return render_template("glossary.html", terms=GLOSSARY_TERMS)
+
+    @app.get("/what-cultivate-is")
+    def what_cultivate_is():
+        return render_template(
+            "what_cultivate_is.html", comparisons=COMPARISON_ITEMS
+        )
+
+    @app.get("/assumptions-review")
+    def assumptions_review():
+        return render_template(
+            "assumptions_review.html", assumptions=ASSUMPTION_ITEMS
+        )
 
     @app.get("/public-draft-hub")
     def public_draft_hub():

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Glossary{% endblock %}
+{% block content %}
+<section class="info-hero">
+  <div>
+    <p class="eyebrow">Glossary</p>
+    <h1>Shared language for the private preview.</h1>
+    <p>This private glossary keeps names, spaces, and working terms consistent while making clear which terms are approved, working, or validation-first.</p>
+  </div>
+  <aside class="info-hero__note">
+    <span>Copy rule</span>
+    <strong>Define without overpromising.</strong>
+    <p>Terms can make the ecosystem feel real, but definitions must keep first version and future vision separate.</p>
+  </aside>
+</section>
+
+<section class="section-band">
+  <div class="section-inner glossary-list">
+    {% for term in terms %}
+    <article class="glossary-term">
+      <div>
+        <p class="eyebrow">Term</p>
+        <h2>{{ term.term }}</h2>
+        <p>{{ term.plain_meaning }}</p>
+      </div>
+      <div>
+        <h3>Use on site</h3>
+        <p>{{ term.use_on_site }}</p>
+      </div>
+      <footer>
+        <h3>Avoid saying</h3>
+        <p>{{ term.avoid_saying }}</p>
+      </footer>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner info-close">
+    <div>
+      <p class="eyebrow">Before publishing</p>
+      <h2>Confirm the words that will become public labels.</h2>
+      <p>The Summit, founding cohort, and public category line still need owner approval before they become family-facing promises.</p>
+    </div>
+    <div class="info-close__links">
+      <a href="{{ url_for('brand_voice') }}">Brand Voice Lab</a>
+      <a href="{{ url_for('what_cultivate_is') }}">What Cultivate Is / Is Not</a>
+      <a href="{{ url_for('owner_decisions') }}">Owner Decisions</a>
+      <a href="{{ url_for('source_evidence') }}">Source Evidence</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

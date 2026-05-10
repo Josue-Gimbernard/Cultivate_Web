@@ -39,6 +39,13 @@ The next-actions board includes lane summaries for owner approval, validation, w
 
 The owner decisions dashboard includes a risk snapshot before the individual decision cards.
 
+The safe-without-owner informational layer is complete:
+
+- `http://127.0.0.1:8080/why-cultivate?access=cultivate-preview`
+- `http://127.0.0.1:8080/glossary?access=cultivate-preview`
+- `http://127.0.0.1:8080/what-cultivate-is?access=cultivate-preview`
+- `http://127.0.0.1:8080/assumptions-review?access=cultivate-preview`
+
 Additional private rooms:
 
 - `http://127.0.0.1:8080/day-at-cultivate?access=cultivate-preview`

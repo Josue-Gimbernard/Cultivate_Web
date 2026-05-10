@@ -21,6 +21,10 @@ last_updated: 2026-05-10
 | `/launch-roadmap` | Private phase-based roadmap from owner review to expansion decisions | gated |
 | `/faq-lab` | Private FAQ and concern-response safety lab | gated |
 | `/source-evidence` | Private source traceability and owner-check room | gated |
+| `/why-cultivate` | Source-safe family pain point and credibility layer | gated |
+| `/glossary` | Shared private-preview terminology and naming guardrails | gated |
+| `/what-cultivate-is` | Safe category comparison for what Cultivate is and is not | gated |
+| `/assumptions-review` | Working assumptions, source basis, current use, and owner approval needs | gated |
 | `/public-draft-hub` | Private hub for future public page drafts and hold conditions | gated |
 | `/draft-home` | Private unapproved public-homepage draft | gated |
 | `/draft-about` | Private unapproved public About page draft | gated |
@@ -59,6 +63,7 @@ Header navigation is registered in `app.py`:
 - `APPROVAL_ITEMS` controls the approval matrix, and `build_approval_summaries()` derives the status snapshot shown above the full matrix.
 - `NEXT_ACTIONS` controls the next-actions board, and `build_action_lane_summaries()` derives the lane snapshot shown above the grouped queues.
 - `DECISIONS` controls the owner decision dashboard, and `build_decision_risk_summaries()` derives the risk snapshot shown above the individual decision cards.
+- `PAIN_POINTS`, `GLOSSARY_TERMS`, `COMPARISON_ITEMS`, and `ASSUMPTION_ITEMS` control the safe-without-owner informational support pages.
 - `REVIEW_SURFACES` controls supporting owner-review rooms, while the start pages are handled by the curated review flow instead of duplicated as cards.
 
 `templates/_guided_review.html` appears on the primary owner-review sequence: `/owner-preview`, `/review-command-center`, `/owner-walkthrough`, `/owner-brief`, `/approval-matrix`, and `/next-actions`.

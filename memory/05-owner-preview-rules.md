@@ -25,6 +25,10 @@ last_updated: 2026-05-10
 - Keep `/launch-roadmap` phase-based; do not let it become a public launch calendar with dates.
 - Keep `/faq-lab` private until the owner approves exact public answers and operational claims.
 - Use `/source-evidence` to check whether future public claims are supported by a source document and owner approval.
+- Use `/why-cultivate` for source-safe credibility and family pain-point framing, not final public marketing.
+- Use `/glossary` to keep names and working terms consistent while preserving owner approval boundaries.
+- Use `/what-cultivate-is` to answer category questions without implying school, daycare, coworking, cafe, employment, rental, or full-campus availability.
+- Use `/assumptions-review` to keep working assumptions visible and separate from owner approvals.
 - Keep `/public-draft-hub` private; it organizes future pages but does not mean those pages are approved to publish.
 - Keep `/draft-home`, `/draft-about`, `/draft-cohort`, and `/draft-faq` gated and clearly labeled as private drafts until owner approval.
 - Draft public pages must avoid launch dates, prices, enrollment claims, licensed childcare promises, cafe operation, Foxtail partnership, paid teen jobs, and public rental claims.
