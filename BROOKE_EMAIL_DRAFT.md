@@ -1,10 +1,18 @@
 # Email Draft To Brooke
 
-Subject: Cultivate questions to help shape the next website pass
+Subject: Cultivate preview and a few questions for the next pass
 
 Hi Brooke,
 
-I put together a short AI-guided question packet to help us clarify the next round of Cultivate decisions without making it feel like a giant homework assignment.
+I put together a private preview of the Cultivate concept site for you to look through:
+
+`https://web-production-dcfae.up.railway.app/?access=cultivate-preview`
+
+This is not meant to be public launch copy yet. It is a working preview to help you see the ecosystem, the language, the possible first offer, and the decisions that still need your direction.
+
+As you go through it, pay attention to what feels right, what feels too big, what feels not quite like you, and what you would want changed before anyone else sees it.
+
+I also attached a short AI-guided question packet to help clarify the next round of Cultivate decisions without making it feel like a giant homework assignment.
 
 You do not need access to GitHub, the website repo, or anything technical. Just upload the attached Markdown file into Claude, paste the prompt from the top of the file, and let Claude interview you one section at a time.
 
