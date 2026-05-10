@@ -10,9 +10,16 @@ Brooke, this packet is meant to help you think out loud with your AI.
 
 You do not need polished answers. Short, honest, imperfect answers are better than trying to sound finished. The goal is to separate what is already true, what is still a dream, what needs a decision, and what should not be promised publicly yet.
 
+You do not need access to any website repo, GitHub account, or technical workspace. This file is meant to be uploaded directly into Claude as an attachment.
+
 ## How To Use This
 
-Attach this file to your AI chat, then paste the prompt below.
+1. Open Claude.
+2. Start a new chat.
+3. Attach this Markdown file.
+4. Paste the prompt below.
+5. Answer Claude one section at a time.
+6. When Claude gives you the final summary, send that summary back to Josue.
 
 ```text
 You are helping me clarify the next business decisions for Cultivate.

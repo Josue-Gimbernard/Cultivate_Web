@@ -41,6 +41,8 @@ Capture Brooke's answers for:
 
 Use `BROOKE_AI_INTERVIEW_PACKET.md` when Brooke wants to work through decisions with her own AI before a meeting or before sending notes back.
 
+Brooke does not need repo access. She is expected to use the Claude app directly by uploading the Markdown file as an attachment and pasting the prompt from the top of the packet.
+
 The packet is designed to:
 
 - ask one section at a time
