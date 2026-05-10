@@ -37,6 +37,18 @@ Capture Brooke's answers for:
 - proof assets, photos, testimonials, credentials, and permissions
 - public call to action
 
+## Attachment-Ready AI Interview
+
+Use `BROOKE_AI_INTERVIEW_PACKET.md` when Brooke wants to work through decisions with her own AI before a meeting or before sending notes back.
+
+The packet is designed to:
+
+- ask one section at a time
+- avoid overwhelming Brooke with every blocker at once
+- distinguish public copy from private planning
+- return a concise summary for Josue
+- feed directly back into `memory/08-owner-answer-log.md`
+
 ## Status Marks
 
 Use the worksheet statuses this way:

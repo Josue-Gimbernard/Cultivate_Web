@@ -19,7 +19,8 @@ This folder is the durable Web Agent memory layer for the Cultivate website.
 7. `memory/05-owner-preview-rules.md`
 8. `memory/07-owner-input-workflow.md`
 9. `memory/08-owner-answer-log.md`
-10. Relevant `skills/*/SKILL.md`
+10. `BROOKE_AI_INTERVIEW_PACKET.md`
+11. Relevant `skills/*/SKILL.md`
 
 ## Memory Files
 
@@ -33,6 +34,7 @@ This folder is the durable Web Agent memory layer for the Cultivate website.
 | `06-repo-and-deploy-operations.md` | GitHub repo setup, SSH account strategy, verification, Railway readiness, and push rules |
 | `07-owner-input-workflow.md` | How to run the owner input meeting and convert answers into site updates |
 | `08-owner-answer-log.md` | Durable pending/approved owner answer record for public-site blockers |
+| `../BROOKE_AI_INTERVIEW_PACKET.md` | Attachment-ready AI interview packet for Brooke to clarify owner decisions without overwhelm |
 | `inbox.md` | Open web questions |
 
 ## Current Setup Status
