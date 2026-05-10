@@ -5,8 +5,8 @@ For implementation work:
 ```powershell
 python -m compileall app.py
 python -m unittest discover -s tests
-npm run lint:colors
+npm.cmd run lint:colors
+node --check static\js\main.js
 ```
 
-Do not initialize git until the founder's new email is ready.
-
+Git is initialized and pushed. If repo, auth, deploy, or commit behavior changes, update `memory/06-repo-and-deploy-operations.md`.

@@ -28,5 +28,12 @@ This folder is the durable Web Agent memory layer for the Cultivate website.
 | `03-brand-and-ui-system.md` | Brand tokens, type, colors, and UI rules |
 | `04-route-architecture.md` | Route map and gated-preview structure |
 | `05-owner-preview-rules.md` | Rules for private owner-facing pages |
+| `06-repo-and-deploy-operations.md` | GitHub repo setup, SSH account strategy, verification, Railway readiness, and push rules |
 | `inbox.md` | Open web questions |
 
+## Current Setup Status
+
+- Git is initialized, committed, and pushed to GitHub as `Josue-Gimbernard/Cultivate_Web`.
+- The local repo uses repo-specific SSH auth for `Josue-Gimbernard` so miniBIOTA global Git credentials remain untouched.
+- The current private preview is Flask-based and runs locally at `http://127.0.0.1:8080/?access=cultivate-preview`.
+- The current preview remains private/gated and is not public launch copy.

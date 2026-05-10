@@ -8,6 +8,10 @@ last_updated: 2026-05-10
 
 Private owner preview.
 
+## Current Repo State
+
+The web repo is initialized and pushed to `git@github.com:Josue-Gimbernard/Cultivate_Web.git`. Use `memory/06-repo-and-deploy-operations.md` before changing Git remotes, SSH auth, Railway setup, or deployment behavior.
+
 ## Current Navigation Strategy
 
 The site now uses a tight primary tab set for the owner review:
