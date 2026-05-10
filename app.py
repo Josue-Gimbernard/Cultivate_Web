@@ -171,6 +171,15 @@ class PostMeetingUpdate:
 
 
 @dataclass(frozen=True)
+class OwnerReviewPrepItem:
+    step: str
+    title: str
+    check: str
+    why_it_matters: str
+    support_route: str
+
+
+@dataclass(frozen=True)
 class PublicDraftItem:
     page: str
     purpose: str
@@ -1174,6 +1183,52 @@ POST_MEETING_UPDATES = [
 ]
 
 
+OWNER_REVIEW_PREP_ITEMS = [
+    OwnerReviewPrepItem(
+        "01",
+        "Open the private preview with the access code.",
+        "Confirm the owner can reach the gated site before the meeting starts.",
+        "The meeting should feel composed, not technical.",
+        "review_command_center",
+    ),
+    OwnerReviewPrepItem(
+        "02",
+        "Start from the command center.",
+        "Use the command center as the table of contents instead of jumping through random pages.",
+        "It keeps the review focused on flow, not route inventory.",
+        "review_command_center",
+    ),
+    OwnerReviewPrepItem(
+        "03",
+        "Use the walkthrough for the first impression.",
+        "Begin with the guided presentation before opening detailed planning pages.",
+        "The owner should feel the vision before debating operations.",
+        "owner_walkthrough",
+    ),
+    OwnerReviewPrepItem(
+        "04",
+        "Have the input packet and worksheet ready.",
+        "Open the owner input packet and printable worksheet before asking for decisions.",
+        "The meeting should end with captured answers, not vague approval.",
+        "owner_input_packet",
+    ),
+    OwnerReviewPrepItem(
+        "05",
+        "Name the promise boundaries out loud.",
+        "Say that pricing, dates, childcare, cafe, Foxtail, teen work, rentals, and full-campus availability are not public promises yet.",
+        "This protects trust while still showing the full ecosystem.",
+        "what_cultivate_is",
+    ),
+    OwnerReviewPrepItem(
+        "06",
+        "Close with the answer log and update plan.",
+        "Show where answers will be recorded and how they become site changes.",
+        "The owner can see that approvals will be handled carefully after the meeting.",
+        "owner_answer_log",
+    ),
+]
+
+
 PUBLIC_DRAFT_ITEMS = [
     PublicDraftItem(
         "Home",
@@ -1367,6 +1422,13 @@ REVIEW_SURFACES = [
         "You need a safe order for converting owner answers into repo changes.",
         "What changes after the meeting?",
         "post_meeting_update_plan",
+    ),
+    ReviewSurface(
+        "Planning",
+        "Owner Review Prep",
+        "You want to make the meeting polished before the owner sees the site.",
+        "Are we ready to present?",
+        "owner_review_prep",
     ),
     ReviewSurface(
         "Safety",
@@ -1599,6 +1661,7 @@ DIRECTORY_NAV = (
             NavItem("Worksheet", "owner_review_worksheet"),
             NavItem("Answer Log", "owner_answer_log"),
             NavItem("Update Plan", "post_meeting_update_plan"),
+            NavItem("Prep", "owner_review_prep"),
         ),
     ),
     NavSection(
@@ -2057,6 +2120,12 @@ def create_app() -> Flask:
     def post_meeting_update_plan():
         return render_template(
             "post_meeting_update_plan.html", updates=POST_MEETING_UPDATES
+        )
+
+    @app.get("/owner-review-prep")
+    def owner_review_prep():
+        return render_template(
+            "owner_review_prep.html", prep_items=OWNER_REVIEW_PREP_ITEMS
         )
 
     @app.get("/owner-walkthrough")

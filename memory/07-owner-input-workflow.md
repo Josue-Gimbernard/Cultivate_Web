@@ -10,13 +10,14 @@ Use this file when the owner is ready to answer the remaining public-site blocke
 
 Open these in order:
 
-1. `/owner-walkthrough`
-2. `/owner-input-packet`
-3. `/owner-review-worksheet`
-4. `/owner-answer-log`
-5. `/post-meeting-update-plan`
-6. `/approval-matrix`
-7. `/next-actions`
+1. `/owner-review-prep`
+2. `/owner-walkthrough`
+3. `/owner-input-packet`
+4. `/owner-review-worksheet`
+5. `/owner-answer-log`
+6. `/post-meeting-update-plan`
+7. `/approval-matrix`
+8. `/next-actions`
 
 ## What To Collect
 

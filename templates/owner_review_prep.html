@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Owner Review Prep{% endblock %}
+{% block content %}
+<section class="info-hero">
+  <div>
+    <p class="eyebrow">Owner review prep</p>
+    <h1>Get the preview ready before the owner sees it.</h1>
+    <p>This private checklist keeps the review polished: access works, the meeting path is clear, decision tools are ready, and promise boundaries are named before public-copy questions begin.</p>
+  </div>
+  <aside class="info-hero__note">
+    <span>Before the meeting</span>
+    <strong>Polish the room first.</strong>
+    <p>The owner should experience a prepared concept, not a loose collection of pages.</p>
+  </aside>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner prep-summary">
+    <div>
+      <p class="eyebrow">Run of show</p>
+      <h2>Prepare, present, capture, then update.</h2>
+      <p>Use this page before a review session. It keeps the meeting sequence simple and makes sure every owner answer has a place to go after the conversation.</p>
+    </div>
+    <div class="prep-summary__links">
+      <a href="{{ url_for('review_command_center') }}">Command Center</a>
+      <a href="{{ url_for('owner_walkthrough') }}">Walkthrough</a>
+      <a href="{{ url_for('owner_input_packet') }}">Input Packet</a>
+      <a href="{{ url_for('owner_review_worksheet') }}">Worksheet</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-band">
+  <div class="section-inner prep-list">
+    {% for item in prep_items %}
+    <article class="prep-card">
+      <header>
+        <span>{{ item.step }}</span>
+        <div>
+          <p class="eyebrow">Prep check</p>
+          <h2>{{ item.title }}</h2>
+        </div>
+      </header>
+      <div class="prep-card__body">
+        <div>
+          <h3>Check</h3>
+          <p>{{ item.check }}</p>
+        </div>
+        <div>
+          <h3>Why it matters</h3>
+          <p>{{ item.why_it_matters }}</p>
+        </div>
+      </div>
+      <a href="{{ url_for(item.support_route) }}">Open support page</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner info-close">
+    <div>
+      <p class="eyebrow">Ready state</p>
+      <h2>The review is ready when the meeting can end with answers.</h2>
+      <p>After the walkthrough, move into the input packet, worksheet, answer log, and post-meeting update plan. That keeps enthusiasm connected to approved next steps.</p>
+    </div>
+    <div class="info-close__links">
+      <a href="{{ url_for('owner_answer_log') }}">Answer Log</a>
+      <a href="{{ url_for('post_meeting_update_plan') }}">Update Plan</a>
+      <a href="{{ url_for('approval_matrix') }}">Approval Matrix</a>
+      <a href="{{ url_for('next_actions') }}">Next Actions</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

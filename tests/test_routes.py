@@ -51,6 +51,7 @@ class RouteTests(unittest.TestCase):
             "/owner-review-worksheet",
             "/owner-answer-log",
             "/post-meeting-update-plan",
+            "/owner-review-prep",
             "/ui-kitchen-sink",
             "/ux-lab",
         ]:
@@ -94,6 +95,7 @@ class RouteTests(unittest.TestCase):
             "/owner-review-worksheet": b"Capture owner answers",
             "/owner-answer-log": b"Track what has actually been approved",
             "/post-meeting-update-plan": b"Turn owner answers into site changes",
+            "/owner-review-prep": b"Get the preview ready",
         }
         for route, text in expectations.items():
             with self.subTest(route=route):
@@ -271,6 +273,19 @@ class RouteTests(unittest.TestCase):
             b"ASSUMPTION_ITEMS in app.py",
             b"Do not update public drafts from memory",
             b"Run tests and document the change",
+        ]:
+            with self.subTest(text=text):
+                self.assertIn(text, response.data)
+
+    def test_owner_review_prep_sets_meeting_readiness(self):
+        response = self.client.get("/owner-review-prep")
+        for text in [
+            b"Prepare, present, capture, then update",
+            b"Confirm the owner can reach the gated site",
+            b"pricing, dates, childcare, cafe, Foxtail",
+            b"Close with the answer log and update plan",
+            b"Command Center",
+            b"Update Plan",
         ]:
             with self.subTest(text=text):
                 self.assertIn(text, response.data)

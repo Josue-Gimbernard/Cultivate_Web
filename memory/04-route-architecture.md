@@ -33,6 +33,7 @@ last_updated: 2026-05-10
 | `/approval-matrix` | Private publishing-approval gate for sensitive claims | gated |
 | `/founding-family-interest` | Disabled private draft of a family interest page | gated |
 | `/owner-decisions` | Owner decision dashboard for next approvals | gated |
+| `/owner-review-prep` | Pre-meeting checklist for owner review readiness | gated |
 | `/owner-input-packet` | Owner-only question packet for public-copy blockers | gated |
 | `/owner-review-worksheet` | Printable owner answer tracker for review meetings | gated |
 | `/owner-answer-log` | Pending/approved owner answer ledger for public-site blockers | gated |
@@ -70,6 +71,7 @@ Header navigation is registered in `app.py`:
 - `PAIN_POINTS`, `GLOSSARY_TERMS`, `COMPARISON_ITEMS`, and `ASSUMPTION_ITEMS` control the safe-without-owner informational support pages.
 - `OWNER_INPUT_ITEMS` controls the owner input packet questions and their supporting routes.
 - `POST_MEETING_UPDATES` controls the ordered post-meeting update plan.
+- `OWNER_REVIEW_PREP_ITEMS` controls the pre-meeting readiness checklist.
 - `REVIEW_SURFACES` controls supporting owner-review rooms, while the start pages are handled by the curated review flow instead of duplicated as cards.
 
 `templates/_guided_review.html` appears on the primary owner-review sequence: `/owner-preview`, `/review-command-center`, `/owner-walkthrough`, `/owner-brief`, `/approval-matrix`, and `/next-actions`.

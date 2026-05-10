@@ -108,7 +108,7 @@ Current risk levels:
 
 `/owner-input-packet` turns the remaining owner-dependent blockers into a meeting packet. It asks for the founder story, public category line, first-cohort audience, schedule, pricing stance, day-one space availability, high-risk future-vision handling, teen contribution boundaries, intake/privacy process, proof assets, and public CTA.
 
-`/owner-review-worksheet` is the printable companion for capturing answers during the meeting. `/owner-answer-log` is the pending ledger that should be updated after the meeting. `/post-meeting-update-plan` gives the safe order for turning answers into repo changes. Use these pages after the owner walkthrough and before editing draft public pages. Owner answers should update the answer log, approval matrix, and assumptions review first.
+`/owner-review-prep` should be used before the owner sees the site. `/owner-review-worksheet` is the printable companion for capturing answers during the meeting. `/owner-answer-log` is the pending ledger that should be updated after the meeting. `/post-meeting-update-plan` gives the safe order for turning answers into repo changes. Use these pages after the owner walkthrough and before editing draft public pages. Owner answers should update the answer log, approval matrix, and assumptions review first.
 
 ## Safe Without Owner Completion
 
@@ -155,6 +155,7 @@ Lead with the ecosystem and founding cohort direction. Keep childcare, cafe, Fox
 - `/approval-matrix`: approval gate for deciding which claims are ready, internal, validation-first, or blocked for public.
 - `/founding-family-interest`: private draft of an interest page with disabled form fields and no data collection.
 - `/owner-decisions`: meeting-ready dashboard of key decisions, recommendations, risk, and unlocks.
+- `/owner-review-prep`: pre-meeting checklist for access, flow, decision tools, and promise boundaries.
 - `/owner-input-packet`: meeting packet for collecting owner-only answers before public copy changes.
 - `/owner-review-worksheet`: printable answer tracker for marking approved, revise, hold, or validate during owner review.
 - `/owner-answer-log`: pending/approved answer ledger that bridges owner notes to site updates.
