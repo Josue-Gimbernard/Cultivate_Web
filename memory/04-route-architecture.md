@@ -36,6 +36,7 @@ last_updated: 2026-05-10
 | `/owner-input-packet` | Owner-only question packet for public-copy blockers | gated |
 | `/owner-review-worksheet` | Printable owner answer tracker for review meetings | gated |
 | `/owner-answer-log` | Pending/approved owner answer ledger for public-site blockers | gated |
+| `/post-meeting-update-plan` | Ordered plan for converting owner answers into repo updates | gated |
 | `/owner-walkthrough` | Guided private presentation flow with focus mode and speaker notes | gated |
 | `/ecosystem-map` | Interactive source-derived ecosystem map | gated |
 | `/founding-cohort` | Recommended first-launch package | gated |
@@ -68,6 +69,7 @@ Header navigation is registered in `app.py`:
 - `DECISIONS` controls the owner decision dashboard, and `build_decision_risk_summaries()` derives the risk snapshot shown above the individual decision cards.
 - `PAIN_POINTS`, `GLOSSARY_TERMS`, `COMPARISON_ITEMS`, and `ASSUMPTION_ITEMS` control the safe-without-owner informational support pages.
 - `OWNER_INPUT_ITEMS` controls the owner input packet questions and their supporting routes.
+- `POST_MEETING_UPDATES` controls the ordered post-meeting update plan.
 - `REVIEW_SURFACES` controls supporting owner-review rooms, while the start pages are handled by the curated review flow instead of duplicated as cards.
 
 `templates/_guided_review.html` appears on the primary owner-review sequence: `/owner-preview`, `/review-command-center`, `/owner-walkthrough`, `/owner-brief`, `/approval-matrix`, and `/next-actions`.

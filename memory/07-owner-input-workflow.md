@@ -14,8 +14,9 @@ Open these in order:
 2. `/owner-input-packet`
 3. `/owner-review-worksheet`
 4. `/owner-answer-log`
-5. `/approval-matrix`
-6. `/next-actions`
+5. `/post-meeting-update-plan`
+6. `/approval-matrix`
+7. `/next-actions`
 
 ## What To Collect
 

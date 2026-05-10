@@ -1122,6 +1122,58 @@ OWNER_INPUT_ITEMS = [
 ]
 
 
+POST_MEETING_UPDATES = [
+    PostMeetingUpdate(
+        "01",
+        "Log the owner answer first.",
+        "memory/08-owner-answer-log.md",
+        "This keeps the durable source of truth in markdown before the site changes.",
+        "Do not update public drafts from memory or chat notes alone.",
+        "owner_answer_log",
+    ),
+    PostMeetingUpdate(
+        "02",
+        "Translate the answer into approval status.",
+        "APPROVAL_ITEMS in app.py and /approval-matrix",
+        "Each approved, held, or validation-needed answer needs a visible publishing gate.",
+        "Only mark a claim ready when the owner answer is specific enough to publish safely.",
+        "approval_matrix",
+    ),
+    PostMeetingUpdate(
+        "03",
+        "Update assumptions and risk boundaries.",
+        "ASSUMPTION_ITEMS in app.py and /assumptions-review",
+        "Owner answers either retire assumptions, confirm them, or turn them into validation work.",
+        "If an answer is partial, keep the assumption visible instead of smoothing it over.",
+        "assumptions_review",
+    ),
+    PostMeetingUpdate(
+        "04",
+        "Revise the relevant private draft.",
+        "Draft pages, FAQ, offer model, and interest page",
+        "Approved answers should make the private public-site packet sharper and less caveated.",
+        "Keep draft pages gated until pricing, intake, launch, and operations are cleared.",
+        "public_draft_hub",
+    ),
+    PostMeetingUpdate(
+        "05",
+        "Update the next-actions queue.",
+        "NEXT_ACTIONS in app.py and /next-actions",
+        "Every answer should produce either a completed item, a validation task, or a new build step.",
+        "Do not leave answered owner questions floating without a next artifact.",
+        "next_actions",
+    ),
+    PostMeetingUpdate(
+        "06",
+        "Run tests and document the change.",
+        "tests/test_routes.py and memory/*.md",
+        "The repo should continue to explain what changed, why, and what remains blocked.",
+        "Do not push owner-answer changes without verification and updated memory notes.",
+        "owner_input_packet",
+    ),
+]
+
+
 PUBLIC_DRAFT_ITEMS = [
     PublicDraftItem(
         "Home",
@@ -1308,6 +1360,13 @@ REVIEW_SURFACES = [
         "You need a durable ledger of owner answers before changing public drafts.",
         "What has actually been approved?",
         "owner_answer_log",
+    ),
+    ReviewSurface(
+        "Planning",
+        "Post-Meeting Update Plan",
+        "You need a safe order for converting owner answers into repo changes.",
+        "What changes after the meeting?",
+        "post_meeting_update_plan",
     ),
     ReviewSurface(
         "Safety",
@@ -1539,6 +1598,7 @@ DIRECTORY_NAV = (
             NavItem("Input Packet", "owner_input_packet"),
             NavItem("Worksheet", "owner_review_worksheet"),
             NavItem("Answer Log", "owner_answer_log"),
+            NavItem("Update Plan", "post_meeting_update_plan"),
         ),
     ),
     NavSection(
@@ -1991,6 +2051,12 @@ def create_app() -> Flask:
     def owner_answer_log():
         return render_template(
             "owner_answer_log.html", input_items=OWNER_INPUT_ITEMS
+        )
+
+    @app.get("/post-meeting-update-plan")
+    def post_meeting_update_plan():
+        return render_template(
+            "post_meeting_update_plan.html", updates=POST_MEETING_UPDATES
         )
 
     @app.get("/owner-walkthrough")

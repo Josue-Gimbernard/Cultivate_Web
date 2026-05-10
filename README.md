@@ -44,6 +44,7 @@ The owner input packet turns the remaining owner-dependent blockers into meeting
 - `http://127.0.0.1:8080/owner-input-packet?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-review-worksheet?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-answer-log?access=cultivate-preview`
+- `http://127.0.0.1:8080/post-meeting-update-plan?access=cultivate-preview`
 
 The safe-without-owner informational layer is complete:
 
@@ -72,6 +73,7 @@ Additional private rooms:
 - `http://127.0.0.1:8080/owner-input-packet?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-review-worksheet?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-answer-log?access=cultivate-preview`
+- `http://127.0.0.1:8080/post-meeting-update-plan?access=cultivate-preview`
 - `http://127.0.0.1:8080/ecosystem-map?access=cultivate-preview`
 - `http://127.0.0.1:8080/founding-cohort?access=cultivate-preview`
 - `http://127.0.0.1:8080/cohort-blueprint?access=cultivate-preview`

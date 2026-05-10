@@ -50,6 +50,7 @@ class RouteTests(unittest.TestCase):
             "/owner-input-packet",
             "/owner-review-worksheet",
             "/owner-answer-log",
+            "/post-meeting-update-plan",
             "/ui-kitchen-sink",
             "/ux-lab",
         ]:
@@ -92,6 +93,7 @@ class RouteTests(unittest.TestCase):
             "/owner-input-packet": b"Collect the answers",
             "/owner-review-worksheet": b"Capture owner answers",
             "/owner-answer-log": b"Track what has actually been approved",
+            "/post-meeting-update-plan": b"Turn owner answers into site changes",
         }
         for route, text in expectations.items():
             with self.subTest(route=route):
@@ -256,6 +258,19 @@ class RouteTests(unittest.TestCase):
             b"Not approved for public use",
             b"memory/08-owner-answer-log.md",
             b"Update approval matrix",
+        ]:
+            with self.subTest(text=text):
+                self.assertIn(text, response.data)
+
+    def test_post_meeting_update_plan_orders_changes(self):
+        response = self.client.get("/post-meeting-update-plan")
+        for text in [
+            b"Log before launch language",
+            b"memory/08-owner-answer-log.md",
+            b"APPROVAL_ITEMS in app.py",
+            b"ASSUMPTION_ITEMS in app.py",
+            b"Do not update public drafts from memory",
+            b"Run tests and document the change",
         ]:
             with self.subTest(text=text):
                 self.assertIn(text, response.data)

@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block title %}Post-Meeting Update Plan{% endblock %}
+{% block content %}
+<section class="actions-hero">
+  <div>
+    <p class="eyebrow">Post-meeting update plan</p>
+    <h1>Turn owner answers into site changes in the right order.</h1>
+    <p>This private plan prevents meeting notes from becoming accidental public claims. Update the answer log first, approvals second, and draft pages only after the gate is clear.</p>
+  </div>
+  <aside class="actions-hero__note">
+    <span>Working rule</span>
+    <strong>Log before launch language.</strong>
+    <p>Owner answers unlock work, but they do not become public copy until the approval path is updated.</p>
+  </aside>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner update-plan-summary">
+    <div>
+      <p class="eyebrow">Update sequence</p>
+      <h2>Six steps from answer to action.</h2>
+      <p>Each step has a target, a reason, and a guardrail so the site stays impressive without drifting into unapproved promises.</p>
+    </div>
+    <div class="update-plan-summary__links">
+      <a href="{{ url_for('owner_answer_log') }}">Answer Log</a>
+      <a href="{{ url_for('approval_matrix') }}">Approval Matrix</a>
+      <a href="{{ url_for('assumptions_review') }}">Assumptions Review</a>
+      <a href="{{ url_for('public_draft_hub') }}">Public Draft Hub</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-band">
+  <div class="section-inner update-plan-list">
+    {% for item in updates %}
+    <article class="update-plan-card">
+      <header>
+        <span>{{ item.step }}</span>
+        <div>
+          <p class="eyebrow">Step {{ item.step }}</p>
+          <h2>{{ item.title }}</h2>
+        </div>
+      </header>
+      <div class="update-plan-card__grid">
+        <div>
+          <h3>Update target</h3>
+          <p>{{ item.update_target }}</p>
+        </div>
+        <div>
+          <h3>Why it matters</h3>
+          <p>{{ item.why_it_matters }}</p>
+        </div>
+        <div>
+          <h3>Guardrail</h3>
+          <p>{{ item.guardrail }}</p>
+        </div>
+      </div>
+      <a href="{{ url_for(item.support_route) }}">Open support page</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner actions-close">
+    <div>
+      <p class="eyebrow">Finish line</p>
+      <h2>When this plan is complete, the site is ready for the next owner-visible pass.</h2>
+      <p>The owner answer log, approval matrix, assumptions, draft pages, tests, and memory files should all tell the same story before anything moves toward Railway or public review.</p>
+    </div>
+    <div class="actions-close__links">
+      <a href="{{ url_for('next_actions') }}">Next Actions</a>
+      <a href="{{ url_for('owner_input_packet') }}">Owner Input Packet</a>
+      <a href="{{ url_for('owner_review_worksheet') }}">Worksheet</a>
+      <a href="{{ url_for('source_evidence') }}">Source Evidence</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
