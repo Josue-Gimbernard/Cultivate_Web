@@ -41,3 +41,5 @@ This folder is the durable Web Agent memory layer for the Cultivate website.
 - The local repo uses repo-specific SSH auth for `Josue-Gimbernard` so miniBIOTA global Git credentials remain untouched.
 - The current private preview is Flask-based and runs locally at `http://127.0.0.1:8080/?access=cultivate-preview`.
 - The current preview remains private/gated and is not public launch copy.
+- The current owner-facing copy is written for Brooke and should stay personal, decision-oriented, and careful around unapproved public promises.
+- Latest pushed web closeout commits: `756b08b Personalize owner preview copy for Brooke` and `fcd44f0 Refine Brooke owner preview copy`.

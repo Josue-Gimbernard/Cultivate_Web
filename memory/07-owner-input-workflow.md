@@ -4,7 +4,7 @@ last_updated: 2026-05-10
 ---
 # Owner Input Workflow
 
-Use this file when the owner is ready to answer the remaining public-site blockers.
+Use this file when Brooke is ready to answer the remaining public-site blockers.
 
 ## Meeting Pages
 
@@ -24,7 +24,7 @@ Open these in order:
 
 ## What To Collect
 
-Capture owner answers for:
+Capture Brooke's answers for:
 
 - founder/origin story
 - public category wording
@@ -33,7 +33,7 @@ Capture owner answers for:
 - day-one spaces versus future-only spaces
 - childcare, cafe, Foxtail, rentals, teen work, and Wilds public stance
 - teen contribution and supervision boundaries
-- interest form fields, owner follow-up, and privacy language
+- interest form fields, follow-up owner, and privacy language
 - proof assets, photos, testimonials, credentials, and permissions
 - public call to action
 
@@ -60,4 +60,4 @@ After the meeting, update files in this order:
 
 ## Guardrail
 
-Owner answers are not automatically public copy. They become public-ready only after the answer log records the owner decision, the approval matrix marks the claim ready, and the draft page no longer depends on unresolved launch, pricing, intake, operational, or privacy details.
+Brooke's answers are not automatically public copy. They become public-ready only after the answer log records the decision, the approval matrix marks the claim ready, and the draft page no longer depends on unresolved launch, pricing, intake, operational, or privacy details.

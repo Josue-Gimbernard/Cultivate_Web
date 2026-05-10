@@ -48,10 +48,11 @@ Chat history is not durable source of truth.
 ## Web Rules
 
 - This is private preview first. Do not treat any page as public launch copy unless explicitly approved.
+- The current owner is Brooke. Owner-facing copy should feel personal and direct to Brooke, while still avoiding invented founder story, pricing, dates, proof, services, or operating commitments.
 - Keep unvalidated claims out of public-feeling language: launch date, pricing, licensed childcare, Foxtail partnership, paid teen jobs, cafe operation, facility capacity, or public rentals.
 - Use brand tokens from the source docs: Georgia display, Calibri/system body, deep teal, clay, soft mint, warm cream, and garden green.
 - UI kitchen sink and UX lab are required development surfaces.
-- The rich private-preview routes are `/review-command-center`, `/owner-brief`, `/next-actions`, `/day-at-cultivate`, `/spaces`, `/brand-voice`, `/membership-model`, `/family-journey`, `/launch-roadmap`, `/faq-lab`, `/source-evidence`, `/public-draft-hub`, `/draft-home`, `/draft-about`, `/draft-cohort`, `/draft-faq`, `/approval-matrix`, `/founding-family-interest`, `/owner-decisions`, `/owner-walkthrough`, `/ecosystem-map`, `/founding-cohort`, `/cohort-blueprint`, `/impact-signals`, and `/launch-readiness`.
+- The rich private-preview routes are `/owner-review-packet`, `/review-command-center`, `/owner-brief`, `/next-actions`, `/day-at-cultivate`, `/spaces`, `/brand-voice`, `/membership-model`, `/family-journey`, `/launch-roadmap`, `/faq-lab`, `/source-evidence`, `/why-cultivate`, `/glossary`, `/what-cultivate-is`, `/assumptions-review`, `/public-draft-hub`, `/draft-home`, `/draft-about`, `/draft-cohort`, `/draft-faq`, `/approval-matrix`, `/founding-family-interest`, `/owner-decisions`, `/owner-review-prep`, `/owner-meeting-script`, `/owner-meeting-recap`, `/owner-input-packet`, `/owner-review-worksheet`, `/owner-answer-log`, `/post-meeting-update-plan`, `/owner-walkthrough`, `/ecosystem-map`, `/founding-cohort`, `/cohort-blueprint`, `/impact-signals`, and `/launch-readiness`.
 - Keep CSS tokenized. Add component styles before one-off page patches when a pattern repeats.
 - Railway config may be edited for deploy readiness, but do not add real secrets.
 - Git is initialized and pushed to `git@github.com:Josue-Gimbernard/Cultivate_Web.git`.

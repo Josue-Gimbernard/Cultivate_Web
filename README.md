@@ -6,6 +6,17 @@ This repo owns the web experience, UI system, owner preview, UI kitchen sink, UX
 
 Repo, GitHub, SSH account, verification, and Railway-readiness rules live in `memory/06-repo-and-deploy-operations.md`.
 
+## Current Owner Preview State
+
+The active site is a private, Brooke-facing owner preview. It is polished enough to review with the owner, but it is still gated and not public launch copy.
+
+Recent pushed copy passes:
+
+- `756b08b Personalize owner preview copy for Brooke`
+- `fcd44f0 Refine Brooke owner preview copy`
+
+The current copy voice should feel like a guided private presentation: personal to Brooke, direct about decisions, and careful about unapproved public promises.
+
 ## Start
 
 ```powershell
@@ -40,7 +51,7 @@ The next-actions board includes lane summaries for owner approval, validation, w
 
 The owner decisions dashboard includes a risk snapshot before the individual decision cards.
 
-The owner input packet turns the remaining owner-dependent blockers into meeting questions:
+The owner input packet turns the remaining Brooke-dependent blockers into meeting questions:
 
 - `http://127.0.0.1:8080/owner-review-packet?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-review-prep?access=cultivate-preview`
@@ -93,9 +104,11 @@ Additional private rooms:
 
 ## Current Mode
 
-This is a private owner-preview site. It is not public launch copy.
+This is a private owner-preview site for Brooke. It is not public launch copy.
 
 The first job is to make the concept feel real, coherent, and impressive while keeping regulated or unapproved claims clearly out of public commitment territory.
+
+Do not invent founder story, pricing, dates, childcare/cafe/Foxtail commitments, paid teen work, rentals, Wilds availability, or real intake/privacy process. Those remain pending until Brooke answers them and the approval matrix is updated.
 
 ## Brand Reference
 
