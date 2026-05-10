@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Impact Signals{% endblock %}
+{% block content %}
+<section class="signals-hero">
+  <div>
+    <p class="eyebrow">Impact signals</p>
+    <h1>Decide what to measure before the first cohort begins.</h1>
+    <p>This private dashboard names the evidence Cultivate should collect during the first term so the next phase is guided by real signals, not vibes alone.</p>
+  </div>
+  <aside class="signals-hero__note">
+    <span>Measurement stance</span>
+    <strong>Evidence, not guarantees.</strong>
+    <p>Track patterns, artifacts, and feedback. Avoid outcome guarantees or public performance claims.</p>
+  </aside>
+</section>
+
+<section class="section-band">
+  <div class="section-inner signals-grid">
+    {% for signal in signals %}
+    <article class="signal-card">
+      <div class="signal-card__topline">
+        <span>Signal {{ loop.index }}</span>
+        <strong>{{ signal.review_cadence }}</strong>
+      </div>
+      <h2>{{ signal.signal }}</h2>
+      <div>
+        <h3>Why it matters</h3>
+        <p>{{ signal.why_it_matters }}</p>
+      </div>
+      <div>
+        <h3>How to capture</h3>
+        <p>{{ signal.how_to_capture }}</p>
+      </div>
+      <footer>
+        <h3>Next decision it informs</h3>
+        <p>{{ signal.next_decision }}</p>
+      </footer>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner signals-close">
+    <div>
+      <p class="eyebrow">Review rhythm</p>
+      <h2>The first cohort should end with evidence.</h2>
+      <p>Use these signals to create a cohort recap: what worked, what was heavy, what families valued, and which future vision item deserves deeper validation.</p>
+    </div>
+    <div class="signals-close__links">
+      <a href="{{ url_for('cohort_blueprint') }}">Cohort Blueprint</a>
+      <a href="{{ url_for('owner_decisions') }}">Owner Decisions</a>
+      <a href="{{ url_for('launch_roadmap') }}">Launch Roadmap</a>
+      <a href="{{ url_for('public_draft_hub') }}">Public Draft Hub</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

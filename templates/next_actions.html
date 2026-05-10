@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Next Actions{% endblock %}
+{% block content %}
+<section class="actions-hero">
+  <div>
+    <p class="eyebrow">Next actions board</p>
+    <h1>Turn the preview into a practical work queue.</h1>
+    <p>This private board names the next approvals, validations, web builds, and evidence artifacts needed before Cultivate moves toward public-facing pages.</p>
+  </div>
+  <aside class="actions-hero__note">
+    <span>Working rule</span>
+    <strong>Every action should produce an artifact.</strong>
+    <p>An approved phrase, checklist, draft page, validation note, or evidence packet keeps the project moving.</p>
+  </aside>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner actions-snapshot">
+    <div class="actions-snapshot__heading">
+      <p class="eyebrow">Action lanes</p>
+      <h2>Make the next work visible.</h2>
+      <p>Each lane should end with an artifact the owner can approve, review, or use for the next build pass.</p>
+    </div>
+    <div class="actions-lane-grid">
+      {% for lane in action_lane_summaries %}
+      <article class="actions-lane-card actions-lane-card--{{ lane.lane|lower|replace(' ', '-') }}">
+        <span>{{ lane.count }}</span>
+        <h3>{{ lane.lane }}</h3>
+        <p>{{ lane.purpose }}</p>
+        <footer>{{ lane.next_move }}</footer>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-band">
+  <div class="section-inner actions-board">
+    {% set lanes = [] %}
+    {% for action in actions %}
+      {% if action.lane not in lanes %}
+        {% set _ = lanes.append(action.lane) %}
+      {% endif %}
+    {% endfor %}
+
+    {% for lane in lanes %}
+    <section class="actions-lane-section">
+      <div class="actions-lane-section__heading">
+        <p class="eyebrow">{{ lane }}</p>
+        <h2>{{ lane }} queue</h2>
+      </div>
+      <div class="actions-card-grid">
+        {% for action in actions if action.lane == lane %}
+        <article class="action-card">
+          <div class="action-card__topline">
+            <span>{{ action.lane }}</span>
+            <strong>Action {{ loop.index }}</strong>
+          </div>
+          <h2>{{ action.action }}</h2>
+          <div>
+            <h3>Why now</h3>
+            <p>{{ action.why_now }}</p>
+          </div>
+          <div>
+            <h3>Output</h3>
+            <p>{{ action.output }}</p>
+          </div>
+          <a href="{{ url_for(action.support_route) }}">Open support page</a>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner actions-close">
+    <div>
+      <p class="eyebrow">Recommended next build</p>
+      <h2>After approval, draft the private public-safe Home page.</h2>
+      <p>The strategy layer is now strong enough to support a first public-page draft, but it should stay gated until the owner approves category, scope, and claims.</p>
+    </div>
+    <div class="actions-close__links">
+      <a href="{{ url_for('owner_brief') }}">Owner Brief</a>
+      <a href="{{ url_for('public_draft_hub') }}">Public Draft Hub</a>
+      <a href="{{ url_for('source_evidence') }}">Source Evidence</a>
+      <a href="{{ url_for('faq_lab') }}">FAQ / Concern Lab</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

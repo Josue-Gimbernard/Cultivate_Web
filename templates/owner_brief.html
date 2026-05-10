@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Owner Brief{% endblock %}
+{% block content %}
+<section class="brief-hero">
+  <div>
+    <p class="eyebrow">Owner brief</p>
+    <h1>The short version for the first serious review.</h1>
+    <p>This private brief compresses the owner-preview strategy into one page: what Cultivate is, what should launch first, what must wait, and what approval unlocks the next build.</p>
+  </div>
+  <aside class="brief-hero__note">
+    <span>Use this when</span>
+    <strong>The owner needs the whole picture quickly.</strong>
+    <p>Start here after the walkthrough, or send this as the compact review surface.</p>
+  </aside>
+</section>
+
+<section class="section-band">
+  <div class="section-inner brief-stack">
+    {% for section in brief_sections %}
+    <article class="brief-section">
+      <div class="brief-section__label">{{ section.label }}</div>
+      <div class="brief-section__body">
+        <h2>{{ section.title }}</h2>
+        <p>{{ section.summary }}</p>
+        <footer>
+          <span>Support pages</span>
+          <strong>{{ section.support }}</strong>
+        </footer>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner brief-close">
+    <div>
+      <p class="eyebrow">Suggested close</p>
+      <h2>Ask for approval on the first lane only.</h2>
+      <p>The owner can approve the first-cohort framing and public category language while keeping bigger campus pieces in validation.</p>
+    </div>
+    <div class="brief-close__links">
+      <a href="{{ url_for('next_actions') }}">Next Actions Board</a>
+      <a href="{{ url_for('approval_matrix') }}">Approval Matrix</a>
+      <a href="{{ url_for('owner_decisions') }}">Owner Decisions</a>
+      <a href="{{ url_for('review_command_center') }}">Command Center</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Approval Matrix{% endblock %}
+{% block content %}
+<section class="approval-hero">
+  <div>
+    <p class="eyebrow">Approval matrix</p>
+    <h1>Separate ready claims from internal assumptions.</h1>
+    <p>This private matrix tracks sensitive claims, their current approval stance, source basis, and the owner action needed before anything moves toward public copy.</p>
+  </div>
+  <aside class="approval-hero__note">
+    <span>Copy safety</span>
+    <strong>Approval before publication.</strong>
+    <p>Anything involving pricing, launch dates, childcare, cafe operation, teen work, or partners stays internal until validated.</p>
+  </aside>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner approval-snapshot">
+    <div class="approval-snapshot__heading">
+      <p class="eyebrow">Approval snapshot</p>
+      <h2>What can move, what must wait.</h2>
+      <p>This summary turns the full claim list into a working agenda for the owner conversation.</p>
+    </div>
+    <div class="approval-summary-grid">
+      {% for summary in approval_summaries %}
+      <article class="approval-summary-card approval-summary-card--{{ summary.status|lower|replace(' ', '-') }}">
+        <span>{{ summary.count }}</span>
+        <h3>{{ summary.status }}</h3>
+        <p>{{ summary.meaning }}</p>
+        <footer>{{ summary.next_move }}</footer>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-band">
+  <div class="section-inner approval-table" role="table" aria-label="Approval matrix">
+    <div class="approval-row approval-row--header" role="row">
+      <span role="columnheader">Claim</span>
+      <span role="columnheader">Status</span>
+      <span role="columnheader">Public stance</span>
+      <span role="columnheader">Owner action</span>
+    </div>
+    {% for item in approvals %}
+    <article class="approval-row approval-row--{{ item.status|lower|replace(' ', '-') }}" role="row">
+      <div role="cell">
+        <h2>{{ item.claim }}</h2>
+        <p>{{ item.source_basis }}</p>
+      </div>
+      <div role="cell">
+        <span class="approval-badge">{{ item.status }}</span>
+      </div>
+      <div role="cell">
+        <p>{{ item.public_stance }}</p>
+      </div>
+      <div role="cell">
+        <p>{{ item.owner_action }}</p>
+        <a href="{{ url_for(item.route) }}">Review support page</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner approval-close">
+    <div>
+      <p class="eyebrow">How to use this</p>
+      <h2>Approval is a publishing gate.</h2>
+      <p>The matrix should be checked before turning private owner-preview language into family-facing copy.</p>
+    </div>
+    <div class="approval-close__links">
+      <a href="{{ url_for('source_evidence') }}">Source Evidence Room</a>
+      <a href="{{ url_for('public_draft_hub') }}">Public Draft Hub</a>
+      <a href="{{ url_for('faq_lab') }}">FAQ / Concern Lab</a>
+      <a href="{{ url_for('owner_decisions') }}">Owner Decisions</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

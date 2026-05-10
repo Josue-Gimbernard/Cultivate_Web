@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Cohort Blueprint{% endblock %}
+{% block content %}
+<section class="blueprint-hero">
+  <div>
+    <p class="eyebrow">Founding cohort blueprint</p>
+    <h1>Make the first term feel buildable.</h1>
+    <p>This private blueprint turns the five-week founding cohort into a working rhythm for teens, middle kids, parents, and the owner. It is a planning artifact, not a published schedule.</p>
+  </div>
+  <aside class="blueprint-hero__note">
+    <span>Blueprint rule</span>
+    <strong>Prototype the rhythm.</strong>
+    <p>Keep childcare, cafe, paid work, rentals, and full outdoor campus out of the first-term promise.</p>
+  </aside>
+</section>
+
+<section class="section-band">
+  <div class="section-inner blueprint-weeks">
+    {% for block in cohort_blocks %}
+    <article class="blueprint-week">
+      <div class="blueprint-week__marker">
+        <span>{{ block.week }}</span>
+        <strong>{{ block.theme }}</strong>
+      </div>
+      <div class="blueprint-week__grid">
+        <div>
+          <h2>Teens</h2>
+          <p>{{ block.teen_focus }}</p>
+        </div>
+        <div>
+          <h2>Middle kids</h2>
+          <p>{{ block.middle_focus }}</p>
+        </div>
+        <div>
+          <h2>Parents</h2>
+          <p>{{ block.parent_focus }}</p>
+        </div>
+        <div>
+          <h2>Evidence</h2>
+          <p>{{ block.evidence }}</p>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner blueprint-close">
+    <div>
+      <p class="eyebrow">Owner use</p>
+      <h2>This page should turn excitement into a testable term.</h2>
+      <p>The blueprint gives enough shape to plan facilitation, supplies, parent communication, and evidence collection while keeping public-facing promises on hold.</p>
+    </div>
+    <div class="blueprint-close__links">
+      <a href="{{ url_for('founding_cohort') }}">Founding Cohort</a>
+      <a href="{{ url_for('impact_signals') }}">Impact Signals</a>
+      <a href="{{ url_for('launch_readiness') }}">Launch Readiness</a>
+      <a href="{{ url_for('approval_matrix') }}">Approval Matrix</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

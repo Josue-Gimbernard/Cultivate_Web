@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Owner Walkthrough{% endblock %}
+{% block content %}
+<section class="walkthrough-hero">
+  <div>
+    <p class="eyebrow">Owner walkthrough</p>
+    <h1>A guided private presentation for the first big review.</h1>
+    <p>This page turns the preview into a calm meeting flow: vision first, first launch second, proof points next, decisions last.</p>
+    <div class="walkthrough-hero__actions">
+      <a class="button button--primary" href="#walkthrough-stage">Start walkthrough</a>
+      <a class="button button--quiet" href="{{ url_for('family_journey') }}">Family journey map</a>
+    </div>
+  </div>
+  <aside class="walkthrough-brief">
+    <span>Best use</span>
+    <strong>15-minute owner review</strong>
+    <p>Move one panel at a time, then jump into the deeper page when a decision needs more context.</p>
+  </aside>
+</section>
+
+<section class="section-band">
+  <div class="section-inner walkthrough-shell" data-walkthrough>
+    <nav class="walkthrough-rail" aria-label="Walkthrough sections">
+      {% for slide in slides %}
+      <a href="#walkthrough-slide-{{ loop.index }}" data-walkthrough-jump="{{ loop.index0 }}">
+        <span>{{ "%02d"|format(loop.index) }}</span>
+        {{ slide.title }}
+      </a>
+      {% endfor %}
+    </nav>
+
+    <div class="walkthrough-stage" id="walkthrough-stage">
+      <div class="walkthrough-toolbar">
+        <div>
+          <p class="eyebrow">Presentation mode</p>
+          <span>Use the buttons or left/right arrow keys.</span>
+        </div>
+        <button class="button button--quiet" type="button" data-walkthrough-present>Focus slides</button>
+      </div>
+      <div class="walkthrough-progress" aria-hidden="true">
+        <span data-walkthrough-progress></span>
+      </div>
+
+      {% for slide in slides %}
+      <article
+        class="walkthrough-slide{% if loop.first %} is-active{% endif %}"
+        id="walkthrough-slide-{{ loop.index }}"
+        data-walkthrough-slide
+        aria-label="{{ slide.label }}"
+      >
+        <div class="walkthrough-slide__kicker">
+          <span>{{ slide.label }}</span>
+          <a href="{{ url_for(slide.route) }}">Open proof page</a>
+        </div>
+        <h2>{{ slide.title }}</h2>
+        <p class="walkthrough-slide__story">{{ slide.story }}</p>
+        <div class="walkthrough-proof-grid">
+          <div>
+            <h3>Why this matters</h3>
+            <p>{{ slide.proof }}</p>
+          </div>
+          <div>
+            <h3>Owner prompt</h3>
+            <p>{{ slide.action }}</p>
+          </div>
+        </div>
+        <footer class="walkthrough-slide__notes">
+          <span>Speaker note</span>
+          <p>{{ slide.speaker_note }}</p>
+        </footer>
+      </article>
+      {% endfor %}
+
+      <div class="walkthrough-controls" aria-label="Walkthrough controls">
+        <button class="button button--quiet" type="button" data-walkthrough-prev>Previous</button>
+        <span data-walkthrough-count>1 of {{ slides|length }}</span>
+        <button class="button button--primary" type="button" data-walkthrough-next>Next</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner walkthrough-close">
+    <div>
+      <p class="eyebrow">Meeting close</p>
+      <h2>End with a short approval list.</h2>
+      <p>The walkthrough should create clarity on what can be shown, what needs validation, and which page becomes the next owner-facing artifact.</p>
+    </div>
+    <div class="walkthrough-close__links">
+      <a href="{{ url_for('family_journey') }}">Family journey map</a>
+      <a href="{{ url_for('owner_decisions') }}">Decision dashboard</a>
+      <a href="{{ url_for('launch_readiness') }}">Launch readiness</a>
+      <a href="{{ url_for('founding_family_interest') }}">Interest page draft</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

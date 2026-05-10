@@ -1,0 +1,101 @@
+.hero {
+  align-items: center;
+  background:
+    linear-gradient(120deg, rgba(253, 246, 240, 0.96), rgba(232, 245, 242, 0.8)),
+    var(--color-cream-100);
+  display: grid;
+  gap: var(--space-7);
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.75fr);
+  min-height: calc(100vh - 74px);
+  padding: var(--space-8) max(1rem, calc((100vw - var(--max-page)) / 2));
+}
+
+.hero__content {
+  display: grid;
+  gap: 1.4rem;
+  max-width: 46rem;
+}
+
+.hero__lede {
+  color: var(--color-ink-soft);
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  max-width: 42rem;
+}
+
+.ecosystem-orbit {
+  aspect-ratio: 1;
+  background:
+    radial-gradient(circle, rgba(255,255,255,0.95) 0 24%, rgba(232,245,242,0.75) 25% 45%, rgba(232,245,233,0.58) 46% 100%);
+  border: 1px solid rgba(42, 125, 111, 0.18);
+  border-radius: 50%;
+  box-shadow: var(--shadow-soft);
+  min-width: 320px;
+  position: relative;
+}
+
+.orbit-center,
+.orbit-item {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.orbit-center {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  flex-direction: column;
+  height: 36%;
+  left: 32%;
+  position: absolute;
+  top: 32%;
+  width: 36%;
+}
+
+.orbit-center strong {
+  color: var(--color-teal-900);
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.orbit-center span {
+  color: var(--color-clay-600);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.orbit-item {
+  background: var(--color-white);
+  border: 1px solid rgba(42, 125, 111, 0.18);
+  border-radius: 999px;
+  color: var(--color-teal-900);
+  font-size: 0.82rem;
+  font-weight: 700;
+  min-height: 2.5rem;
+  padding: 0.45rem 0.75rem;
+  position: absolute;
+  width: 9.2rem;
+}
+
+.orbit-item--one { left: 8%; top: 17%; }
+.orbit-item--two { right: 4%; top: 21%; }
+.orbit-item--three { left: 36%; top: 4%; }
+.orbit-item--four { bottom: 18%; left: 3%; }
+.orbit-item--five { bottom: 7%; left: 36%; }
+.orbit-item--six { bottom: 21%; right: 4%; }
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .ecosystem-orbit {
+    max-width: 440px;
+    min-width: 0;
+    width: 100%;
+  }
+}
+

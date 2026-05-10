@@ -1,0 +1,315 @@
+.walkthrough-hero {
+  align-items: end;
+  background: linear-gradient(135deg, var(--color-cream-100), var(--color-mint-100));
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.34fr);
+  padding: var(--space-8) max(1rem, calc((100vw - var(--max-page)) / 2));
+}
+
+.walkthrough-hero h1 {
+  max-width: 56rem;
+}
+
+.walkthrough-hero p {
+  color: var(--color-ink-soft);
+  font-size: 1.2rem;
+  max-width: 42rem;
+  padding-top: var(--space-4);
+}
+
+.walkthrough-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-top: var(--space-5);
+}
+
+.walkthrough-brief {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+.walkthrough-brief span {
+  color: var(--color-clay-600);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.walkthrough-brief strong {
+  color: var(--color-teal-900);
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  line-height: 1.05;
+}
+
+.walkthrough-brief p {
+  font-size: 1rem;
+  padding: 0;
+}
+
+.walkthrough-shell {
+  align-items: start;
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: minmax(13rem, 0.28fr) minmax(0, 1fr);
+}
+
+.walkthrough-rail {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: 0.35rem;
+  padding: var(--space-3);
+  position: sticky;
+  top: 6rem;
+}
+
+.walkthrough-rail a {
+  border-radius: var(--radius-sm);
+  color: var(--color-ink-soft);
+  display: grid;
+  font-size: 0.94rem;
+  gap: 0.15rem;
+  line-height: 1.2;
+  padding: 0.75rem;
+  text-decoration: none;
+}
+
+.walkthrough-rail a:hover,
+.walkthrough-rail a:focus-visible,
+.walkthrough-rail a.is-active {
+  background: var(--color-mint-100);
+  color: var(--color-teal-900);
+  outline: 2px solid transparent;
+}
+
+.walkthrough-rail span {
+  color: var(--color-clay-600);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.walkthrough-stage {
+  display: grid;
+  gap: var(--space-5);
+  min-width: 0;
+}
+
+.walkthrough-toolbar {
+  align-items: center;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: flex;
+  gap: var(--space-4);
+  justify-content: space-between;
+  padding: var(--space-4);
+}
+
+.walkthrough-toolbar span {
+  color: var(--color-ink-soft);
+  font-weight: 700;
+}
+
+.walkthrough-shell.is-presenting {
+  background: var(--color-cream-100);
+  grid-template-columns: 1fr;
+  max-width: none;
+  min-height: calc(100vh - 5rem);
+  padding-left: max(1rem, calc((100vw - 1260px) / 2));
+  padding-right: max(1rem, calc((100vw - 1260px) / 2));
+}
+
+.walkthrough-shell.is-presenting .walkthrough-rail {
+  display: none;
+}
+
+.walkthrough-shell.is-presenting .walkthrough-stage {
+  align-self: stretch;
+}
+
+.walkthrough-shell.is-presenting .walkthrough-slide {
+  min-height: 62vh;
+}
+
+.walkthrough-progress {
+  background: var(--color-line);
+  border-radius: 999px;
+  height: 0.55rem;
+  overflow: hidden;
+}
+
+.walkthrough-progress span {
+  background: var(--color-teal-700);
+  display: block;
+  height: 100%;
+  transition: width 180ms ease;
+  width: 16.666%;
+}
+
+.walkthrough-slide {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  display: none;
+  gap: var(--space-5);
+  min-height: 34rem;
+  padding: clamp(1.5rem, 4vw, 4rem);
+}
+
+.walkthrough-slide.is-active {
+  display: grid;
+}
+
+.walkthrough-slide__kicker {
+  align-items: center;
+  display: flex;
+  gap: var(--space-4);
+  justify-content: space-between;
+}
+
+.walkthrough-slide__kicker span {
+  color: var(--color-clay-600);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.walkthrough-slide__kicker a,
+.walkthrough-close__links a {
+  color: var(--color-teal-700);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.walkthrough-slide h2 {
+  font-size: clamp(2.2rem, 5vw, 5.2rem);
+  max-width: 62rem;
+}
+
+.walkthrough-slide__story {
+  color: var(--color-ink-soft);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  max-width: 54rem;
+}
+
+.walkthrough-proof-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.walkthrough-proof-grid div {
+  background: var(--color-cream-100);
+  border: 1px solid rgba(42, 125, 111, 0.16);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+.walkthrough-proof-grid h3 {
+  font-size: 1.2rem;
+}
+
+.walkthrough-proof-grid p {
+  color: var(--color-ink-soft);
+}
+
+.walkthrough-slide__notes {
+  background: var(--color-mint-100);
+  border: 1px solid rgba(42, 125, 111, 0.18);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+}
+
+.walkthrough-slide__notes span {
+  color: var(--color-clay-600);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.walkthrough-slide__notes p {
+  color: var(--color-teal-900);
+  font-weight: 700;
+}
+
+.walkthrough-controls {
+  align-items: center;
+  display: flex;
+  gap: var(--space-4);
+  justify-content: space-between;
+}
+
+.walkthrough-controls span {
+  color: var(--color-ink-soft);
+  font-weight: 700;
+}
+
+.walkthrough-close {
+  align-items: center;
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.4fr);
+}
+
+.walkthrough-close p {
+  color: var(--color-ink-soft);
+  max-width: 44rem;
+}
+
+.walkthrough-close__links {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+@media (max-width: 860px) {
+  .walkthrough-hero,
+  .walkthrough-shell,
+  .walkthrough-close {
+    grid-template-columns: 1fr;
+  }
+
+  .walkthrough-rail {
+    position: static;
+  }
+
+  .walkthrough-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .walkthrough-proof-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .walkthrough-slide {
+    min-height: auto;
+  }
+
+  .walkthrough-slide__kicker,
+  .walkthrough-controls {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

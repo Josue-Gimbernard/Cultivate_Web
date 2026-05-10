@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Review Command Center{% endblock %}
+{% block content %}
+<section class="command-hero">
+  <div>
+    <p class="eyebrow">Review command center</p>
+    <h1>Run the owner review from one calm control room.</h1>
+    <p>This private dashboard keeps the review flow tight: open with the pitch, ground it in the family experience, close with approvals, and keep every deeper room one click away.</p>
+  </div>
+  <aside class="command-hero__note">
+    <span>Recommended path</span>
+    <strong>Walkthrough to approvals</strong>
+    <p>Use this page as the table of contents before, during, and after the owner conversation.</p>
+  </aside>
+</section>
+
+<section class="section-band">
+  <div class="section-inner command-layout">
+    <section class="command-sequence" aria-labelledby="recommended-flow">
+      <div class="command-sequence__intro">
+        <p class="eyebrow">Tight review flow</p>
+        <h2 id="recommended-flow">The strongest owner meeting path.</h2>
+        <p>These are the tabs that should carry the conversation. Everything else supports them in the directory below.</p>
+      </div>
+      <div class="command-flow">
+        {% for step in command_flow %}
+        <a class="command-flow__step" href="{{ url_for(step.route) }}">
+          <span>{{ step.number }}</span>
+          <strong>{{ step.title }}</strong>
+          <p>{{ step.summary }}</p>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="command-tracks" aria-labelledby="meeting-tracks">
+      <div class="command-tracks__heading">
+        <p class="eyebrow">Meeting modes</p>
+        <h2 id="meeting-tracks">Pick the track before opening more rooms.</h2>
+      </div>
+      <div class="command-track-grid">
+        {% for track in meeting_tracks %}
+        <article class="command-track">
+          <span>{{ track.label }}</span>
+          <strong>{{ track.title }}</strong>
+          <p>{{ track.summary }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    {% set groups = [] %}
+    {% for surface in surfaces %}
+      {% if surface.group != 'Start here' and surface.group not in groups %}
+        {% set _ = groups.append(surface.group) %}
+      {% endif %}
+    {% endfor %}
+
+    {% for group in groups %}
+    <section class="command-group">
+      <div class="command-group__heading">
+        <p class="eyebrow">{{ group }}</p>
+        <h2>{{ group }}</h2>
+      </div>
+      <div class="command-card-grid">
+        {% for surface in surfaces if surface.group == group %}
+        <a class="command-card" href="{{ url_for(surface.route) }}">
+          <strong>{{ surface.title }}</strong>
+          <p>{{ surface.use_when }}</p>
+          <span>{{ surface.owner_question }}</span>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner command-close">
+    <div>
+      <p class="eyebrow">Meeting rhythm</p>
+      <h2>Open with vision. Close with approvals.</h2>
+      <p>The strongest owner review flow is walkthrough, family journey, approval matrix, then roadmap. That keeps the emotion alive while still landing in concrete next steps.</p>
+    </div>
+    <div class="command-close__links">
+      <a href="{{ url_for('owner_walkthrough') }}">Owner Walkthrough</a>
+      <a href="{{ url_for('family_journey') }}">Family Journey Map</a>
+      <a href="{{ url_for('approval_matrix') }}">Approval Matrix</a>
+      <a href="{{ url_for('launch_roadmap') }}">Launch Roadmap</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

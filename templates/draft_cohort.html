@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Draft Founding Cohort{% endblock %}
+{% block content %}
+<section class="draft-page-flag">
+  <strong>Private draft</strong>
+  <span>Not public cohort copy. Schedule, age scope, location assumptions, pricing, intake, and offer language need owner approval.</span>
+</section>
+
+<section class="draft-cohort-hero">
+  <div>
+    <p class="eyebrow">Draft public Founding Cohort</p>
+    <h1>Help shape the first version of Cultivate.</h1>
+    <p>The founding cohort is a possible first step for families who want to help test the rhythm, culture, and usefulness of Cultivate before the full campus vision is promised.</p>
+    <div class="draft-home-hero__actions">
+      <a class="button button--primary" href="{{ url_for('founding_family_interest') }}">Preview interest draft</a>
+      <a class="button button--quiet" href="{{ url_for('cohort_blueprint') }}">Review blueprint</a>
+    </div>
+  </div>
+  <aside class="draft-cohort-hero__note">
+    <span>Draft stance</span>
+    <strong>Invitation, not enrollment.</strong>
+    <p>This should read as a possible founding-family invitation only after the owner approves scope and intake.</p>
+  </aside>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner draft-cohort-summary">
+    <div>
+      <p class="eyebrow">Possible first version</p>
+      <h2>A small term to test rhythm, trust, and fit.</h2>
+      <p>The first cohort should focus on teen belonging, middle-kid projects, parent workspace/community, and a shared workshop rhythm. It should not depend on licensed childcare, public cafe operations, paid teen roles, rentals, or the full outdoor campus.</p>
+    </div>
+    <div class="draft-cohort-summary__list">
+      <div><strong>The Summit</strong><span>Teen belonging and useful responsibility.</span></div>
+      <div><strong>The Stepping Stones</strong><span>Middle-kid making and confidence.</span></div>
+      <div><strong>The Grove</strong><span>Parent work, connection, and contribution.</span></div>
+      <div><strong>The Commons</strong><span>Workshop rhythm and shared reflection.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-band">
+  <div class="section-inner">
+    <div class="section-heading">
+      <p class="eyebrow">Draft term arc</p>
+      <h2>What the founding cohort could explore.</h2>
+    </div>
+    <div class="draft-cohort-weeks">
+      {% for block in cohort_blocks %}
+      <article>
+        <span>{{ block.week }}</span>
+        <h3>{{ block.theme }}</h3>
+        <p>{{ block.evidence }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner draft-cohort-close">
+    <div>
+      <p class="eyebrow">Before publishing</p>
+      <h2>Approval turns this from idea into invitation.</h2>
+      <p>This page should stay private until the owner approves the offer name, age range, schedule, location assumptions, intake process, privacy language, and public claims.</p>
+    </div>
+    <div class="draft-cohort-close__links">
+      <a href="{{ url_for('approval_matrix') }}">Approval Matrix</a>
+      <a href="{{ url_for('impact_signals') }}">Impact Signals</a>
+      <a href="{{ url_for('launch_roadmap') }}">Launch Roadmap</a>
+      <a href="{{ url_for('draft_faq') }}">Draft FAQ</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

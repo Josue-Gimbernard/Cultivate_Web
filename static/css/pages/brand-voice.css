@@ -1,0 +1,85 @@
+.voice-principles {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.voice-principles article {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: 0.85rem;
+  min-height: 16rem;
+  padding: var(--space-5);
+}
+
+.voice-principles span {
+  color: var(--color-clay-600);
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.voice-principles h2 {
+  font-size: 1.7rem;
+}
+
+.voice-principles p,
+.voice-pair p,
+.voice-samples p {
+  color: var(--color-ink-soft);
+}
+
+.voice-pair-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.voice-pair {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.1fr);
+  padding: var(--space-5);
+}
+
+.voice-label {
+  color: var(--color-teal-900);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.45rem;
+  text-transform: uppercase;
+}
+
+.voice-label--use {
+  color: var(--color-teal-700);
+}
+
+.voice-label--avoid {
+  color: var(--color-clay-600);
+}
+
+.voice-samples {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.voice-samples div {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(42, 125, 111, 0.16);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+
+@media (max-width: 920px) {
+  .voice-principles,
+  .voice-pair,
+  .voice-samples {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,17 @@
+<section class="draft-nav" aria-labelledby="draft-nav-title">
+  <div class="draft-nav__inner">
+    <div>
+      <p class="eyebrow">Private public-site packet</p>
+      <h2 id="draft-nav-title">Draft set: {{ draft_current.label }}</h2>
+      <p>These pages are gated review artifacts until the owner approves category language, first offer, claims boundaries, intake process, and publish timing.</p>
+    </div>
+    <nav class="draft-nav__links" aria-label="Public draft pages">
+      {% for item in draft_nav %}
+      <a href="{{ url_for(item.route) }}" {% if item.route == draft_current.route %}aria-current="page"{% endif %}>
+        <span>{{ item.status }}</span>
+        {{ item.label }}
+      </a>
+      {% endfor %}
+    </nav>
+  </div>
+</section>

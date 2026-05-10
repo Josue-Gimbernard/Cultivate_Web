@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Cultivate UI Kitchen Sink{% endblock %}
+{% block content %}
+<section class="lab-hero">
+  <p class="eyebrow">Design system</p>
+  <h1>UI Kitchen Sink</h1>
+  <p>Tokens, buttons, cards, sections, status chips, and content patterns used to keep Cultivate visually consistent.</p>
+</section>
+
+<section class="section-band">
+  <div class="section-inner kitchen-stack">
+    <div class="token-row">
+      <div class="swatch swatch--teal"><span>Deep teal</span><code>#2A7D6F</code></div>
+      <div class="swatch swatch--clay"><span>Clay</span><code>#C4622D</code></div>
+      <div class="swatch swatch--mint"><span>Soft mint</span><code>#E8F5F2</code></div>
+      <div class="swatch swatch--cream"><span>Warm cream</span><code>#FDF6F0</code></div>
+      <div class="swatch swatch--green"><span>Garden green</span><code>#E8F5E9</code></div>
+    </div>
+
+    <div class="kitchen-panel">
+      <h2>Buttons</h2>
+      <div class="button-row">
+        <button class="button button--primary">Primary</button>
+        <button class="button button--secondary">Secondary</button>
+        <button class="button button--quiet">Quiet</button>
+      </div>
+    </div>
+
+    <div class="kitchen-panel">
+      <h2>Cards</h2>
+      <div class="space-grid">
+        {% for space in spaces[:3] %}
+        <article class="space-card">
+          <span class="space-card__phase">{{ space.phase }}</span>
+          <h3>{{ space.name }}</h3>
+          <p>{{ space.role }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+

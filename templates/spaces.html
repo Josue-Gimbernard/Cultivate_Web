@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Spaces{% endblock %}
+{% block content %}
+<section class="lab-hero">
+  <p class="eyebrow">Space detail panels</p>
+  <h1>The campus, piece by piece.</h1>
+  <p>Each space has a feeling, a job, a safe first version, and a fuller future version. This page lets the owner inspect the concept without losing the launch boundaries.</p>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner space-anchor-list" aria-label="Space anchors">
+    {% for space in spaces %}
+    <a href="#{{ space.name|lower|replace(' ', '-')|replace('the-', '')|replace('cafe', 'cafe') }}">{{ space.name }}</a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band">
+  <div class="section-inner space-detail-stack">
+    {% for space in spaces %}
+    <article class="space-detail-panel" id="{{ space.name|lower|replace(' ', '-')|replace('the-', '')|replace('cafe', 'cafe') }}">
+      <div class="space-detail-panel__intro">
+        <p class="eyebrow">{{ space.phase }} / {{ space.audience }}</p>
+        <h2>{{ space.name }}</h2>
+        <p>{{ space.detail }}</p>
+      </div>
+      <div class="space-detail-panel__body">
+        <div>
+          <h3>Feeling</h3>
+          <p>{{ space.feeling }}</p>
+        </div>
+        <div>
+          <h3>First version</h3>
+          <p>{{ space.first_version }}</p>
+        </div>
+        <div>
+          <h3>Future version</h3>
+          <p>{{ space.future_version }}</p>
+        </div>
+        <div>
+          <h3>Dependencies</h3>
+          <ul>
+            {% for dependency in space.dependencies %}
+            <li>{{ dependency }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
+

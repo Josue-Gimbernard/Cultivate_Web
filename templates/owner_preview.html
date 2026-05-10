@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Owner Preview{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero__content">
+    <p class="eyebrow">Homeschool family campus / Central Florida</p>
+    <h1>Cultivate</h1>
+    <p class="hero__lede">A complete community home where kids grow through real skills, parents find room to breathe, and the whole family has a place to belong.</p>
+    <div class="hero__actions">
+      <a class="button button--primary" href="{{ url_for('review_command_center') }}">Command center</a>
+      <a class="button button--quiet" href="{{ url_for('owner_walkthrough') }}">Walkthrough</a>
+      <a class="button button--quiet" href="{{ url_for('owner_brief') }}">Owner brief</a>
+    </div>
+  </div>
+  <div class="ecosystem-orbit" aria-label="Cultivate ecosystem overview">
+    <div class="orbit-center">
+      <strong>Real Skills</strong>
+      <span>for Real Life</span>
+    </div>
+    <span class="orbit-item orbit-item--one">Sprout Space</span>
+    <span class="orbit-item orbit-item--two">Stepping Stones</span>
+    <span class="orbit-item orbit-item--three">The Summit</span>
+    <span class="orbit-item orbit-item--four">The Grove</span>
+    <span class="orbit-item orbit-item--five">Harvest Cafe</span>
+    <span class="orbit-item orbit-item--six">The Wilds</span>
+  </div>
+</section>
+
+<section class="section-band section-band--cream" id="first-launch">
+  <div class="section-inner two-column">
+    <div>
+      <p class="eyebrow">Recommended first move</p>
+      <h2>Launch the village before the full campus.</h2>
+      <p>A limited founding cohort can prove culture, demand, programming, and parent connection before Cultivate commits to licensed childcare, public food service, paid teen roles, or a full outdoor buildout.</p>
+    </div>
+    <div class="decision-panel">
+      <h3>Founding Cohort Term</h3>
+      <ul class="check-list">
+        <li>The Summit Lite for teens</li>
+        <li>The Stepping Stones Lite for ages 6-12</li>
+        <li>Parent workspace and community rhythm</li>
+        <li>Workshop/gathering room</li>
+        <li>Five-week term ending with reflection and showcase</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section-band" id="ecosystem">
+  <div class="section-inner">
+    <div class="section-heading">
+      <p class="eyebrow">The ecosystem</p>
+      <h2>Every space has a job to do.</h2>
+    </div>
+    <div class="space-grid">
+      {% for space in spaces %}
+      <article class="space-card">
+        <span class="space-card__phase">{{ space.phase }}</span>
+        <h3>{{ space.name }}</h3>
+        <p class="space-card__audience">{{ space.audience }}</p>
+        <p>{{ space.role }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner split-proof">
+    <div>
+      <p class="eyebrow">Owner preview stance</p>
+      <h2>Polished, but careful.</h2>
+      <p>This preview is designed to feel impressive without making public promises. The full vision stays visible, while launch-sensitive details remain framed as validation work.</p>
+    </div>
+    <div class="promise-list">
+      <div><strong>Show now</strong><span>Vision, warmth, rhythm, family journey</span></div>
+      <div><strong>Validate next</strong><span>Childcare, cafe, teen work, rentals, outdoor campus</span></div>
+      <div><strong>Decide later</strong><span>Prices, dates, partner terms, facility capacity</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner section-cta">
+    <div>
+      <p class="eyebrow">Next owner-review layers</p>
+      <h2>The review path is ready.</h2>
+      <p>Use this sequence when the owner is reviewing the concept for the first time. Deeper rooms stay available through the command center.</p>
+    </div>
+    <div class="preview-link-grid">
+      <a href="{{ url_for('review_command_center') }}">
+        <strong>Review Command Center</strong>
+        <span>Start here when choosing what to review, approve, or validate next.</span>
+      </a>
+      <a href="{{ url_for('owner_walkthrough') }}">
+        <strong>Owner Walkthrough</strong>
+        <span>Move through the concept like a guided private presentation.</span>
+      </a>
+      <a href="{{ url_for('owner_brief') }}">
+        <strong>Owner Brief</strong>
+        <span>Read the compact version of what Cultivate is and what happens next.</span>
+      </a>
+      <a href="{{ url_for('approval_matrix') }}">
+        <strong>Approval Matrix</strong>
+        <span>Separate ready claims from validation-first ideas.</span>
+      </a>
+      <a href="{{ url_for('next_actions') }}">
+        <strong>Next Actions Board</strong>
+        <span>Turn approvals, validation, and web drafts into a practical queue.</span>
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

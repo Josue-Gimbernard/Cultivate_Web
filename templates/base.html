@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Cultivate Preview{% endblock %}</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/design-tokens.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/buttons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/cards.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/guided-review.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/sections.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/owner-preview.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/ecosystem-map.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/founding-cohort.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/cohort-blueprint.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/impact-signals.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/launch-readiness.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/day-at-cultivate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/spaces.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/brand-voice.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/membership-model.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/founding-family-interest.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/family-journey.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/launch-roadmap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/faq-lab.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/source-evidence.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/public-draft-hub.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/review-command-center.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/approval-matrix.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/owner-brief.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/next-actions.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/draft-public.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/owner-decisions.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/owner-walkthrough.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/ui-kitchen-sink.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages/ux-lab.css') }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand-mark" href="{{ url_for('owner_preview') }}" aria-label="Cultivate owner preview">
+        <span class="brand-mark__seed"></span>
+        <span>
+          <strong>Cultivate</strong>
+          <small>Private Preview</small>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Preview navigation">
+        {% set active_endpoint = request.endpoint %}
+        <div class="site-nav__primary" aria-label="Primary review tabs">
+          {% for item in primary_nav %}
+          <a href="{{ url_for(item.route) }}" {% if active_endpoint == item.route or active_endpoint in item.match_routes %}aria-current="page"{% endif %}>{{ item.label }}</a>
+          {% endfor %}
+        </div>
+        <details class="site-nav__directory">
+          <summary>All rooms</summary>
+          <div class="site-nav__panel">
+            {% for section in directory_nav %}
+            <div>
+              <strong>{{ section.title }}</strong>
+              {% for item in section.items %}
+              <a href="{{ url_for(item.route) }}" {% if active_endpoint == item.route or active_endpoint in item.match_routes %}aria-current="page"{% endif %}>{{ item.label }}</a>
+              {% endfor %}
+            </div>
+            {% endfor %}
+          </div>
+        </details>
+      </nav>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+      {% if draft_current %}
+        {% include "_publish_gate.html" %}
+        {% include "_draft_nav.html" %}
+      {% endif %}
+      {% if guided_current %}
+        {% include "_guided_review.html" %}
+      {% endif %}
+    </main>
+    <footer class="site-footer">
+      <span>Private planning surface. Not public launch copy.</span>
+      <span>Real Skills for Real Life</span>
+    </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+  </body>
+</html>

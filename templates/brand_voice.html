@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Brand Voice Lab{% endblock %}
+{% block content %}
+<section class="lab-hero">
+  <p class="eyebrow">Brand Voice Lab</p>
+  <h1>Warm, grounded, precise.</h1>
+  <p>Cultivate should sound like a real community with real standards: welcoming, practical, inclusive, and careful about what has not been validated yet.</p>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner voice-principles">
+    <article>
+      <span>01</span>
+      <h2>Belonging before performance.</h2>
+      <p>Lead with safety, community, and the relief of having a place to land.</p>
+    </article>
+    <article>
+      <span>02</span>
+      <h2>Practical, not precious.</h2>
+      <p>Real skills, real food, real projects, real contribution. Keep the language useful.</p>
+    </article>
+    <article>
+      <span>03</span>
+      <h2>Vision without overpromising.</h2>
+      <p>Show the full ecosystem, but separate what is ready from what still needs validation.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-band">
+  <div class="section-inner">
+    <div class="section-heading">
+      <p class="eyebrow">Phrase guardrails</p>
+      <h2>Say this. Avoid that.</h2>
+    </div>
+    <div class="voice-pair-stack">
+      {% for pair in voice_pairs %}
+      <article class="voice-pair">
+        <div>
+          <p class="voice-label voice-label--use">Use</p>
+          <p>{{ pair.use }}</p>
+        </div>
+        <div>
+          <p class="voice-label voice-label--avoid">Avoid</p>
+          <p>{{ pair.avoid }}</p>
+        </div>
+        <div>
+          <p class="voice-label">Why</p>
+          <p>{{ pair.reason }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner voice-samples">
+    <div>
+      <p class="eyebrow">Owner-preview sample</p>
+      <h2>Cultivate is not just a place to drop kids off.</h2>
+      <p>It is a community rhythm families can grow with: little ones rooted in care, middle kids finding confidence, teens practicing real responsibility, and parents finally having a place to work, connect, and belong.</p>
+    </div>
+    <div>
+      <p class="eyebrow">First-cohort sample</p>
+      <h2>Help shape the first term.</h2>
+      <p>The founding cohort is a small, careful first version of Cultivate. It is designed to test the rhythm, gather feedback, and build the village before the full campus is promised.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}
+

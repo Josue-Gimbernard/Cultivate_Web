@@ -1,0 +1,140 @@
+.decision-snapshot {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.decision-snapshot__heading {
+  max-width: 45rem;
+}
+
+.decision-snapshot__heading h2 {
+  font-size: clamp(1.9rem, 3vw, 3.2rem);
+}
+
+.decision-snapshot__heading p:not(.eyebrow) {
+  color: var(--color-ink-soft);
+  padding-top: var(--space-3);
+}
+
+.decision-risk-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.decision-risk-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  display: grid;
+  gap: var(--space-2);
+  min-height: 13rem;
+  padding: var(--space-4);
+}
+
+.decision-risk-card span {
+  align-items: center;
+  background: var(--color-mint-100);
+  border-radius: 999px;
+  color: var(--color-teal-900);
+  display: inline-flex;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  height: 3rem;
+  justify-content: center;
+  width: 3rem;
+}
+
+.decision-risk-card--low span {
+  background: var(--color-green-100);
+}
+
+.decision-risk-card--high span {
+  background: var(--color-cream-100);
+  color: var(--color-clay-600);
+}
+
+.decision-risk-card h3 {
+  font-size: 1.25rem;
+}
+
+.decision-risk-card p {
+  color: var(--color-ink-soft);
+}
+
+.decision-risk-card footer {
+  align-self: end;
+  border-top: 1px solid var(--color-line);
+  color: var(--color-clay-600);
+  font-weight: 700;
+  padding-top: var(--space-2);
+}
+
+.decision-dashboard {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+
+.decision-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: 1rem;
+  min-height: 23rem;
+  padding: var(--space-5);
+}
+
+.decision-card__topline {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.decision-card__topline span {
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.6rem;
+}
+
+.decision-card__topline p {
+  color: var(--color-ink-soft);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.decision-card--low .decision-card__topline span {
+  background: var(--color-green-100);
+  color: var(--color-teal-900);
+}
+
+.decision-card--medium .decision-card__topline span {
+  background: var(--color-mint-100);
+  color: var(--color-teal-900);
+}
+
+.decision-card--high .decision-card__topline span {
+  background: var(--color-cream-100);
+  color: var(--color-clay-600);
+}
+
+.decision-card h2 {
+  font-size: 1.8rem;
+}
+
+.decision-card h3 {
+  font-size: 1.05rem;
+}
+
+.decision-card p {
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 760px) {
+  .decision-risk-grid {
+    grid-template-columns: 1fr;
+  }
+}

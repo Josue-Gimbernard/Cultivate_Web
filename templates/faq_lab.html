@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Cultivate FAQ Lab{% endblock %}
+{% block content %}
+<section class="faq-hero">
+  <div>
+    <p class="eyebrow">FAQ / Concern Lab</p>
+    <h1>Answer the hard questions without overpromising.</h1>
+    <p>This private lab turns likely family concerns into careful response patterns. It protects the warmth of the brand while keeping regulated, operational, or unapproved claims out of public copy.</p>
+  </div>
+  <aside class="faq-hero__rule">
+    <span>Copy rule</span>
+    <strong>Say what is true now.</strong>
+    <p>Then name what is being validated next. That rhythm builds more trust than pretending every detail is solved.</p>
+  </aside>
+</section>
+
+<section class="section-band">
+  <div class="section-inner faq-board">
+    {% for item in concerns %}
+    <article class="faq-card">
+      <div class="faq-card__topline">
+        <span>{{ item.topic }}</span>
+        <strong>Concern {{ loop.index }}</strong>
+      </div>
+      <h2>{{ item.family_question }}</h2>
+      <div class="faq-card__answer">
+        <h3>Safe response pattern</h3>
+        <p>{{ item.safe_response }}</p>
+      </div>
+      <div class="faq-card__avoid">
+        <h3>Avoid saying</h3>
+        <p>{{ item.avoid }}</p>
+      </div>
+      <footer>
+        <h3>Internal note</h3>
+        <p>{{ item.internal_note }}</p>
+      </footer>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner faq-close">
+    <div>
+      <p class="eyebrow">Next copy layer</p>
+      <h2>This becomes the public FAQ only after approval.</h2>
+      <p>For now, use it as a copy safety check when drafting future Home, About, Founding Cohort, Interest, and FAQ pages.</p>
+    </div>
+    <div class="faq-close__links">
+      <a href="{{ url_for('brand_voice') }}">Brand Voice Lab</a>
+      <a href="{{ url_for('membership_model') }}">Membership Model</a>
+      <a href="{{ url_for('launch_roadmap') }}">Launch Roadmap</a>
+      <a href="{{ url_for('owner_walkthrough') }}">Owner Walkthrough</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

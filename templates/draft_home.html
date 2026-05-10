@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Draft Home{% endblock %}
+{% block content %}
+<section class="draft-page-flag">
+  <strong>Private draft</strong>
+  <span>Not public launch copy. Category, offer, dates, pricing, childcare, cafe, and partner language still need owner approval.</span>
+</section>
+
+<section class="draft-home-hero">
+  <div>
+    <p class="eyebrow">Draft public homepage</p>
+    <h1>Cultivate</h1>
+    <p>A homeschool family campus where real-life skills, community, and belonging can become part of the week.</p>
+    <div class="draft-home-hero__actions">
+      <a class="button button--primary" href="{{ url_for('founding_family_interest') }}">Preview interest page</a>
+      <a class="button button--quiet" href="{{ url_for('approval_matrix') }}">Review approval gates</a>
+    </div>
+  </div>
+  <aside class="draft-home-hero__note">
+    <span>Draft stance</span>
+    <strong>Warm, specific, and careful.</strong>
+    <p>This page shows possible public direction while avoiding enrollment, pricing, launch-date, childcare, cafe, and partner promises.</p>
+  </aside>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner draft-home-intro">
+    <div>
+      <p class="eyebrow">For families</p>
+      <h2>A place for the whole homeschool rhythm.</h2>
+      <p>Cultivate is being shaped as a community-centered place for teens, middle kids, and parents: a place to practice useful skills, make real contributions, work near one another, and build a village with intention.</p>
+    </div>
+    <div class="draft-home-proof">
+      <div><strong>Kids</strong><span>Projects, life skills, confidence, and belonging.</span></div>
+      <div><strong>Teens</strong><span>Responsibility, mentorship, creativity, and community.</span></div>
+      <div><strong>Parents</strong><span>Workspace, connection, contribution, and breathing room.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-band">
+  <div class="section-inner">
+    <div class="section-heading">
+      <p class="eyebrow">The first version</p>
+      <h2>A founding cohort before the full campus.</h2>
+      <p>The first public story should point to a limited founding cohort, not the whole future campus. The goal is to test rhythm, trust, demand, and operational fit with care.</p>
+    </div>
+    <div class="draft-home-offer-grid">
+      <article>
+        <h3>The Summit</h3>
+        <p>A teen community rhythm centered on real-life skills, belonging, and meaningful contribution.</p>
+      </article>
+      <article>
+        <h3>The Stepping Stones</h3>
+        <p>Hands-on project blocks for middle kids, designed to build confidence and curiosity.</p>
+      </article>
+      <article>
+        <h3>The Grove</h3>
+        <p>A parent landing place for work, connection, and community contribution during cohort time.</p>
+      </article>
+      <article>
+        <h3>The Commons</h3>
+        <p>A flexible workshop and gathering space for the first cohort's shared rhythm.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner draft-home-boundaries">
+    <div>
+      <p class="eyebrow">Still in validation</p>
+      <h2>The bigger vision stays visible, but bounded.</h2>
+      <p>The Sprout Space, Harvest Cafe, Foxtail idea, paid teen roles, rentals, pricing, dates, and full outdoor campus should remain future vision or internal planning until approved.</p>
+    </div>
+    <div class="draft-home-boundaries__links">
+      <a href="{{ url_for('faq_lab') }}">FAQ / Concern Lab</a>
+      <a href="{{ url_for('source_evidence') }}">Source Evidence Room</a>
+      <a href="{{ url_for('draft_faq') }}">Draft FAQ</a>
+      <a href="{{ url_for('public_draft_hub') }}">Public Draft Hub</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

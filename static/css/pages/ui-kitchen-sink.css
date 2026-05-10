@@ -1,0 +1,44 @@
+.lab-hero {
+  background: var(--color-cream-100);
+  padding: var(--space-8) max(1rem, calc((100vw - var(--max-page)) / 2)) var(--space-7);
+}
+
+.lab-hero p {
+  color: var(--color-ink-soft);
+  max-width: 42rem;
+}
+
+.kitchen-stack {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.token-row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.swatch {
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  min-height: 8rem;
+  padding: 1rem;
+}
+
+.swatch span {
+  align-self: end;
+  font-weight: 700;
+}
+
+.swatch code {
+  font-size: 0.85rem;
+}
+
+.swatch--teal { background: var(--color-teal-700); color: var(--color-white); }
+.swatch--clay { background: var(--color-clay-600); color: var(--color-white); }
+.swatch--mint { background: var(--color-mint-100); }
+.swatch--cream { background: var(--color-cream-100); }
+.swatch--green { background: var(--color-green-100); }
+

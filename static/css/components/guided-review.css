@@ -1,0 +1,98 @@
+.guided-review {
+  background: var(--color-teal-900);
+  color: var(--color-white);
+  padding: var(--space-6) max(1rem, calc((100vw - var(--max-page)) / 2));
+}
+
+.guided-review__inner {
+  align-items: center;
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: minmax(15rem, 0.32fr) minmax(0, 1fr) minmax(15rem, 0.26fr);
+}
+
+.guided-review .eyebrow {
+  color: var(--color-green-100);
+}
+
+.guided-review h2 {
+  color: var(--color-white);
+  font-size: clamp(1.7rem, 3vw, 2.8rem);
+}
+
+.guided-review__copy {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.guided-review__copy p:not(.eyebrow) {
+  color: var(--color-mint-100);
+}
+
+.guided-review__steps {
+  display: grid;
+  gap: 0.4rem;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.guided-review__steps a {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-sm);
+  color: var(--color-mint-100);
+  display: grid;
+  gap: 0.2rem;
+  min-height: 4.8rem;
+  padding: 0.75rem;
+  text-decoration: none;
+}
+
+.guided-review__steps span {
+  color: var(--color-green-100);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.guided-review__steps .is-current a,
+.guided-review__steps a:hover,
+.guided-review__steps a:focus-visible {
+  background: var(--color-cream-100);
+  color: var(--color-teal-900);
+  outline: 0;
+}
+
+.guided-review__steps .is-current span,
+.guided-review__steps a:hover span,
+.guided-review__steps a:focus-visible span {
+  color: var(--color-clay-600);
+}
+
+.guided-review__actions {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.guided-review__actions .button {
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 980px) {
+  .guided-review__inner {
+    align-items: stretch;
+    grid-template-columns: 1fr;
+  }
+
+  .guided-review__steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .guided-review__steps {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,130 @@
+.day-hero {
+  align-items: end;
+  background:
+    linear-gradient(120deg, rgba(253, 246, 240, 0.96), rgba(232, 245, 233, 0.82)),
+    var(--color-cream-100);
+  display: grid;
+  gap: var(--space-7);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+  padding: var(--space-8) max(1rem, calc((100vw - var(--max-page)) / 2));
+}
+
+.day-hero p {
+  color: var(--color-ink-soft);
+  max-width: 44rem;
+}
+
+.day-hero__note {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 0.35rem;
+  padding: var(--space-5);
+}
+
+.day-hero__note strong {
+  color: var(--color-teal-900);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+.day-hero__note span {
+  color: var(--color-ink-soft);
+}
+
+.day-story {
+  background: var(--color-white);
+  padding: var(--space-8) max(1rem, calc((100vw - var(--max-page)) / 2));
+}
+
+.day-moment {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: 8rem minmax(0, 1fr);
+  margin: 0 auto;
+  max-width: 980px;
+  position: relative;
+}
+
+.day-moment + .day-moment {
+  margin-top: var(--space-7);
+}
+
+.day-moment::before {
+  background: var(--color-line);
+  content: "";
+  height: calc(100% + var(--space-7));
+  left: 4rem;
+  position: absolute;
+  top: 2.4rem;
+  width: 1px;
+}
+
+.day-moment:last-child::before {
+  display: none;
+}
+
+.day-moment__time {
+  position: relative;
+  z-index: 1;
+}
+
+.day-moment__time span {
+  align-items: center;
+  background: var(--color-teal-700);
+  border: 6px solid var(--color-white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-soft);
+  color: var(--color-white);
+  display: inline-flex;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  height: 5.2rem;
+  justify-content: center;
+  width: 5.2rem;
+}
+
+.day-moment__content {
+  background: var(--color-cream-100);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: 1rem;
+  padding: var(--space-6);
+}
+
+.day-moment__content p:not(.eyebrow) {
+  color: var(--color-ink-soft);
+  font-size: 1.08rem;
+}
+
+.owner-note {
+  background: rgba(255, 255, 255, 0.7);
+  border-left: 4px solid var(--color-clay-600);
+  border-radius: var(--radius-sm);
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.9rem 1rem;
+}
+
+.owner-note strong {
+  color: var(--color-clay-600);
+}
+
+.owner-note span {
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 820px) {
+  .day-hero,
+  .day-moment {
+    grid-template-columns: 1fr;
+  }
+
+  .day-moment::before {
+    display: none;
+  }
+}

@@ -1,0 +1,77 @@
+.cohort-columns {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cohort-panel {
+  background: var(--color-mint-100);
+  border: 1px solid rgba(42, 125, 111, 0.18);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+
+.cohort-panel--caution {
+  background: var(--color-cream-100);
+}
+
+.cohort-panel ul {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.term-timeline {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.term-timeline li {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: 0.5rem;
+  min-height: 13rem;
+  padding: 1rem;
+}
+
+.term-timeline span {
+  align-items: center;
+  background: var(--color-teal-700);
+  border-radius: 50%;
+  color: var(--color-white);
+  display: inline-flex;
+  font-weight: 700;
+  height: 2rem;
+  justify-content: center;
+  width: 2rem;
+}
+
+.term-timeline strong {
+  color: var(--color-teal-900);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+}
+
+.term-timeline p {
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 980px) {
+  .term-timeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .cohort-columns {
+    grid-template-columns: 1fr;
+  }
+}
+

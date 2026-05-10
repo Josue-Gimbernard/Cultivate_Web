@@ -1,0 +1,31 @@
+<section class="guided-review" aria-labelledby="guided-review-title">
+  <div class="guided-review__inner">
+    <div class="guided-review__copy">
+      <p class="eyebrow">Guided owner review</p>
+      <h2 id="guided-review-title">{{ guided_current.label }}. {{ guided_current.title }}</h2>
+      <p>{{ guided_current.summary }}</p>
+    </div>
+    <ol class="guided-review__steps" aria-label="Owner review sequence">
+      {% for step in guided_review_steps %}
+      <li class="{% if step.route == guided_current.route %}is-current{% endif %}">
+        <a href="{{ url_for(step.route) }}">
+          <span>{{ step.label }}</span>
+          {{ step.title }}
+        </a>
+      </li>
+      {% endfor %}
+    </ol>
+    <div class="guided-review__actions">
+      {% if guided_previous %}
+      <a class="button button--quiet" href="{{ url_for(guided_previous.route) }}">Back to {{ guided_previous.title }}</a>
+      {% else %}
+      <a class="button button--quiet" href="{{ url_for('review_command_center') }}">Open command center</a>
+      {% endif %}
+      {% if guided_next %}
+      <a class="button button--primary" href="{{ url_for(guided_next.route) }}">Continue to {{ guided_next.title }}</a>
+      {% else %}
+      <a class="button button--primary" href="{{ url_for('public_draft_hub') }}">Move to public drafts</a>
+      {% endif %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "lint:colors": "node scripts/lint-color-tokens.js",
+    "lint:css": "node scripts/lint-color-tokens.js"
+  },
+  "devDependencies": {}
+}
+

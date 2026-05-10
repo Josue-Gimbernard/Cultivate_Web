@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environments and secrets
+.env
+!.env.example
+.venv/
+venv/
+env/
+
+# Logs and runtime output
+*.log
+*.tmp
+*.temp
+
+# Node and frontend tooling
+node_modules/
+dist/
+build/
+.vite/
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

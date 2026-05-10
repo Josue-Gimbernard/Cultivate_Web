@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Membership Model{% endblock %}
+{% block content %}
+<section class="lab-hero">
+  <p class="eyebrow">Internal offer model</p>
+  <h1>How the ecosystem could earn.</h1>
+  <p>This is a private visualizer for offer buckets and revenue logic. It does not set prices or create public membership promises.</p>
+</section>
+
+<section class="section-band">
+  <div class="section-inner offer-grid">
+    {% for offer in offers %}
+    <article class="offer-card">
+      <span class="offer-card__status">{{ offer.status }}</span>
+      <h2>{{ offer.name }}</h2>
+      <p class="offer-card__audience">{{ offer.audience }}</p>
+      <p>{{ offer.role }}</p>
+      <div>
+        <h3>Could include</h3>
+        <ul>
+          {% for item in offer.includes %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <strong>{{ offer.pricing_note }}</strong>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner two-column">
+    <div>
+      <p class="eyebrow">Contribution discount model</p>
+      <h2>Useful idea, but it needs operations.</h2>
+      <p>The source docs include weekly, monthly, and occasional contribution discounts. That can become a beautiful community mechanism, but it needs clear rules before families see it as a promise.</p>
+    </div>
+    <div class="discount-model">
+      <div><strong>Weekly</strong><span>25% off monthly membership</span></div>
+      <div><strong>Monthly</strong><span>10% off monthly membership</span></div>
+      <div><strong>Occasional</strong><span>5% off that month</span></div>
+      <div><strong>No contribution</strong><span>standard rate, no penalty</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner">
+    <div class="section-heading">
+      <p class="eyebrow">Pricing work before public use</p>
+      <h2>What must be modeled first.</h2>
+    </div>
+    <div class="model-checks">
+      <span>facility rent</span>
+      <span>insurance</span>
+      <span>payroll</span>
+      <span>staffing ratios</span>
+      <span>program supplies</span>
+      <span>payment processing</span>
+      <span>capacity</span>
+      <span>scholarship rules</span>
+      <span>tax/accounting path</span>
+    </div>
+  </div>
+</section>
+{% endblock %}
+

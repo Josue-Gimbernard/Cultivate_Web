@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Public Draft Hub{% endblock %}
+{% block content %}
+<section class="draft-hero">
+  <div>
+    <p class="eyebrow">Public Draft Hub</p>
+    <h1>Prepare the public site without publishing the promises.</h1>
+    <p>This private hub organizes the future family-facing pages. Each draft has a purpose, a source base, and a hold condition so the public website grows in the right order.</p>
+  </div>
+  <aside class="draft-hero__note">
+    <span>Draft rule</span>
+    <strong>Private until approved.</strong>
+    <p>These are not public pages yet. They are the next writing targets after owner approval and validation.</p>
+  </aside>
+</section>
+
+<section class="section-band">
+  <div class="section-inner draft-board">
+    {% for draft in drafts %}
+    <article class="draft-card">
+      <div class="draft-card__topline">
+        <span>Future page</span>
+        <strong>{{ loop.index }}</strong>
+      </div>
+      <h2>{{ draft.page }}</h2>
+      <p class="draft-card__purpose">{{ draft.purpose }}</p>
+      <div class="draft-card__detail">
+        <h3>Ready source</h3>
+        <p>{{ draft.ready_source }}</p>
+      </div>
+      <div class="draft-card__hold">
+        <h3>Hold until</h3>
+        <p>{{ draft.hold_until }}</p>
+      </div>
+      <footer>
+        <h3>Next build</h3>
+        <p>{{ draft.next_build }}</p>
+        <a href="{{ url_for(draft.route) }}">Open {{ draft.page }} draft</a>
+      </footer>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner draft-close">
+    <div>
+      <p class="eyebrow">Recommended next writing pass</p>
+      <h2>Start with Home only after the owner approves the category.</h2>
+      <p>The most important public copy decision is what Cultivate is allowed to call itself. The rest of the site should follow that approved frame.</p>
+    </div>
+    <div class="draft-close__links">
+      <a href="{{ url_for('draft_home') }}">Draft Home</a>
+      <a href="{{ url_for('draft_about') }}">Draft About</a>
+      <a href="{{ url_for('draft_cohort') }}">Draft Founding Cohort</a>
+      <a href="{{ url_for('draft_faq') }}">Draft FAQ</a>
+      <a href="{{ url_for('source_evidence') }}">Source Evidence Room</a>
+      <a href="{{ url_for('faq_lab') }}">FAQ / Concern Lab</a>
+      <a href="{{ url_for('founding_family_interest') }}">Interest draft</a>
+      <a href="{{ url_for('launch_roadmap') }}">Launch Roadmap</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

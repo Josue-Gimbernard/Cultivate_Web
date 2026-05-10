@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Draft FAQ{% endblock %}
+{% block content %}
+<section class="draft-page-flag">
+  <strong>Private draft</strong>
+  <span>Not public FAQ copy. Answers need owner review and operational validation before publication.</span>
+</section>
+
+<section class="draft-faq-hero">
+  <div>
+    <p class="eyebrow">Draft public FAQ</p>
+    <h1>Questions families may ask first.</h1>
+    <p>This private draft converts the concern lab into possible family-facing answers. It stays careful around childcare, cafe, teen work, pricing, dates, and partner claims.</p>
+  </div>
+  <aside class="draft-faq-hero__note">
+    <span>Draft rule</span>
+    <strong>Truth first, validation second.</strong>
+    <p>Each answer should say what is true now, then name what still needs approval.</p>
+  </aside>
+</section>
+
+<section class="section-band">
+  <div class="section-inner draft-faq-list">
+    {% for item in concerns %}
+    <article class="draft-faq-item">
+      <p class="eyebrow">{{ item.topic }}</p>
+      <h2>{{ item.family_question }}</h2>
+      <p>{{ item.safe_response }}</p>
+      <footer>
+        <strong>Needs review before public use:</strong>
+        <span>{{ item.internal_note }}</span>
+      </footer>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner draft-faq-close">
+    <div>
+      <p class="eyebrow">Before publishing</p>
+      <h2>Approve the claims, then simplify the language.</h2>
+      <p>This draft is intentionally cautious. After owner approval, the public FAQ can become warmer and shorter while keeping the same boundaries.</p>
+    </div>
+    <div class="draft-faq-close__links">
+      <a href="{{ url_for('approval_matrix') }}">Approval Matrix</a>
+      <a href="{{ url_for('faq_lab') }}">FAQ / Concern Lab</a>
+      <a href="{{ url_for('draft_home') }}">Draft Home</a>
+      <a href="{{ url_for('next_actions') }}">Next Actions</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

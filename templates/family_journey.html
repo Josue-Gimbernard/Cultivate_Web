@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Family Journey Map{% endblock %}
+{% block content %}
+<section class="journey-hero">
+  <div class="journey-hero__copy">
+    <p class="eyebrow">Family journey map</p>
+    <h1>From curiosity to belonging.</h1>
+    <p>This private map shows how a family should experience Cultivate before, during, and after the founding cohort. It is designed to help the owner see the full path without turning unknowns into public promises.</p>
+  </div>
+  <div class="journey-hero__signal" aria-label="Journey summary">
+    <span>Core arc</span>
+    <strong>Discover -> Trust -> Join -> Grow</strong>
+    <p>The website should make each step feel warm, useful, and carefully bounded.</p>
+  </div>
+</section>
+
+<section class="section-band">
+  <div class="section-inner journey-map">
+    {% for step in journey_steps %}
+    <article class="journey-step">
+      <div class="journey-step__number">{{ "%02d"|format(loop.index) }}</div>
+      <div class="journey-step__content">
+        <p class="eyebrow">{{ step.phase }}</p>
+        <h2>{{ step.title }}</h2>
+        <div class="journey-step__grid">
+          <div>
+            <h3>Family state</h3>
+            <p>{{ step.family_state }}</p>
+          </div>
+          <div>
+            <h3>Cultivate response</h3>
+            <p>{{ step.cultivate_response }}</p>
+          </div>
+          <div>
+            <h3>Proof point</h3>
+            <p>{{ step.proof_point }}</p>
+          </div>
+          <div>
+            <h3>Owner question</h3>
+            <p>{{ step.owner_question }}</p>
+          </div>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner journey-proof">
+    <div>
+      <p class="eyebrow">Useful next clicks</p>
+      <h2>The journey map points back to the working preview.</h2>
+      <p>Each page answers a different owner question: what it feels like, what is ready, what needs validation, and what families might eventually see.</p>
+    </div>
+    <div class="journey-proof__links">
+      <a href="{{ url_for('owner_walkthrough') }}">Owner walkthrough</a>
+      <a href="{{ url_for('day_at_cultivate') }}">A day at Cultivate</a>
+      <a href="{{ url_for('launch_readiness') }}">Launch readiness</a>
+      <a href="{{ url_for('founding_cohort') }}">Founding cohort</a>
+      <a href="{{ url_for('founding_family_interest') }}">Interest page draft</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

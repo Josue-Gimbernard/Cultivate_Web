@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Cultivate UX Lab{% endblock %}
+{% block content %}
+<section class="lab-hero">
+  <p class="eyebrow">Interaction lab</p>
+  <h1>UX Lab</h1>
+  <p>Private experiments for journey framing, launch sequencing, and owner-facing storytelling.</p>
+</section>
+
+<section class="section-band">
+  <div class="section-inner ux-grid">
+    <article class="ux-panel">
+      <h2>Journey Switcher</h2>
+      <div class="segmented-control" role="tablist" aria-label="Family journey">
+        <button class="is-active" data-journey="sprout">Sprout</button>
+        <button data-journey="stones">Stones</button>
+        <button data-journey="summit">Summit</button>
+        <button data-journey="ready">Ready</button>
+      </div>
+      <p id="journey-copy">Little ones take root while parents stay close to the community.</p>
+    </article>
+    <article class="ux-panel">
+      <h2>Launch Gate</h2>
+      <ol class="gate-list">
+        <li><span>1</span> Founder decision</li>
+        <li><span>2</span> Family discovery</li>
+        <li><span>3</span> Compliance check</li>
+        <li><span>4</span> First cohort</li>
+      </ol>
+    </article>
+  </div>
+</section>
+<script src="{{ url_for('static', filename='js/ux-lab.js') }}" defer></script>
+{% endblock %}
+

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Launch Readiness{% endblock %}
+{% block content %}
+<section class="lab-hero">
+  <p class="eyebrow">Launch readiness</p>
+  <h1>Show the vision. Protect the promises.</h1>
+  <p>This dashboard separates what is ready to show from what needs validation before the owner, families, or partners hear it as a commitment.</p>
+</section>
+
+<section class="section-band">
+  <div class="section-inner readiness-grid">
+    {% for item in readiness %}
+    <article class="readiness-card readiness-card--{{ item.status|lower|replace(' ', '-') }}">
+      <span>{{ item.status }}</span>
+      <h2>{{ item.name }}</h2>
+      <p>{{ item.summary }}</p>
+      <strong>Next: {{ item.next_step }}</strong>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner two-column">
+    <div>
+      <p class="eyebrow">Owner decision</p>
+      <h2>The first decision is shape, not scale.</h2>
+      <p>Choose whether the first public-facing move is a discovery pilot, a limited founding cohort, or a full campus launch. Current recommendation: limited founding cohort.</p>
+    </div>
+    <div class="decision-panel">
+      <h3>Decision needed</h3>
+      <ul class="check-list">
+        <li>Public label</li>
+        <li>Target family count</li>
+        <li>Included age groups</li>
+        <li>Days and hours to test</li>
+        <li>What can be said publicly</li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}

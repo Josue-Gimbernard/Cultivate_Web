@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Launch Roadmap{% endblock %}
+{% block content %}
+<section class="roadmap-hero">
+  <div>
+    <p class="eyebrow">Private launch roadmap</p>
+    <h1>Sequence the work without pretending the future is already approved.</h1>
+    <p>This roadmap gives the owner a grounded path from private review to founding cohort and future expansion. It is a build sequence, not a public launch calendar.</p>
+  </div>
+  <aside class="roadmap-hero__note">
+    <span>Roadmap rule</span>
+    <strong>No dates until approvals are real.</strong>
+    <p>Use phases, gates, and owner outputs. Keep public timing out of the site until the offer and operations are ready.</p>
+  </aside>
+</section>
+
+<section class="section-band">
+  <div class="section-inner roadmap-track">
+    {% for phase in roadmap %}
+    <article class="roadmap-phase">
+      <div class="roadmap-phase__marker">
+        <span>{{ loop.index }}</span>
+        <strong>{{ phase.phase }}</strong>
+      </div>
+      <div class="roadmap-phase__body">
+        <h2>{{ phase.title }}</h2>
+        <p class="roadmap-phase__purpose">{{ phase.purpose }}</p>
+        <div class="roadmap-phase__grid">
+          <div>
+            <h3>Build focus</h3>
+            <p>{{ phase.build_focus }}</p>
+          </div>
+          <div>
+            <h3>Validation gate</h3>
+            <p>{{ phase.validation_gate }}</p>
+          </div>
+          <div>
+            <h3>Owner output</h3>
+            <p>{{ phase.owner_output }}</p>
+          </div>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner roadmap-close">
+    <div>
+      <p class="eyebrow">How to use this</p>
+      <h2>Every phase should create an artifact.</h2>
+      <p>The site becomes more valuable when each page produces an owner decision, a validation list, or a public-safe draft.</p>
+    </div>
+    <div class="roadmap-close__links">
+      <a href="{{ url_for('owner_decisions') }}">Owner decisions</a>
+      <a href="{{ url_for('launch_readiness') }}">Launch readiness</a>
+      <a href="{{ url_for('faq_lab') }}">FAQ / Concern Lab</a>
+      <a href="{{ url_for('founding_family_interest') }}">Interest page draft</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

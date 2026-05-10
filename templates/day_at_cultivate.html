@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}A Day at Cultivate{% endblock %}
+{% block content %}
+<section class="day-hero">
+  <div>
+    <p class="eyebrow">Experience story</p>
+    <h1>A day at Cultivate</h1>
+    <p>Not a schedule to promise yet. A narrative prototype of how the campus should feel when the village is working.</p>
+  </div>
+  <aside class="day-hero__note">
+    <strong>Owner-preview lens</strong>
+    <span>This page turns the source docs into a felt experience while keeping regulated pieces framed carefully.</span>
+  </aside>
+</section>
+
+<section class="day-story" aria-label="A day at Cultivate timeline">
+  {% for moment in moments %}
+  <article class="day-moment">
+    <div class="day-moment__time">
+      <span>{{ moment.time }}</span>
+    </div>
+    <div class="day-moment__content">
+      <p class="eyebrow">{{ moment.location }}</p>
+      <h2>{{ moment.title }}</h2>
+      <p>{{ moment.story }}</p>
+      <div class="owner-note">
+        <strong>Preview note</strong>
+        <span>{{ moment.owner_note }}</span>
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner two-column">
+    <div>
+      <p class="eyebrow">What this page proves</p>
+      <h2>The concept has rhythm.</h2>
+      <p>The owner should be able to feel how Cultivate moves: arrival, belonging, making, parent connection, food, cross-age contribution, and visible evidence of growth.</p>
+    </div>
+    <div class="decision-panel">
+      <h3>Use this to decide</h3>
+      <ul class="check-list">
+        <li>Which moments are essential for the first cohort?</li>
+        <li>Which moments are full-campus future vision?</li>
+        <li>What would make a parent say, “I can see us here”?</li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}
+

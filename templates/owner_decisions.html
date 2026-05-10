@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Owner Decisions{% endblock %}
+{% block content %}
+<section class="lab-hero">
+  <p class="eyebrow">Owner decision dashboard</p>
+  <h1>The next decisions are shape decisions.</h1>
+  <p>This page gathers the choices that make Cultivate easier to build, easier to explain, and safer to share.</p>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner decision-snapshot">
+    <div class="decision-snapshot__heading">
+      <p class="eyebrow">Decision agenda</p>
+      <h2>Start with the risk level, then make the choice.</h2>
+      <p>The point is not to solve the whole future campus. The point is to approve the safe first lane and name what stays private.</p>
+    </div>
+    <div class="decision-risk-grid">
+      {% for summary in decision_risk_summaries %}
+      <article class="decision-risk-card decision-risk-card--{{ summary.risk|lower }}">
+        <span>{{ summary.count }}</span>
+        <h3>{{ summary.risk }} risk</h3>
+        <p>{{ summary.meaning }}</p>
+        <footer>{{ summary.meeting_move }}</footer>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-band">
+  <div class="section-inner decision-dashboard">
+    {% for item in decisions %}
+    <article class="decision-card decision-card--{{ item.risk|lower }}">
+      <div class="decision-card__topline">
+        <span>{{ item.risk }} risk</span>
+        <p>Decision {{ loop.index }}</p>
+      </div>
+      <h2>{{ item.decision }}</h2>
+      <div>
+        <h3>Recommendation</h3>
+        <p>{{ item.recommendation }}</p>
+      </div>
+      <div>
+        <h3>Unlocks</h3>
+        <p>{{ item.unlocks }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner two-column">
+    <div>
+      <p class="eyebrow">Meeting flow</p>
+      <h2>Use this page to make the next conversation productive.</h2>
+      <p>The owner does not need to solve everything at once. These decisions create the first safe lane: what to call it, who it serves first, what stays vision, and what can be shown to families.</p>
+    </div>
+    <div class="decision-panel">
+      <h3>Suggested meeting order</h3>
+      <ul class="check-list">
+        <li>Approve first launch shape</li>
+        <li>Confirm naming</li>
+        <li>Set first age scope</li>
+        <li>Decide what stays validate-first</li>
+        <li>Approve or hold interest page</li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}

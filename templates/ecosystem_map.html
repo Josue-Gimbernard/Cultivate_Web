@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Ecosystem Map{% endblock %}
+{% block content %}
+<section class="lab-hero">
+  <p class="eyebrow">Interactive ecosystem</p>
+  <h1>Every space strengthens the village.</h1>
+  <p>Click a space to see what it does, who it serves, and what must be true before it can be promised.</p>
+</section>
+
+<section class="section-band">
+  <div class="section-inner ecosystem-map-layout">
+    <div class="map-list" role="tablist" aria-label="Cultivate spaces">
+      {% for space in spaces %}
+      <button
+        class="map-node{% if loop.first %} is-active{% endif %}"
+        data-space-index="{{ loop.index0 }}"
+        type="button"
+      >
+        <span>{{ space.phase }}</span>
+        <strong>{{ space.name }}</strong>
+        <small>{{ space.audience }}</small>
+      </button>
+      {% endfor %}
+    </div>
+    <article class="map-detail" id="map-detail">
+      <p class="eyebrow" id="map-phase">{{ spaces[0].phase }}</p>
+      <h2 id="map-name">{{ spaces[0].name }}</h2>
+      <p class="map-detail__audience" id="map-audience">{{ spaces[0].audience }}</p>
+      <p id="map-detail-copy">{{ spaces[0].detail }}</p>
+      <div class="dependency-box">
+        <h3>Dependencies</h3>
+        <ul id="map-dependencies">
+          {% for dependency in spaces[0].dependencies %}
+          <li>{{ dependency }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<script>
+  window.CULTIVATE_SPACES = {{ spaces|tojson }};
+</script>
+<script src="{{ url_for('static', filename='js/ecosystem-map.js') }}" defer></script>
+{% endblock %}
+

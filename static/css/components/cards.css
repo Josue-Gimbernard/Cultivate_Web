@@ -1,0 +1,48 @@
+.space-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.space-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 26px rgba(36, 58, 52, 0.06);
+  min-height: 12rem;
+  padding: 1.25rem;
+}
+
+.space-card h3 {
+  margin: 0.65rem 0 0.5rem;
+}
+
+.space-card p {
+  color: var(--color-ink-soft);
+}
+
+.space-card__phase {
+  background: var(--color-mint-100);
+  border-radius: 999px;
+  color: var(--color-teal-900);
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.55rem;
+}
+
+.space-card__audience {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.decision-panel,
+.ux-panel,
+.kitchen-panel {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-6);
+}
+

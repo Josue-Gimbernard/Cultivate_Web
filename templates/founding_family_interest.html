@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Founding Family Interest{% endblock %}
+{% block content %}
+<section class="interest-hero">
+  <div>
+    <p class="eyebrow">Private draft / interest only</p>
+    <h1>Help shape Cultivate from the beginning.</h1>
+    <p>Cultivate is forming a small founding family circle to help test the first rhythm of a homeschool family campus in Central Florida.</p>
+    <div class="hero__actions">
+      <a class="button button--primary" href="#interest-preview">Preview interest flow</a>
+      <a class="button button--quiet" href="{{ url_for('launch_readiness') }}">Readiness</a>
+    </div>
+  </div>
+  <aside class="interest-note">
+    <strong>Not open enrollment</strong>
+    <span>This page is a draft for tone and structure. It should not collect real information until the founder approves the offer, privacy language, and process.</span>
+  </aside>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner interest-promise-grid">
+    <article>
+      <h2>For teens</h2>
+      <p>A place to practice real skills, take creative risks, and belong without the pressure to perform.</p>
+    </article>
+    <article>
+      <h2>For middle kids</h2>
+      <p>Hands-on projects, warm structure, curiosity, confidence, and a bridge toward the teen years.</p>
+    </article>
+    <article>
+      <h2>For parents</h2>
+      <p>A place to work, connect, contribute, and stop feeling like every program leaves you waiting in between.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section-band" id="interest-preview">
+  <div class="section-inner two-column">
+    <div>
+      <p class="eyebrow">Founding cohort interest</p>
+      <h2>What we would ask families.</h2>
+      <p>The first interest flow should learn whether the founding cohort shape matches real family needs. It should not ask for payment or imply guaranteed acceptance.</p>
+    </div>
+    <form class="interest-form" aria-label="Founding family interest preview">
+      <label>
+        Family age groups
+        <select disabled>
+          <option>Teen, middle kid, both, or discovery only</option>
+        </select>
+      </label>
+      <label>
+        Best weekly rhythm
+        <select disabled>
+          <option>Two days, three days, or still unsure</option>
+        </select>
+      </label>
+      <label>
+        What would make Cultivate valuable?
+        <textarea disabled placeholder="Preview only. No data collected."></textarea>
+      </label>
+      <button class="button button--primary" type="button" disabled>Interest form disabled for preview</button>
+    </form>
+  </div>
+</section>
+
+<section class="section-band section-band--mint">
+  <div class="section-inner">
+    <div class="section-heading">
+      <p class="eyebrow">Careful public boundaries</p>
+      <h2>This page can be warm without overpromising.</h2>
+    </div>
+    <div class="interest-boundaries">
+      <div><strong>Say</strong><span>We are gathering interest for a small founding family cohort.</span></div>
+      <div><strong>Say</strong><span>Some parts of the full vision are still being validated.</span></div>
+      <div><strong>Avoid</strong><span>Enrollment is open.</span></div>
+      <div><strong>Avoid</strong><span>Licensed childcare, cafe, or paid teen roles are available.</span></div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+

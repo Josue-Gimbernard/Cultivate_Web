@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Cultivate Source Evidence{% endblock %}
+{% block content %}
+<section class="evidence-hero">
+  <div>
+    <p class="eyebrow">Source evidence room</p>
+    <h1>Show where the website is getting its truth.</h1>
+    <p>This private page connects the owner preview back to the source documents, making it easier to verify what is supported, what changed, and what still needs approval.</p>
+  </div>
+  <aside class="evidence-hero__note">
+    <span>Source hierarchy</span>
+    <strong>Owner-updated docs lead.</strong>
+    <p>The final ecosystem and Wilds documents carry the most weight unless the owner corrects them.</p>
+  </aside>
+</section>
+
+<section class="section-band">
+  <div class="section-inner evidence-grid">
+    {% for item in evidence %}
+    <article class="evidence-card evidence-card--{{ item.confidence|lower }}">
+      <div class="evidence-card__topline">
+        <span>{{ item.confidence }} confidence</span>
+        <strong>Source {{ loop.index }}</strong>
+      </div>
+      <h2>{{ item.source }}</h2>
+      <div>
+        <h3>Supports</h3>
+        <p>{{ item.what_it_supports }}</p>
+      </div>
+      <div>
+        <h3>Used on site as</h3>
+        <p>{{ item.site_usage }}</p>
+      </div>
+      <footer>
+        <h3>Owner check</h3>
+        <p>{{ item.owner_check }}</p>
+      </footer>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner evidence-close">
+    <div>
+      <p class="eyebrow">How this helps</p>
+      <h2>Every future page should be traceable.</h2>
+      <p>Before copy becomes public, this room should answer a simple question: which source supports the claim, and what approval or validation is still missing?</p>
+    </div>
+    <div class="evidence-close__links">
+      <a href="{{ url_for('brand_voice') }}">Brand Voice Lab</a>
+      <a href="{{ url_for('launch_readiness') }}">Launch readiness</a>
+      <a href="{{ url_for('public_draft_hub') }}">Public Draft Hub</a>
+      <a href="{{ url_for('owner_decisions') }}">Owner decisions</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,107 @@
+.offer-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+
+.offer-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: 0.9rem;
+  min-height: 28rem;
+  padding: var(--space-5);
+}
+
+.offer-card__status {
+  background: var(--color-mint-100);
+  border-radius: 999px;
+  color: var(--color-teal-900);
+  display: inline-flex;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.6rem;
+  width: fit-content;
+}
+
+.offer-card h2 {
+  font-size: 1.85rem;
+}
+
+.offer-card h3 {
+  font-size: 1.05rem;
+}
+
+.offer-card p,
+.offer-card li {
+  color: var(--color-ink-soft);
+}
+
+.offer-card__audience {
+  color: var(--color-clay-600);
+  font-weight: 700;
+}
+
+.offer-card ul {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0.55rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.offer-card strong {
+  align-self: end;
+  border-top: 1px solid var(--color-line);
+  color: var(--color-teal-900);
+  padding-top: 0.85rem;
+}
+
+.discount-model {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.discount-model div {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.discount-model strong {
+  color: var(--color-teal-900);
+}
+
+.discount-model span {
+  color: var(--color-ink-soft);
+  text-align: right;
+}
+
+.model-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.model-checks span {
+  background: var(--color-white);
+  border: 1px solid rgba(42, 125, 111, 0.16);
+  border-radius: 999px;
+  color: var(--color-teal-900);
+  font-weight: 700;
+  padding: 0.55rem 0.8rem;
+}
+
+@media (max-width: 720px) {
+  .discount-model div {
+    display: grid;
+  }
+
+  .discount-model span {
+    text-align: left;
+  }
+}

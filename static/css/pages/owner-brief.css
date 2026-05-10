@@ -1,0 +1,126 @@
+.brief-hero {
+  align-items: end;
+  background: linear-gradient(135deg, var(--color-cream-100), var(--color-mint-100));
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.34fr);
+  padding: var(--space-8) max(1rem, calc((100vw - var(--max-page)) / 2));
+}
+
+.brief-hero h1 {
+  max-width: 62rem;
+}
+
+.brief-hero p {
+  color: var(--color-ink-soft);
+  font-size: 1.2rem;
+  max-width: 46rem;
+  padding-top: var(--space-4);
+}
+
+.brief-hero__note,
+.brief-close__links {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+.brief-hero__note span,
+.brief-section__label {
+  color: var(--color-clay-600);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brief-hero__note strong {
+  color: var(--color-teal-900);
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  line-height: 1.05;
+}
+
+.brief-hero__note p {
+  font-size: 1rem;
+  padding: 0;
+}
+
+.brief-stack {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.brief-section {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: minmax(10rem, 0.24fr) minmax(0, 1fr);
+  padding: var(--space-5);
+}
+
+.brief-section__body {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.brief-section h2 {
+  font-size: clamp(1.8rem, 3vw, 3rem);
+}
+
+.brief-section p,
+.brief-close p {
+  color: var(--color-ink-soft);
+}
+
+.brief-section footer {
+  background: var(--color-cream-100);
+  border: 1px solid rgba(42, 125, 111, 0.14);
+  border-radius: var(--radius-sm);
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+}
+
+.brief-section footer span {
+  color: var(--color-clay-600);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brief-section footer strong {
+  color: var(--color-teal-900);
+}
+
+.brief-close {
+  align-items: center;
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.4fr);
+}
+
+.brief-close__links {
+  box-shadow: none;
+}
+
+.brief-close__links a {
+  color: var(--color-teal-700);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  .brief-hero,
+  .brief-section,
+  .brief-close {
+    grid-template-columns: 1fr;
+  }
+}
