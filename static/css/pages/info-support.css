@@ -160,12 +160,117 @@
   text-decoration: none;
 }
 
+.input-summary {
+  align-items: center;
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.45fr);
+}
+
+.input-summary__stats {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.input-summary__stats article {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-5);
+}
+
+.input-summary__stats span {
+  color: var(--color-teal-900);
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.input-summary__stats p {
+  color: var(--color-ink-soft);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.owner-input-list {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.owner-input-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: minmax(0, 0.8fr) minmax(15rem, 0.5fr) minmax(15rem, 0.5fr);
+  padding: var(--space-5);
+}
+
+.owner-input-card__question {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.owner-input-card__question span {
+  background: var(--color-mint-100);
+  border-radius: 999px;
+  color: var(--color-teal-900);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.65rem;
+  width: fit-content;
+}
+
+.owner-input-card h2 {
+  font-size: 1.55rem;
+}
+
+.owner-input-card h3 {
+  font-size: 1.05rem;
+}
+
+.owner-input-card p {
+  color: var(--color-ink-soft);
+}
+
+.owner-input-card > div:not(.owner-input-card__question),
+.owner-input-card footer {
+  background: var(--color-cream-100);
+  border: 1px solid rgba(42, 125, 111, 0.14);
+  border-radius: var(--radius-sm);
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+}
+
+.owner-input-card footer {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.owner-input-card footer a {
+  color: var(--color-teal-700);
+  font-weight: 700;
+  text-decoration: none;
+}
+
 @media (max-width: 900px) {
   .info-hero,
   .info-close,
+  .input-summary,
+  .owner-input-card,
   .glossary-term,
   .assumption-item,
   .comparison-row {
+    grid-template-columns: 1fr;
+  }
+
+  .owner-input-card footer {
     grid-template-columns: 1fr;
   }
 }

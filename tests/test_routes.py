@@ -47,6 +47,7 @@ class RouteTests(unittest.TestCase):
             "/cohort-blueprint",
             "/impact-signals",
             "/launch-readiness",
+            "/owner-input-packet",
             "/ui-kitchen-sink",
             "/ux-lab",
         ]:
@@ -86,6 +87,7 @@ class RouteTests(unittest.TestCase):
             "/cohort-blueprint": b"Make the first term feel buildable.",
             "/impact-signals": b"Decide what to measure",
             "/launch-readiness": b"Show the vision. Protect the promises.",
+            "/owner-input-packet": b"Collect the answers",
         }
         for route, text in expectations.items():
             with self.subTest(route=route):
@@ -215,6 +217,19 @@ class RouteTests(unittest.TestCase):
             for text in texts:
                 with self.subTest(route=route, text=text):
                     self.assertIn(text, response.data)
+
+    def test_owner_input_packet_names_owner_dependent_work(self):
+        response = self.client.get("/owner-input-packet")
+        for text in [
+            b"founder origin story",
+            b"What should Cultivate call itself",
+            b"Who is the first cohort actually for",
+            b"What information can an interest form collect",
+            b"public guesses",
+            b"Approval Matrix",
+        ]:
+            with self.subTest(text=text):
+                self.assertIn(text, response.data)
 
     def test_public_draft_hub_cards_link_to_drafts(self):
         response = self.client.get("/public-draft-hub")

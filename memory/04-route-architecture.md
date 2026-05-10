@@ -33,6 +33,7 @@ last_updated: 2026-05-10
 | `/approval-matrix` | Private publishing-approval gate for sensitive claims | gated |
 | `/founding-family-interest` | Disabled private draft of a family interest page | gated |
 | `/owner-decisions` | Owner decision dashboard for next approvals | gated |
+| `/owner-input-packet` | Owner-only question packet for public-copy blockers | gated |
 | `/owner-walkthrough` | Guided private presentation flow with focus mode and speaker notes | gated |
 | `/ecosystem-map` | Interactive source-derived ecosystem map | gated |
 | `/founding-cohort` | Recommended first-launch package | gated |
@@ -64,6 +65,7 @@ Header navigation is registered in `app.py`:
 - `NEXT_ACTIONS` controls the next-actions board, and `build_action_lane_summaries()` derives the lane snapshot shown above the grouped queues.
 - `DECISIONS` controls the owner decision dashboard, and `build_decision_risk_summaries()` derives the risk snapshot shown above the individual decision cards.
 - `PAIN_POINTS`, `GLOSSARY_TERMS`, `COMPARISON_ITEMS`, and `ASSUMPTION_ITEMS` control the safe-without-owner informational support pages.
+- `OWNER_INPUT_ITEMS` controls the owner input packet questions and their supporting routes.
 - `REVIEW_SURFACES` controls supporting owner-review rooms, while the start pages are handled by the curated review flow instead of duplicated as cards.
 
 `templates/_guided_review.html` appears on the primary owner-review sequence: `/owner-preview`, `/review-command-center`, `/owner-walkthrough`, `/owner-brief`, `/approval-matrix`, and `/next-actions`.

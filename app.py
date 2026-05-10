@@ -151,6 +151,16 @@ class AssumptionItem:
 
 
 @dataclass(frozen=True)
+class OwnerInputItem:
+    category: str
+    question: str
+    why_it_matters: str
+    answer_shape: str
+    unlocks: str
+    support_route: str
+
+
+@dataclass(frozen=True)
 class PublicDraftItem:
     page: str
     purpose: str
@@ -1010,6 +1020,98 @@ ASSUMPTION_ITEMS = [
 ]
 
 
+OWNER_INPUT_ITEMS = [
+    OwnerInputItem(
+        "Story and category",
+        "What is the founder origin story we are allowed to tell publicly?",
+        "The current site can explain the need, but only the owner can supply the personal why, timeline, and emotional details.",
+        "A short founder story, approved words to use, and anything that should stay private.",
+        "Public About copy, homepage credibility, and owner bio language.",
+        "draft_about",
+    ),
+    OwnerInputItem(
+        "Story and category",
+        "What should Cultivate call itself in public copy?",
+        "The safest working phrase is homeschool family campus, but the final public category needs owner approval.",
+        "One preferred category line plus two words or labels to avoid.",
+        "Homepage headline support, FAQ language, and publish-ready navigation.",
+        "what_cultivate_is",
+    ),
+    OwnerInputItem(
+        "First cohort",
+        "Who is the first cohort actually for?",
+        "Age scope determines claims, parent expectations, staffing assumptions, and which spaces can be described as day-one.",
+        "Approved age range, parent participation expectations, and whether siblings are included, excluded, or future vision.",
+        "Founding cohort page, FAQ answers, and first interest form language.",
+        "founding_cohort",
+    ),
+    OwnerInputItem(
+        "First cohort",
+        "What schedule, term length, location, and capacity are realistic for the first version?",
+        "The site can stay phase-based now, but public copy needs concrete boundaries before families respond.",
+        "Preferred days/times, approximate term length, location stance, and target family or child capacity.",
+        "Draft cohort details, launch roadmap, and owner-ready intake questions.",
+        "cohort_blueprint",
+    ),
+    OwnerInputItem(
+        "Offer and pricing",
+        "What can be said about price, membership, donations, and scholarship support?",
+        "Pricing language affects trust immediately and should not be guessed from the concept docs.",
+        "Approved stance: no pricing yet, estimated range, founder price, application-first, or another model.",
+        "Offer model, homepage calls to action, and public FAQ.",
+        "membership_model",
+    ),
+    OwnerInputItem(
+        "Operations",
+        "Which spaces are actually available in the first version?",
+        "Cultivate has a rich campus vision, but day-one availability must stay narrower than the dream unless confirmed.",
+        "A list of spaces that are available now, future-only, partner-dependent, or intentionally not public.",
+        "Spaces page, homepage proof points, and approval matrix updates.",
+        "spaces",
+    ),
+    OwnerInputItem(
+        "Operations",
+        "How should Sprout Space, childcare, cafe, Foxtail, rentals, and The Wilds be handled publicly?",
+        "These are the highest-risk promise areas because they imply licensing, food service, partnerships, employment, or facilities.",
+        "For each item: public now, private vision, validate later, or remove from public copy.",
+        "FAQ, source evidence, launch readiness, and public page safety.",
+        "launch_readiness",
+    ),
+    OwnerInputItem(
+        "Teen contribution",
+        "What kinds of teen responsibility are approved for public description?",
+        "The teen vision is compelling, but language must avoid accidental employment or childcare-supervision claims.",
+        "Approved examples of teen contribution, supervision boundaries, and words to avoid.",
+        "The Summit copy, FAQ responses, and parent trust language.",
+        "glossary",
+    ),
+    OwnerInputItem(
+        "Intake and privacy",
+        "What information can an interest form collect, and who receives it?",
+        "The current interest page is disabled because real family data needs a clear process before collection.",
+        "Fields to collect, where responses go, follow-up owner, data-retention stance, and privacy wording.",
+        "Enabled interest page, CTA copy, and publish gate clearance.",
+        "founding_family_interest",
+    ),
+    OwnerInputItem(
+        "Trust and proof",
+        "What photos, testimonials, credentials, partners, or local proof can be used?",
+        "The site can be polished without proof, but owner-approved trust assets will make the private preview feel closer to public-ready.",
+        "Approved assets, captions, attribution rules, and items that need permission first.",
+        "Homepage richness, About credibility, and owner presentation polish.",
+        "source_evidence",
+    ),
+    OwnerInputItem(
+        "Public launch",
+        "What call to action should a first public page use?",
+        "Public visitors need a clear next step, but the CTA must match the approved intake and launch readiness.",
+        "Preferred CTA label, destination, contact method, and whether the page is invite-only, interest-only, or application-based.",
+        "Draft homepage, cohort page, FAQ, and Railway test-domain review.",
+        "public_draft_hub",
+    ),
+]
+
+
 PUBLIC_DRAFT_ITEMS = [
     PublicDraftItem(
         "Home",
@@ -1175,6 +1277,13 @@ REVIEW_SURFACES = [
         "You want the next approval conversation to end with specific choices.",
         "Which decisions unlock the next build?",
         "owner_decisions",
+    ),
+    ReviewSurface(
+        "Planning",
+        "Owner Input Packet",
+        "You need the exact questions that turn the private preview into approved public copy.",
+        "What does the owner need to answer next?",
+        "owner_input_packet",
     ),
     ReviewSurface(
         "Safety",
@@ -1403,6 +1512,7 @@ DIRECTORY_NAV = (
             NavItem("Blueprint", "cohort_blueprint"),
             NavItem("Signals", "impact_signals"),
             NavItem("Readiness", "launch_readiness"),
+            NavItem("Input Packet", "owner_input_packet"),
         ),
     ),
     NavSection(
@@ -1837,6 +1947,12 @@ def create_app() -> Flask:
             "owner_decisions.html",
             decision_risk_summaries=build_decision_risk_summaries(DECISIONS),
             decisions=DECISIONS,
+        )
+
+    @app.get("/owner-input-packet")
+    def owner_input_packet():
+        return render_template(
+            "owner_input_packet.html", input_items=OWNER_INPUT_ITEMS
         )
 
     @app.get("/owner-walkthrough")

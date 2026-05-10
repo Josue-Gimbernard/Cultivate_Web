@@ -104,6 +104,12 @@ Current risk levels:
 - Medium
 - High
 
+## Owner Input Packet
+
+`/owner-input-packet` turns the remaining owner-dependent blockers into a meeting packet. It asks for the founder story, public category line, first-cohort audience, schedule, pricing stance, day-one space availability, high-risk future-vision handling, teen contribution boundaries, intake/privacy process, proof assets, and public CTA.
+
+Use this page after the owner walkthrough and before editing draft public pages. Owner answers should update the approval matrix and assumptions review first.
+
 ## Safe Without Owner Completion
 
 The remaining source-safe informational pages have been added:
@@ -149,6 +155,7 @@ Lead with the ecosystem and founding cohort direction. Keep childcare, cafe, Fox
 - `/approval-matrix`: approval gate for deciding which claims are ready, internal, validation-first, or blocked for public.
 - `/founding-family-interest`: private draft of an interest page with disabled form fields and no data collection.
 - `/owner-decisions`: meeting-ready dashboard of key decisions, recommendations, risk, and unlocks.
+- `/owner-input-packet`: meeting packet for collecting owner-only answers before public copy changes.
 - `/owner-walkthrough`: guided presentation flow with focus mode and speaker notes for reviewing the concept with the owner.
 - `/ecosystem-map`: click-through map of spaces, dependencies, and phases.
 - `/founding-cohort`: recommended first safe launch shape.

@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}Owner Input Packet{% endblock %}
+{% block content %}
+<section class="info-hero">
+  <div>
+    <p class="eyebrow">Owner input packet</p>
+    <h1>Collect the answers that only the owner can give.</h1>
+    <p>This private packet turns the remaining public-site blockers into a focused owner conversation. Each answer unlocks copy, claims, or review work without guessing.</p>
+  </div>
+  <aside class="info-hero__note">
+    <span>Next clear step</span>
+    <strong>Ask, decide, update.</strong>
+    <p>Use this after the preview walkthrough and before changing draft public pages.</p>
+  </aside>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner input-summary">
+    <div>
+      <p class="eyebrow">Meeting packet</p>
+      <h2>These are the owner-dependent answers still missing.</h2>
+      <p>The site has enough source-safe structure. This page names what cannot be responsibly filled without the owner: story, offer, pricing, operations, proof, intake, and public CTA.</p>
+    </div>
+    <div class="input-summary__stats" aria-label="Owner input summary">
+      <article>
+        <span>{{ input_items|length }}</span>
+        <p>owner questions</p>
+      </article>
+      <article>
+        <span>0</span>
+        <p>public guesses</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section-band">
+  <div class="section-inner owner-input-list">
+    {% for item in input_items %}
+    <article class="owner-input-card">
+      <div class="owner-input-card__question">
+        <span>{{ item.category }}</span>
+        <h2>{{ item.question }}</h2>
+      </div>
+      <div>
+        <h3>Why it matters</h3>
+        <p>{{ item.why_it_matters }}</p>
+      </div>
+      <div>
+        <h3>Answer needed</h3>
+        <p>{{ item.answer_shape }}</p>
+      </div>
+      <footer>
+        <div>
+          <h3>Unlocks</h3>
+          <p>{{ item.unlocks }}</p>
+        </div>
+        <a href="{{ url_for(item.support_route) }}">Open support page</a>
+      </footer>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner info-close">
+    <div>
+      <p class="eyebrow">After the owner answers</p>
+      <h2>Update approvals before public drafts.</h2>
+      <p>Owner answers should first update the approval matrix, assumptions review, and draft pages. Only then should the public homepage, cohort page, FAQ, or interest form move closer to publication.</p>
+    </div>
+    <div class="info-close__links">
+      <a href="{{ url_for('approval_matrix') }}">Approval Matrix</a>
+      <a href="{{ url_for('assumptions_review') }}">Assumptions Review</a>
+      <a href="{{ url_for('public_draft_hub') }}">Public Draft Hub</a>
+      <a href="{{ url_for('next_actions') }}">Next Actions</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

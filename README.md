@@ -39,6 +39,10 @@ The next-actions board includes lane summaries for owner approval, validation, w
 
 The owner decisions dashboard includes a risk snapshot before the individual decision cards.
 
+The owner input packet turns the remaining owner-dependent blockers into meeting questions:
+
+- `http://127.0.0.1:8080/owner-input-packet?access=cultivate-preview`
+
 The safe-without-owner informational layer is complete:
 
 - `http://127.0.0.1:8080/why-cultivate?access=cultivate-preview`
@@ -63,6 +67,7 @@ Additional private rooms:
 - `http://127.0.0.1:8080/approval-matrix?access=cultivate-preview`
 - `http://127.0.0.1:8080/founding-family-interest?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-decisions?access=cultivate-preview`
+- `http://127.0.0.1:8080/owner-input-packet?access=cultivate-preview`
 - `http://127.0.0.1:8080/ecosystem-map?access=cultivate-preview`
 - `http://127.0.0.1:8080/founding-cohort?access=cultivate-preview`
 - `http://127.0.0.1:8080/cohort-blueprint?access=cultivate-preview`
