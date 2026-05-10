@@ -34,6 +34,7 @@ last_updated: 2026-05-10
 | `/founding-family-interest` | Disabled private draft of a family interest page | gated |
 | `/owner-decisions` | Owner decision dashboard for next approvals | gated |
 | `/owner-input-packet` | Owner-only question packet for public-copy blockers | gated |
+| `/owner-review-worksheet` | Printable owner answer tracker for review meetings | gated |
 | `/owner-walkthrough` | Guided private presentation flow with focus mode and speaker notes | gated |
 | `/ecosystem-map` | Interactive source-derived ecosystem map | gated |
 | `/founding-cohort` | Recommended first-launch package | gated |

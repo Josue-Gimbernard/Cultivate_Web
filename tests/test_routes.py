@@ -48,6 +48,7 @@ class RouteTests(unittest.TestCase):
             "/impact-signals",
             "/launch-readiness",
             "/owner-input-packet",
+            "/owner-review-worksheet",
             "/ui-kitchen-sink",
             "/ux-lab",
         ]:
@@ -88,6 +89,7 @@ class RouteTests(unittest.TestCase):
             "/impact-signals": b"Decide what to measure",
             "/launch-readiness": b"Show the vision. Protect the promises.",
             "/owner-input-packet": b"Collect the answers",
+            "/owner-review-worksheet": b"Capture owner answers",
         }
         for route, text in expectations.items():
             with self.subTest(route=route):
@@ -227,6 +229,19 @@ class RouteTests(unittest.TestCase):
             b"What information can an interest form collect",
             b"public guesses",
             b"Approval Matrix",
+        ]:
+            with self.subTest(text=text):
+                self.assertIn(text, response.data)
+
+    def test_owner_review_worksheet_is_meeting_ready(self):
+        response = self.client.get("/owner-review-worksheet")
+        for text in [
+            b"Print worksheet",
+            b"Owner answer",
+            b"Approved",
+            b"Validate",
+            b"founder origin story",
+            b"Update approvals before public drafts",
         ]:
             with self.subTest(text=text):
                 self.assertIn(text, response.data)

@@ -36,4 +36,5 @@ last_updated: 2026-05-10
 - Keep `/founding-family-interest` disabled until privacy language, intake process, offer scope, and owner approval are ready.
 - Use `/owner-decisions` to drive approval conversations; it is not family-facing copy.
 - Use `/owner-input-packet` when the next step is collecting owner-only answers; do not treat unanswered packet items as approved claims.
+- Use `/owner-review-worksheet` for meeting notes only; update approvals and assumptions before changing public drafts.
 - Keep `/owner-walkthrough` as an internal presentation mode for owner review meetings; focus mode and speaker notes should guide decisions, not imply public launch readiness.

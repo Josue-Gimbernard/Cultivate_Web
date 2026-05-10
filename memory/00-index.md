@@ -17,7 +17,8 @@ This folder is the durable Web Agent memory layer for the Cultivate website.
 5. `memory/03-brand-and-ui-system.md`
 6. `memory/04-route-architecture.md`
 7. `memory/05-owner-preview-rules.md`
-8. Relevant `skills/*/SKILL.md`
+8. `memory/07-owner-input-workflow.md`
+9. Relevant `skills/*/SKILL.md`
 
 ## Memory Files
 
@@ -29,6 +30,7 @@ This folder is the durable Web Agent memory layer for the Cultivate website.
 | `04-route-architecture.md` | Route map and gated-preview structure |
 | `05-owner-preview-rules.md` | Rules for private owner-facing pages |
 | `06-repo-and-deploy-operations.md` | GitHub repo setup, SSH account strategy, verification, Railway readiness, and push rules |
+| `07-owner-input-workflow.md` | How to run the owner input meeting and convert answers into site updates |
 | `inbox.md` | Open web questions |
 
 ## Current Setup Status
