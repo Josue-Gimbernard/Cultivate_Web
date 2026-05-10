@@ -117,10 +117,110 @@
   text-decoration: none;
 }
 
+.recap-summary {
+  align-items: center;
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.4fr);
+}
+
+.recap-summary p:not(.eyebrow) {
+  color: var(--color-ink-soft);
+  padding-top: var(--space-3);
+}
+
+.recap-summary__links {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+.recap-summary__links a {
+  color: var(--color-teal-700);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.recap-list {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.recap-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: minmax(10rem, 0.25fr) minmax(0, 1fr);
+  padding: var(--space-5);
+}
+
+.recap-card__label {
+  align-self: start;
+  background: var(--color-mint-100);
+  border-radius: 999px;
+  color: var(--color-teal-900);
+  font-weight: 700;
+  padding: 0.45rem 0.8rem;
+  text-align: center;
+}
+
+.recap-card--hold .recap-card__label,
+.recap-card--validate .recap-card__label {
+  background: var(--color-cream-100);
+  color: var(--color-clay-600);
+}
+
+.recap-card__body {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.recap-card h2 {
+  font-size: 1.65rem;
+}
+
+.recap-card p {
+  color: var(--color-ink-soft);
+}
+
+.recap-card footer {
+  background: var(--color-cream-100);
+  border: 1px solid rgba(42, 125, 111, 0.14);
+  border-radius: var(--radius-sm);
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+}
+
+.recap-card footer span {
+  color: var(--color-clay-600);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.recap-card footer strong {
+  color: var(--color-teal-900);
+}
+
+.recap-card a {
+  color: var(--color-teal-700);
+  font-weight: 700;
+  text-decoration: none;
+}
+
 @media (max-width: 760px) {
   .brief-hero,
   .brief-section,
-  .brief-close {
+  .brief-close,
+  .recap-summary,
+  .recap-card {
     grid-template-columns: 1fr;
   }
 }

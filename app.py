@@ -190,6 +190,15 @@ class OwnerMeetingScriptStep:
 
 
 @dataclass(frozen=True)
+class OwnerMeetingRecapItem:
+    section: str
+    purpose: str
+    starter_text: str
+    next_source: str
+    support_route: str
+
+
+@dataclass(frozen=True)
 class PublicDraftItem:
     page: str
     purpose: str
@@ -1291,6 +1300,45 @@ OWNER_MEETING_SCRIPT = [
 ]
 
 
+OWNER_MEETING_RECAP_ITEMS = [
+    OwnerMeetingRecapItem(
+        "Approved",
+        "Record decisions the owner clearly approved.",
+        "No approvals recorded yet. Move items here only after the owner confirms wording or scope.",
+        "memory/08-owner-answer-log.md",
+        "owner_answer_log",
+    ),
+    OwnerMeetingRecapItem(
+        "Revise",
+        "Capture concepts the owner likes but wants reworded or reshaped.",
+        "No revision notes recorded yet. Use this for language, naming, audience, or offer changes.",
+        "Owner review worksheet",
+        "owner_review_worksheet",
+    ),
+    OwnerMeetingRecapItem(
+        "Hold",
+        "Name decisions that should stay private or unresolved.",
+        "No holds recorded yet. Use this for items that should not appear in public drafts.",
+        "Approval matrix",
+        "approval_matrix",
+    ),
+    OwnerMeetingRecapItem(
+        "Validate",
+        "Turn operational uncertainty into evidence or checklist work.",
+        "No validation tasks recorded yet. Use this for childcare, cafe, partnerships, teen work, rentals, pricing, dates, and facility details.",
+        "Launch readiness",
+        "launch_readiness",
+    ),
+    OwnerMeetingRecapItem(
+        "Next Artifact",
+        "Choose the next concrete file, page, or checklist to update.",
+        "No next artifact selected yet. Choose one update target before ending the recap.",
+        "Post-meeting update plan",
+        "post_meeting_update_plan",
+    ),
+]
+
+
 PUBLIC_DRAFT_ITEMS = [
     PublicDraftItem(
         "Home",
@@ -1498,6 +1546,13 @@ REVIEW_SURFACES = [
         "You want facilitator notes for presenting the preview cleanly.",
         "What should we say in the meeting?",
         "owner_meeting_script",
+    ),
+    ReviewSurface(
+        "Planning",
+        "Owner Meeting Recap",
+        "You need a structured summary after the owner review.",
+        "What did we decide, hold, or validate?",
+        "owner_meeting_recap",
     ),
     ReviewSurface(
         "Safety",
@@ -1732,6 +1787,7 @@ DIRECTORY_NAV = (
             NavItem("Update Plan", "post_meeting_update_plan"),
             NavItem("Prep", "owner_review_prep"),
             NavItem("Script", "owner_meeting_script"),
+            NavItem("Recap", "owner_meeting_recap"),
         ),
     ),
     NavSection(
@@ -2202,6 +2258,12 @@ def create_app() -> Flask:
     def owner_meeting_script():
         return render_template(
             "owner_meeting_script.html", script_steps=OWNER_MEETING_SCRIPT
+        )
+
+    @app.get("/owner-meeting-recap")
+    def owner_meeting_recap():
+        return render_template(
+            "owner_meeting_recap.html", recap_items=OWNER_MEETING_RECAP_ITEMS
         )
 
     @app.get("/owner-walkthrough")

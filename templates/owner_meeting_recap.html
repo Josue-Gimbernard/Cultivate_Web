@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Owner Meeting Recap{% endblock %}
+{% block content %}
+<section class="brief-hero">
+  <div>
+    <p class="eyebrow">Owner meeting recap</p>
+    <h1>Summarize the meeting before changing the site.</h1>
+    <p>This private recap template turns the owner review into clear buckets: approved, revise, hold, validate, and next artifact. It starts empty until the owner actually answers.</p>
+  </div>
+  <aside class="brief-hero__note">
+    <span>Recap rule</span>
+    <strong>No fake approvals.</strong>
+    <p>Only move items out of pending status when the owner answer is logged.</p>
+  </aside>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner recap-summary">
+    <div>
+      <p class="eyebrow">After the meeting</p>
+      <h2>Recap first. Edit second.</h2>
+      <p>The recap should agree with the worksheet and answer log before the approval matrix, assumptions, or draft public pages change.</p>
+    </div>
+    <div class="recap-summary__links">
+      <a href="{{ url_for('owner_review_worksheet') }}">Worksheet</a>
+      <a href="{{ url_for('owner_answer_log') }}">Answer Log</a>
+      <a href="{{ url_for('approval_matrix') }}">Approval Matrix</a>
+      <a href="{{ url_for('post_meeting_update_plan') }}">Update Plan</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-band">
+  <div class="section-inner recap-list">
+    {% for item in recap_items %}
+    <article class="recap-card recap-card--{{ item.section|lower|replace(' ', '-') }}">
+      <div class="recap-card__label">{{ item.section }}</div>
+      <div class="recap-card__body">
+        <h2>{{ item.purpose }}</h2>
+        <p>{{ item.starter_text }}</p>
+        <footer>
+          <span>Source to check</span>
+          <strong>{{ item.next_source }}</strong>
+        </footer>
+        <a href="{{ url_for(item.support_route) }}">Open support page</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-band section-band--cream">
+  <div class="section-inner brief-close">
+    <div>
+      <p class="eyebrow">Next update</p>
+      <h2>When the recap is filled, update the answer log first.</h2>
+      <p>The recap is a meeting artifact. The answer log is the durable memory source. After that, use the post-meeting update plan to change app data, draft copy, tests, and documentation.</p>
+    </div>
+    <div class="brief-close__links">
+      <a href="{{ url_for('owner_answer_log') }}">Answer Log</a>
+      <a href="{{ url_for('post_meeting_update_plan') }}">Post-Meeting Plan</a>
+      <a href="{{ url_for('next_actions') }}">Next Actions</a>
+      <a href="{{ url_for('public_draft_hub') }}">Public Draft Hub</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

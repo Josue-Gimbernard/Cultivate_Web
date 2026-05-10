@@ -15,10 +15,11 @@ Open these in order:
 3. `/owner-walkthrough`
 4. `/owner-input-packet`
 5. `/owner-review-worksheet`
-6. `/owner-answer-log`
-7. `/post-meeting-update-plan`
-8. `/approval-matrix`
-9. `/next-actions`
+6. `/owner-meeting-recap`
+7. `/owner-answer-log`
+8. `/post-meeting-update-plan`
+9. `/approval-matrix`
+10. `/next-actions`
 
 ## What To Collect
 

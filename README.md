@@ -43,6 +43,7 @@ The owner input packet turns the remaining owner-dependent blockers into meeting
 
 - `http://127.0.0.1:8080/owner-review-prep?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-meeting-script?access=cultivate-preview`
+- `http://127.0.0.1:8080/owner-meeting-recap?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-input-packet?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-review-worksheet?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-answer-log?access=cultivate-preview`
@@ -74,6 +75,7 @@ Additional private rooms:
 - `http://127.0.0.1:8080/owner-decisions?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-review-prep?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-meeting-script?access=cultivate-preview`
+- `http://127.0.0.1:8080/owner-meeting-recap?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-input-packet?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-review-worksheet?access=cultivate-preview`
 - `http://127.0.0.1:8080/owner-answer-log?access=cultivate-preview`

@@ -35,6 +35,7 @@ last_updated: 2026-05-10
 | `/owner-decisions` | Owner decision dashboard for next approvals | gated |
 | `/owner-review-prep` | Pre-meeting checklist for owner review readiness | gated |
 | `/owner-meeting-script` | Facilitator script for the owner review meeting | gated |
+| `/owner-meeting-recap` | Post-meeting recap template for owner decisions and next artifacts | gated |
 | `/owner-input-packet` | Owner-only question packet for public-copy blockers | gated |
 | `/owner-review-worksheet` | Printable owner answer tracker for review meetings | gated |
 | `/owner-answer-log` | Pending/approved owner answer ledger for public-site blockers | gated |
@@ -74,6 +75,7 @@ Header navigation is registered in `app.py`:
 - `POST_MEETING_UPDATES` controls the ordered post-meeting update plan.
 - `OWNER_REVIEW_PREP_ITEMS` controls the pre-meeting readiness checklist.
 - `OWNER_MEETING_SCRIPT` controls the owner review facilitator script.
+- `OWNER_MEETING_RECAP_ITEMS` controls the owner meeting recap template.
 - `REVIEW_SURFACES` controls supporting owner-review rooms, while the start pages are handled by the curated review flow instead of duplicated as cards.
 
 `templates/_guided_review.html` appears on the primary owner-review sequence: `/owner-preview`, `/review-command-center`, `/owner-walkthrough`, `/owner-brief`, `/approval-matrix`, and `/next-actions`.

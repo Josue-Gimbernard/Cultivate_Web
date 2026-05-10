@@ -37,6 +37,7 @@ last_updated: 2026-05-10
 - Use `/owner-decisions` to drive approval conversations; it is not family-facing copy.
 - Use `/owner-review-prep` before an owner session so access, tabs, decision tools, and promise boundaries are ready.
 - Use `/owner-meeting-script` to keep the owner conversation warm and bounded; do not improvise promises from the script.
+- Use `/owner-meeting-recap` after the review; do not update site copy until the recap agrees with the answer log.
 - Use `/owner-input-packet` when the next step is collecting owner-only answers; do not treat unanswered packet items as approved claims.
 - Use `/owner-review-worksheet` for meeting notes only; update approvals and assumptions before changing public drafts.
 - Use `/owner-answer-log` as the durable record after owner review; only logged and approved answers may unlock public copy changes.
