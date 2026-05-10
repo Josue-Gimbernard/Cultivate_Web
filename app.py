@@ -199,6 +199,15 @@ class OwnerMeetingRecapItem:
 
 
 @dataclass(frozen=True)
+class OwnerReviewPacketItem:
+    phase: str
+    title: str
+    purpose: str
+    output: str
+    route: str
+
+
+@dataclass(frozen=True)
 class PublicDraftItem:
     page: str
     purpose: str
@@ -1339,6 +1348,80 @@ OWNER_MEETING_RECAP_ITEMS = [
 ]
 
 
+OWNER_REVIEW_PACKET_ITEMS = [
+    OwnerReviewPacketItem(
+        "Before",
+        "Owner Review Prep",
+        "Confirm access, meeting path, decision tools, and promise boundaries.",
+        "A prepared review room.",
+        "owner_review_prep",
+    ),
+    OwnerReviewPacketItem(
+        "Before",
+        "Owner Meeting Script",
+        "Guide the facilitator through what to say, show, capture, and avoid.",
+        "A calm meeting plan.",
+        "owner_meeting_script",
+    ),
+    OwnerReviewPacketItem(
+        "During",
+        "Owner Walkthrough",
+        "Present the concept visually before asking for operational decisions.",
+        "Owner confidence and first reactions.",
+        "owner_walkthrough",
+    ),
+    OwnerReviewPacketItem(
+        "During",
+        "Owner Input Packet",
+        "Ask the owner-only questions that unblock public copy.",
+        "Answers needed for story, scope, offer, proof, intake, and CTA.",
+        "owner_input_packet",
+    ),
+    OwnerReviewPacketItem(
+        "During",
+        "Owner Review Worksheet",
+        "Record approved, revise, hold, and validate statuses while talking.",
+        "Meeting notes that do not rely on memory.",
+        "owner_review_worksheet",
+    ),
+    OwnerReviewPacketItem(
+        "After",
+        "Owner Meeting Recap",
+        "Summarize the meeting into approved, revise, hold, validate, and next-artifact buckets.",
+        "A readable recap before site edits.",
+        "owner_meeting_recap",
+    ),
+    OwnerReviewPacketItem(
+        "After",
+        "Owner Answer Log",
+        "Move confirmed answers into the durable markdown/source-of-truth ledger.",
+        "Logged owner answers.",
+        "owner_answer_log",
+    ),
+    OwnerReviewPacketItem(
+        "After",
+        "Post-Meeting Update Plan",
+        "Convert logged answers into app data, approvals, assumptions, drafts, tests, and memory updates.",
+        "A safe update order.",
+        "post_meeting_update_plan",
+    ),
+    OwnerReviewPacketItem(
+        "After",
+        "Approval Matrix",
+        "Mark what is ready, blocked, internal, or validation-first before public copy changes.",
+        "Updated publishing gate.",
+        "approval_matrix",
+    ),
+    OwnerReviewPacketItem(
+        "After",
+        "Next Actions",
+        "Turn owner answers into concrete artifacts and work queues.",
+        "A clear next build pass.",
+        "next_actions",
+    ),
+]
+
+
 PUBLIC_DRAFT_ITEMS = [
     PublicDraftItem(
         "Home",
@@ -1441,6 +1524,13 @@ REVIEW_SURFACES = [
         "You need a meeting dashboard that explains where to go next.",
         "What should we review today?",
         "review_command_center",
+    ),
+    ReviewSurface(
+        "Start here",
+        "Owner Review Packet",
+        "You want the full before, during, and after owner-review sequence in one place.",
+        "What is the complete review packet?",
+        "owner_review_packet",
     ),
     ReviewSurface(
         "Start here",
@@ -1777,6 +1867,7 @@ DIRECTORY_NAV = (
         "Planning",
         (
             NavItem("Roadmap", "launch_roadmap"),
+            NavItem("Packet", "owner_review_packet"),
             NavItem("Cohort", "founding_cohort"),
             NavItem("Blueprint", "cohort_blueprint"),
             NavItem("Signals", "impact_signals"),
@@ -2175,6 +2266,12 @@ def create_app() -> Flask:
     @app.get("/owner-preview")
     def owner_preview():
         return render_template("owner_preview.html", spaces=SPACES)
+
+    @app.get("/owner-review-packet")
+    def owner_review_packet():
+        return render_template(
+            "owner_review_packet.html", packet_items=OWNER_REVIEW_PACKET_ITEMS
+        )
 
     @app.get("/ui-kitchen-sink")
     def ui_kitchen_sink():

@@ -249,10 +249,120 @@
   text-decoration: none;
 }
 
+.packet-summary {
+  align-items: center;
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.42fr);
+}
+
+.packet-summary p:not(.eyebrow) {
+  color: var(--color-ink-soft);
+  padding-top: var(--space-3);
+}
+
+.packet-summary__stats {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.packet-summary__stats article {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-5);
+}
+
+.packet-summary__stats span {
+  color: var(--color-teal-900);
+  font-family: var(--font-display);
+  font-size: 2.7rem;
+  line-height: 1;
+}
+
+.packet-summary__stats p {
+  color: var(--color-ink-soft);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.packet-list {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.packet-phase {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.packet-phase__heading {
+  border-bottom: 1px solid var(--color-line);
+  padding-bottom: var(--space-3);
+}
+
+.packet-phase__heading h2 {
+  font-size: clamp(1.8rem, 3vw, 3rem);
+}
+
+.packet-grid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.packet-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  display: grid;
+  gap: var(--space-3);
+  min-height: 15rem;
+  padding: var(--space-5);
+  text-decoration: none;
+}
+
+.packet-card:hover,
+.packet-card:focus-visible {
+  border-color: var(--color-teal-700);
+  outline: 0;
+}
+
+.packet-card span {
+  background: var(--color-mint-100);
+  border-radius: 999px;
+  color: var(--color-teal-900);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.65rem;
+  width: fit-content;
+}
+
+.packet-card h3 {
+  font-size: 1.4rem;
+}
+
+.packet-card p {
+  color: var(--color-ink-soft);
+}
+
+.packet-card footer {
+  align-self: end;
+  border-top: 1px solid var(--color-line);
+  color: var(--color-clay-600);
+  font-weight: 700;
+  padding-top: var(--space-3);
+}
+
 @media (max-width: 760px) {
   .command-hero,
   .command-sequence,
-  .command-close {
+  .command-close,
+  .packet-summary,
+  .packet-summary__stats {
     grid-template-columns: 1fr;
   }
 

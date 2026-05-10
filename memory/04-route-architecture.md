@@ -10,6 +10,7 @@ last_updated: 2026-05-10
 |---|---|---|
 | `/` | Owner preview home | gated |
 | `/owner-preview` | Same as home | gated |
+| `/owner-review-packet` | Single packet for before/during/after owner-review workflow | gated |
 | `/review-command-center` | Front-door dashboard for owner-review navigation | gated |
 | `/owner-brief` | Compact owner-facing private summary | gated |
 | `/next-actions` | Private approvals, validation, web build, and evidence work queue | gated |
@@ -67,6 +68,7 @@ Header navigation is registered in `app.py`:
 - `GUIDED_REVIEW_STEPS` controls the reusable bottom-of-page review path.
 - `DRAFT_NAV` controls the reusable public-draft packet navigation.
 - `PUBLISH_GATES` controls the reusable publishing-gate cards shown on draft packet pages.
+- `OWNER_REVIEW_PACKET_ITEMS` controls the owner review packet sequence.
 - `APPROVAL_ITEMS` controls the approval matrix, and `build_approval_summaries()` derives the status snapshot shown above the full matrix.
 - `NEXT_ACTIONS` controls the next-actions board, and `build_action_lane_summaries()` derives the lane snapshot shown above the grouped queues.
 - `DECISIONS` controls the owner decision dashboard, and `build_decision_risk_summaries()` derives the risk snapshot shown above the individual decision cards.

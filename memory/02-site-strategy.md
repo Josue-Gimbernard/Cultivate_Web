@@ -108,7 +108,7 @@ Current risk levels:
 
 `/owner-input-packet` turns the remaining owner-dependent blockers into a meeting packet. It asks for the founder story, public category line, first-cohort audience, schedule, pricing stance, day-one space availability, high-risk future-vision handling, teen contribution boundaries, intake/privacy process, proof assets, and public CTA.
 
-`/owner-review-prep` should be used before the owner sees the site. `/owner-meeting-script` gives facilitator language for the review itself. `/owner-meeting-recap` summarizes what was approved, revised, held, or sent to validation. `/owner-review-worksheet` is the printable companion for capturing answers during the meeting. `/owner-answer-log` is the pending ledger that should be updated after the meeting. `/post-meeting-update-plan` gives the safe order for turning answers into repo changes. Use these pages after the owner walkthrough and before editing draft public pages. Owner answers should update the answer log, approval matrix, and assumptions review first.
+`/owner-review-packet` is the single entry point for the before, during, and after owner-review workflow. `/owner-review-prep` should be used before the owner sees the site. `/owner-meeting-script` gives facilitator language for the review itself. `/owner-meeting-recap` summarizes what was approved, revised, held, or sent to validation. `/owner-review-worksheet` is the printable companion for capturing answers during the meeting. `/owner-answer-log` is the pending ledger that should be updated after the meeting. `/post-meeting-update-plan` gives the safe order for turning answers into repo changes. Use these pages after the owner walkthrough and before editing draft public pages. Owner answers should update the answer log, approval matrix, and assumptions review first.
 
 ## Safe Without Owner Completion
 
@@ -137,6 +137,7 @@ Lead with the ecosystem and founding cohort direction. Keep childcare, cafe, Fox
 ## Current Rich Preview Surfaces
 
 - `/review-command-center`: front-door dashboard for choosing the right owner-review surface.
+- `/owner-review-packet`: single owner-review packet organized into before, during, and after phases.
 - `/owner-brief`: compact owner-facing summary of the concept, first move, holdbacks, and next approval.
 - `/next-actions`: practical work queue for approvals, validation, web drafts, and evidence artifacts.
 - `/day-at-cultivate`: narrative day-in-the-life page that makes the experience tangible.

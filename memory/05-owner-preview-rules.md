@@ -34,6 +34,7 @@ last_updated: 2026-05-10
 - Draft public pages must avoid launch dates, prices, enrollment claims, licensed childcare promises, cafe operation, Foxtail partnership, paid teen jobs, and public rental claims.
 - Use `/approval-matrix` as the publishing gate for sensitive claims before drafting or enabling public pages.
 - Keep `/founding-family-interest` disabled until privacy language, intake process, offer scope, and owner approval are ready.
+- Use `/owner-review-packet` as the clean entry point for a full owner-review session.
 - Use `/owner-decisions` to drive approval conversations; it is not family-facing copy.
 - Use `/owner-review-prep` before an owner session so access, tabs, decision tools, and promise boundaries are ready.
 - Use `/owner-meeting-script` to keep the owner conversation warm and bounded; do not improvise promises from the script.

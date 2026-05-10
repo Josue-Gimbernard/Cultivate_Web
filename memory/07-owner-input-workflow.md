@@ -10,6 +10,7 @@ Use this file when the owner is ready to answer the remaining public-site blocke
 
 Open these in order:
 
+0. `/owner-review-packet`
 1. `/owner-review-prep`
 2. `/owner-meeting-script`
 3. `/owner-walkthrough`

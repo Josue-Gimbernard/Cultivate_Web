@@ -18,6 +18,7 @@ class RouteTests(unittest.TestCase):
         for route in [
             "/",
             "/owner-preview",
+            "/owner-review-packet",
             "/review-command-center",
             "/owner-brief",
             "/next-actions",
@@ -66,6 +67,7 @@ class RouteTests(unittest.TestCase):
         expectations = {
             "/day-at-cultivate": b"A day at Cultivate",
             "/review-command-center": b"Run the owner review",
+            "/owner-review-packet": b"Run the whole owner review",
             "/owner-brief": b"The short version",
             "/next-actions": b"Turn the preview",
             "/spaces": b"The campus, piece by piece.",
@@ -113,7 +115,22 @@ class RouteTests(unittest.TestCase):
             b"15 minute review",
             b"Public page prep",
             b"All rooms",
+            b"Owner Review Packet",
             b"Offer Model",
+        ]:
+            with self.subTest(text=text):
+                self.assertIn(text, response.data)
+
+    def test_owner_review_packet_groups_full_workflow(self):
+        response = self.client.get("/owner-review-packet")
+        for text in [
+            b"Before",
+            b"During",
+            b"After",
+            b"Owner Meeting Script",
+            b"Owner Meeting Recap",
+            b"Post-Meeting Update Plan",
+            b"One sequence. No loose ends",
         ]:
             with self.subTest(text=text):
                 self.assertIn(text, response.data)
