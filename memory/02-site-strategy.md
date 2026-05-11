@@ -12,6 +12,12 @@ Private owner preview for Brooke.
 
 The web repo is initialized and pushed to `git@github.com:Josue-Gimbernard/Cultivate_Web.git`. Use `memory/06-repo-and-deploy-operations.md` before changing Git remotes, SSH auth, Railway setup, or deployment behavior.
 
+The live Railway preview is:
+
+`https://web-production-dcfae.up.railway.app/?access=cultivate-preview`
+
+Brooke can review the site from that link without repo access. The access link is included in `BROOKE_EMAIL_DRAFT.md`.
+
 ## Current Navigation Strategy
 
 The site now uses a tight primary tab set for the owner review:
@@ -117,6 +123,8 @@ Current risk levels:
 `/owner-input-packet` turns the remaining Brooke-dependent blockers into a meeting packet. It asks for the founder story, public category line, first-cohort audience, schedule, pricing stance, day-one space availability, high-risk future-vision handling, teen contribution boundaries, intake/privacy process, proof assets, and public CTA.
 
 `/owner-review-packet` is the single entry point for the before, during, and after owner-review workflow. `/owner-review-prep` should be used before Brooke sees the site. `/owner-meeting-script` gives facilitator language for the review itself. `/owner-meeting-recap` summarizes what was approved, revised, held, or sent to validation. `/owner-review-worksheet` is the printable companion for capturing answers during the meeting. `/owner-answer-log` is the pending ledger that should be updated after the meeting. `/post-meeting-update-plan` gives the safe order for turning answers into repo changes. Use these pages after the owner walkthrough and before editing draft public pages. Brooke's answers should update the answer log, approval matrix, and assumptions review first.
+
+`BROOKE_AI_INTERVIEW_PACKET.md` is the off-platform version for Brooke's Claude app. It should be attached to an email, not linked through GitHub. Brooke's Claude summary should be treated as owner input, but still logged in `memory/08-owner-answer-log.md` before website copy changes.
 
 ## Safe Without Owner Completion
 

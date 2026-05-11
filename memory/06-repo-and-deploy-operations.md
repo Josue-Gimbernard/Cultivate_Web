@@ -61,16 +61,33 @@ Access code:
 
 Preview pages remain private and should not be treated as public launch copy.
 
-## Railway Readiness
+## Railway Deployment
 
-Railway files exist:
+Railway files exist and the app has been deployed:
 
 - `Procfile`
 - `railway.toml`
 - `requirements.txt`
 - `.env.example`
 
-Do not deploy, change secrets, or make hosting changes unless the founder explicitly asks.
+Current live private preview:
+
+`https://web-production-dcfae.up.railway.app/?access=cultivate-preview`
+
+Current deploy details:
+
+- Builder: `RAILPACK`
+- Start command: `gunicorn app:app --bind 0.0.0.0:$PORT`
+- Healthcheck: `/healthz`
+- App is still private/gated and not public launch copy.
+
+Do not change Railway variables, domains, secrets, public preview behavior, or hosting settings unless explicitly asked.
+
+Railway account lesson:
+
+- Railway GitHub repo visibility comes from the Railway GitHub App connection, not local SSH keys.
+- If the repo picker only shows miniBIOTA repos, the Railway/GitHub App session is still seeing miniBIOTA.
+- Do not disturb miniBIOTA Railway/GitHub settings when connecting Cultivate. Prefer separate browser profiles or carefully selected GitHub App repository access.
 
 ## Current Commit Status
 
@@ -95,8 +112,13 @@ Current owner-preview completion commits pushed on 2026-05-10:
 - `32953df Add owner review packet`
 - `756b08b Personalize owner preview copy for Brooke`
 - `fcd44f0 Refine Brooke owner preview copy`
+- `09ab2b9 Prepare Railway deployment config`
+- `d51d250 Fix preview access gate sizing`
+- `90df654 Add Brooke AI interview packet`
+- `c89fadf Clarify Brooke Claude handoff`
+- `a991b56 Add preview link to Brooke email draft`
 
-The latest pushed state is a Brooke-facing private owner preview with the owner-review packet, meeting prep, script, worksheet, recap, answer log, post-meeting update plan, approval matrix, public draft packet, and safe-without-owner support pages. It remains gated and not public launch copy.
+The latest pushed state is a Brooke-facing private owner preview with live Railway access, the owner-review packet, meeting prep, script, worksheet, recap, answer log, post-meeting update plan, approval matrix, public draft packet, safe-without-owner support pages, and a Claude-ready Brooke decision packet. It remains gated and not public launch copy.
 
 ## Known Local Git Warning
 

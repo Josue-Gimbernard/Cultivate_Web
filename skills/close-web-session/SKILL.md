@@ -17,6 +17,9 @@ Use this skill before finishing Cultivate Web work.
 7. Confirm no public commitments, secrets, live production records, or hosting changes were made unless explicitly scoped.
 8. If owner-facing copy changed, confirm it stays Brooke-centered without inventing owner story, pricing, launch dates, childcare/cafe/Foxtail commitments, paid teen work, rentals, or Wilds availability.
 9. If work was pushed, record the commit hash in the final response and update durable memory when the change affects future sessions.
+10. If Railway/live preview behavior changed, update `memory/06-repo-and-deploy-operations.md`, `memory/02-site-strategy.md`, and the company repo web domain docs.
+11. If Brooke handoff materials changed, update `BROOKE_AI_INTERVIEW_PACKET.md`, `BROOKE_EMAIL_DRAFT.md`, and `memory/07-owner-input-workflow.md` as needed.
+12. If the session produced a durable lesson, add or update a dated closeout note under `memory/`.
 
 ## Closeout Format
 
