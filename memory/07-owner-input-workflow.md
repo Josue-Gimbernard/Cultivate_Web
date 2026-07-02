@@ -1,10 +1,12 @@
 ---
 title: Owner Input Workflow
-last_updated: 2026-05-10
+last_updated: 2026-05-20
 ---
 # Owner Input Workflow
 
-Use this file when Brooke is ready to answer the remaining public-site blockers.
+Use this file when Brooke is ready to answer remaining blockers or review how her 2026-05-20 direction has been translated into the website.
+
+Several prior blockers are now answered in `memory/08-owner-answer-log.md`: public category, founder story direction, day-one spaces, membership direction, public/private boundaries, interest-list CTA, and interest-list fields.
 
 ## Meeting Pages
 
@@ -24,18 +26,23 @@ Open these in order:
 
 ## What To Collect
 
-Capture Brooke's answers for:
+Brooke's 2026-05-20 direction already covers:
 
 - founder/origin story
 - public category wording
-- first cohort audience, age range, schedule, location stance, and capacity
+- first audience direction and day-one spaces
 - price, membership, donation, or scholarship stance
 - day-one spaces versus future-only spaces
 - childcare, cafe, Foxtail, rentals, teen work, and Wilds public stance
-- teen contribution and supervision boundaries
-- interest form fields, follow-up owner, and privacy language
-- proof assets, photos, testimonials, credentials, and permissions
 - public call to action
+
+Still collect or validate:
+
+- exact location, schedule, capacity, and operating offer name
+- real interest-form storage, privacy language, and follow-up owner
+- photo release, testimonial consent, and family proof rules
+- legal/entity structure, insurance, waivers, and volunteer background check policy
+- Step Up provider process and timing
 
 ## Attachment-Ready AI Interview
 

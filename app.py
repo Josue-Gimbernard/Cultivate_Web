@@ -164,6 +164,16 @@ class OwnerInputItem:
 
 
 @dataclass(frozen=True)
+class OwnerAnswerLogItem:
+    category: str
+    question: str
+    status: str
+    answer: str
+    next_update: str
+    support_route: str
+
+
+@dataclass(frozen=True)
 class PostMeetingUpdate:
     step: str
     title: str
@@ -346,78 +356,78 @@ SPACES = [
     Space(
         "The Sprout Space",
         "Ages 0-5",
-        "On-site childcare vision",
-        "Validate",
+        "Future childcare vision",
+        "Private",
         "Warm, play-based care that lets families participate without arranging separate childcare.",
         ("DCF licensing", "background checks", "staff ratios", "teen helper boundaries"),
         "Calm, secure, sensory-rich, and close enough for parents to breathe.",
-        "Discovery-only until childcare licensing is validated.",
+        "Private/future-facing until childcare licensing is validated.",
         "Licensed on-site childcare with trained adult staff and carefully bounded teen helper pathways.",
     ),
     Space(
         "The Stepping Stones",
         "Ages 6-12",
         "Middle-kid making and discovery",
-        "Cohort",
+        "Conditional day one",
         "Hands-on projects, early life skills, creative exploration, and a bridge toward The Summit.",
-        ("project supplies", "facilitators", "outdoor access", "bridge moments"),
+        ("family demand", "qualified staff", "project supplies", "bridge moments"),
         "Warm structure with enough freedom for curiosity to become confidence.",
-        "Hands-on project blocks for a small founding cohort.",
+        "Confirmed if family demand and qualified staff support it.",
         "A full middle-kids community space with bridge programming and outdoor/garden connections.",
     ),
     Space(
         "The Summit",
         "Ages 13-18",
         "Teen life skills and belonging",
-        "Cohort",
+        "Day one",
         "Judgment-free teen community built around real skills, communal rhythm, and meaningful responsibility.",
         ("life-skills workshops", "inclusive staff", "mentorship", "project space"),
         "Unhurried, grounded, and genuinely theirs.",
-        "The anchor program for teens in the founding cohort.",
+        "The core of Cultivate and primary day-one teen space.",
         "A mature teen community with cafe, childcare, garden, media, mentorship, and project pathways.",
     ),
     Space(
         "The Harvest Cafe",
         "Campus",
-        "Teen-run cafe vision",
-        "Validate",
+        "Future cafe vision",
+        "Private",
         "A future community cafe where teens learn hospitality, food costs, service, and small-business thinking.",
         ("food-service path", "kitchen", "teen work rules", "possible coffee partner"),
         "Warm, bustling, handmade, and connected to everything else.",
-        "Communal snack/lunch rhythm only; no public cafe promise.",
+        "Do not mention cafe service, food sales, or cafe licensing publicly yet.",
         "Teen-run cafe with food-service compliance, catering, and possible coffee partner.",
     ),
     Space(
         "The Grove",
         "Parents",
         "Work lounge and community",
-        "Cohort",
+        "Day one",
         "A calm parent landing place that turns waiting time into work, friendship, and community contribution.",
-        ("wifi", "work tables", "parent rhythm", "community hosting"),
+        ("comfortable seating", "self-serve coffee station", "parent rhythm", "community hosting"),
         "Like a beloved neighborhood coffee shop with better purpose.",
-        "Parent lounge/work tables during cohort sessions.",
+        "Parent co-working lounge with self-serve coffee station and comfortable seating.",
         "Full co-working lounge with desk options, call pods, and day/monthly access.",
     ),
     Space(
         "The Commons",
         "Community",
-        "Workshops and shared gatherings",
-        "Cohort",
+        "Future rentals and shared gatherings",
+        "Private",
         "A flexible room for workshops, family gatherings, co-op energy, and eventually community rentals.",
         ("room setup", "guidelines", "insurance", "booking rules"),
         "Flexible, welcoming, useful, and easy to reconfigure.",
-        "Shared workshop and showcase room for the cohort.",
+        "Keep Commons and rental language private/future-facing for now.",
         "Rentable community space for co-ops, workshops, events, and gatherings.",
     ),
     Space(
         "The Wilds",
         "All ages",
         "Outdoor campus vision",
-        "Validate",
+        "Future vision",
         "The outdoor campus: Sprout Yard, Range, Canopy, Growing Grounds, and Garden Guild.",
         ("site", "safety", "accessibility", "supervision", "maintenance"),
         "Open air, movement, restoration, stewardship, and a little wonder.",
-        "Light outdoor rhythm or container garden if the site allows.",
+        "Simple outdoor space only if the chosen site allows: shade, hammock chairs, and grassy area.",
         "Full outdoor campus with Sprout Yard, Range, Canopy, Growing Grounds, and Garden Guild.",
     ),
 ]
@@ -425,15 +435,15 @@ SPACES = [
 READINESS = [
     ReadinessItem(
         "Vision and brand",
-        "Ready to show",
-        "The owner-updated docs give the site a clear emotional center and visual language.",
-        "Use the preview to align on tone, names, and story.",
+        "Approved direction",
+        "Brooke approved the core frame: a community space for homeschool families where everyone belongs.",
+        "Apply this language across the private draft packet and approval matrix.",
     ),
     ReadinessItem(
-        "Founding cohort",
-        "Ready to shape",
-        "The first safe launch can center teens, middle kids, parents, and a simple five-week rhythm.",
-        "Choose the public label, target size, and days/times.",
+        "Interest list",
+        "Ready to draft",
+        "The approved CTA is warm, simple, no-commitment interest collection.",
+        "Build the preview form around name, email, zip code, ages, referral source, and what matters most.",
     ),
     ReadinessItem(
         "Childcare",
@@ -515,9 +525,9 @@ DAY_MOMENTS = [
 
 VOICE_PAIRS = [
     VoicePair(
-        "A homeschool family campus in Central Florida.",
-        "A school, daycare, cafe, and coworking center all in one.",
-        "The first phrase is clear and flexible. The second creates regulated or overbuilt expectations.",
+        "A community space for homeschool families where everyone belongs.",
+        "A school, tutoring center, STEAM program, or daycare.",
+        "Brooke approved the first phrase and specifically rejected the narrower category labels.",
     ),
     VoicePair(
         "A place where real-life skills become part of the week.",
@@ -530,9 +540,9 @@ VOICE_PAIRS = [
         "Food service and teen work need validation before public claims.",
     ),
     VoicePair(
-        "A founding cohort helping shape what Cultivate becomes.",
+        "Join the interest list to help shape what Cultivate becomes.",
         "Enrollment is open for the full campus.",
-        "The first launch is still a careful owner/founder decision.",
+        "The current CTA is interest only, not enrollment, application, or payment.",
     ),
     VoicePair(
         "Designed with neurodiverse families in mind.",
@@ -545,59 +555,65 @@ OFFER_BUCKETS = [
     OfferBucket(
         "Family Membership",
         "Whole family",
-        "Base relationship with Cultivate",
-        "Model next",
-        ("community access", "founding family updates", "week-five events", "eligibility for program add-ons"),
-        "No price set. Model against facility, staffing, and cohort size.",
+        "Flexible term-based relationship with Cultivate",
+        "Approved direction",
+        ("5-week term billing", "1-, 2-, or 3-day pass options", "3-day best per-day value", "interest-list-first path"),
+        "Founding family pricing will be announced once a location is confirmed.",
     ),
     OfferBucket(
         "The Summit",
         "Ages 13-18",
         "Teen life-skills and community program",
-        "Cohort anchor",
+        "Day-one core",
         ("life-skills workshops", "projects", "creative/media work", "communal rhythm", "mentorship pathways"),
-        "Likely core program pricing, but must reflect staffing and schedule.",
+        "Core offer direction; specific price still depends on location and operating costs.",
     ),
     OfferBucket(
         "The Stepping Stones",
         "Ages 6-12",
         "Middle-kid making and discovery",
-        "Cohort anchor",
+        "Conditional",
         ("hands-on projects", "early life skills", "creative exploration", "bridge moments"),
-        "Could be priced as program add-on or cohort seat.",
+        "Confirm only if family demand and qualified staff support it.",
     ),
     OfferBucket(
         "The Grove",
         "Parents",
         "Parent workspace and community",
-        "Light first version",
-        ("work tables", "wifi", "parent community", "skill-sharing", "future day/monthly options"),
-        "Do not price as full co-working until amenities are known.",
+        "Day-one support",
+        ("comfortable seating", "self-serve coffee station", "parent community", "skill-sharing"),
+        "Describe as parent co-working lounge, not a standalone coworking product.",
     ),
     OfferBucket(
         "The Commons",
         "Members/community",
         "Workshops, gatherings, and future rentals",
-        "Internal first",
+        "Future-facing",
         ("cohort workshops", "showcases", "family gatherings", "future rentals"),
-        "Public rental pricing requires facility, insurance, and booking rules.",
+        "Keep Commons and rentals private until facility, insurance, and booking rules are validated.",
     ),
     OfferBucket(
         "Community Fund",
         "Optional supporters",
         "Accessibility and program support",
-        "Design carefully",
-        ("voluntary donations", "supply support", "future subsidy support", "Village Wall recognition"),
-        "Needs accounting, governance, and scholarship rules before public claims.",
+        "Approved direction",
+        ("financial donations", "supply donations", "future subsidy support", "Village Wall recognition"),
+        "Optional fund approved as direction; accounting and administration still need design.",
     ),
 ]
 
 DECISIONS = [
     DecisionItem(
-        "First launch shape",
-        "Limited founding cohort",
+        "Public concept",
+        "Use Brooke's approved line: a community space for homeschool families where everyone belongs",
+        "Low",
+        "Unlocks homepage, About, FAQ, and interest-list copy.",
+    ),
+    DecisionItem(
+        "Immediate CTA",
+        "Join the interest list",
         "Medium",
-        "Lets Cultivate test demand and rhythm before committing to the full campus.",
+        "Moves the public draft from owner questions toward a real no-commitment family funnel.",
     ),
     DecisionItem(
         "Teen space name",
@@ -606,10 +622,10 @@ DECISIONS = [
         "Clarifies the family journey from Sprout to Stones to Summit to world ready.",
     ),
     DecisionItem(
-        "Ages in first cohort",
-        "Anchor on teens and middle kids; keep 0-5 discovery-only",
+        "Day-one spaces",
+        "Lead with The Summit, The Grove, The Village Wall, conditional Stepping Stones, and simple outdoor space",
         "Medium",
-        "Avoids childcare promises until licensing and staffing are validated.",
+        "Gives the site a concrete first version without promising the full ecosystem.",
     ),
     DecisionItem(
         "Cafe stance",
@@ -625,9 +641,9 @@ DECISIONS = [
     ),
     DecisionItem(
         "Interest page",
-        "Keep disabled/private until intake process is approved",
+        "Preview the approved fields, then choose the real storage/privacy process",
         "Low",
-        "Allows owner review now without collecting real family data yet.",
+        "Brooke approved the questions, but implementation still needs a data path.",
     ),
 ]
 
@@ -667,20 +683,20 @@ def build_decision_risk_summaries(
 WALKTHROUGH_SLIDES = [
     WalkthroughSlide(
         "01 / Opening",
-        "Cultivate is a village for the whole homeschool family.",
-        "Let the complete ecosystem land first: kids, teens, parents, work, food, outdoor rhythm, and community all supporting one another.",
-        "The strongest source-doc language is not about a single program. It is about a family campus where real skills become part of ordinary life.",
-        "Start with Brooke's full emotional picture, then quickly show the safer first launch lane.",
-        "Set the frame: this is a private concept room, not public copy yet.",
+        "Cultivate is a community space for homeschool families where everyone belongs.",
+        "Let the emotional center land first: home away from home, excited to come, relieved to be close, independent but together.",
+        "Brooke approved language that is bigger and more human than school, tutoring, STEAM, or daycare.",
+        "Show how the site now turns that approved direction into a careful interest-list draft.",
+        "Set the frame: this is still gated preview work, but it now has owner-approved direction.",
         "owner_preview",
     ),
     WalkthroughSlide(
         "02 / First move",
-        "Launch the rhythm before launching the full campus.",
-        "The founding cohort gives Cultivate a credible first version without forcing childcare, cafe, partner, employment, or facility promises too early.",
-        "The current recommendation is a limited term anchored by The Summit, The Stepping Stones, The Grove, and The Commons.",
-        "Ask for Brooke's read on cohort label, audience, term length, and whether the interest page can move from draft to real intake.",
-        "Keep this crisp: the first launch is a proof of rhythm, not a smaller dream.",
+        "Collect interest before launching anything.",
+        "The interest list gives Cultivate a credible next step without forcing childcare, cafe, partner, employment, rental, pricing, or facility promises too early.",
+        "The approved day-one direction is The Summit, The Grove, The Village Wall, conditional Stepping Stones, and simple outdoor space if the site supports it.",
+        "Ask what data path should power the real form after the draft feels right.",
+        "Keep this crisp: the first public move is invitation and learning, not enrollment.",
         "founding_cohort",
     ),
     WalkthroughSlide(
@@ -822,9 +838,9 @@ CONCERN_ITEMS = [
     ConcernItem(
         "What is Cultivate?",
         "Is this a school, daycare, co-op, or coworking space?",
-        "Cultivate is being shaped as a homeschool family campus: a community-centered place for real-life skills, parent connection, and age-aware programming.",
-        "Calling it a school, licensed daycare, full coworking center, or public cafe before those details are approved.",
-        "Keep the category flexible until operating model, licensing, and facility scope are finalized.",
+        "Cultivate is a community space for homeschool families where everyone belongs. It is not a school, tutoring center, STEAM program, or daycare.",
+        "Calling it a school, licensed daycare, full coworking center, public cafe, tutoring center, or STEAM program.",
+        "Use Brooke's approved category line consistently.",
     ),
     ConcernItem(
         "Childcare",
@@ -850,9 +866,9 @@ CONCERN_ITEMS = [
     ConcernItem(
         "Pricing",
         "How much will it cost?",
-        "Pricing is not ready for publication. The first step is defining the approved offer, schedule, staffing, facility needs, and founding cohort size.",
+        "Cultivate uses a flexible term-based membership model. Families choose how many days per week work for them. Founding family pricing will be announced once a location is confirmed.",
         "Publishing placeholder prices or comparing against school, daycare, or coworking pricing.",
-        "The membership model page can stay internal until Brooke approves real assumptions.",
+        "The membership model direction is approved, but specific prices wait on location and operating costs.",
     ),
     ConcernItem(
         "Timeline",
@@ -947,21 +963,21 @@ PAIN_POINTS = [
 GLOSSARY_TERMS = [
     GlossaryTerm(
         "Cultivate",
-        "A private working concept for a homeschool family campus in Central Florida.",
-        "Use as the parent brand for the whole ecosystem.",
-        "Do not define it as a school, daycare, coworking center, cafe, or public venue until approved.",
+        "A community space for homeschool families where everyone belongs.",
+        "Use as the approved public category and parent brand.",
+        "Do not define it as a school, tutoring center, STEAM program, daycare, cafe, or public venue.",
     ),
     GlossaryTerm(
-        "Founding cohort",
-        "A limited first version used to test rhythm, demand, trust, and operational fit before the full campus.",
-        "Use as the safest first-launch recommendation.",
-        "Do not imply enrollment is open, dates are set, or the offer is approved.",
+        "Interest list",
+        "A warm, no-commitment way for families to help shape what Cultivate becomes.",
+        "Use as the immediate public CTA.",
+        "Do not imply enrollment is open, dates are set, payment is due, or acceptance is guaranteed.",
     ),
     GlossaryTerm(
         "The Summit",
-        "Current working name for the teen space and teen growth lane.",
-        "Use as the current site name while preserving The Glade as provenance.",
-        "Do not treat the name as final public language until Brooke confirms it.",
+        "Current public name for the teen space and teen growth lane.",
+        "Use as the approved public teen-space name while preserving The Glade as provenance.",
+        "Do not merge in paid work, apprenticeships, or childcare-supervision promises.",
     ),
     GlossaryTerm(
         "The Stepping Stones",
@@ -977,8 +993,8 @@ GLOSSARY_TERMS = [
     ),
     GlossaryTerm(
         "The Commons",
-        "Flexible workshop and gathering space concept.",
-        "Use as a shared rhythm and workshop frame for the first version.",
+        "Future-facing flexible workshop and gathering space concept.",
+        "Keep as private/future-facing until facility and rental rules are validated.",
         "Do not publish rental, event, or capacity claims yet.",
     ),
     GlossaryTerm(
@@ -1005,15 +1021,15 @@ GLOSSARY_TERMS = [
 COMPARISON_ITEMS = [
     ComparisonItem(
         "Category",
-        "A developing homeschool family campus concept.",
-        "A licensed school, daycare, coworking chain, public cafe, or event venue.",
-        "This keeps the public category warm but careful until the operating model is approved.",
+        "A community space for homeschool families where everyone belongs.",
+        "A licensed school, tutoring center, STEAM program, daycare, coworking chain, public cafe, or event venue.",
+        "This uses Brooke's approved public frame while avoiding regulated or too-narrow categories.",
     ),
     ComparisonItem(
-        "First launch",
-        "A limited founding cohort is the safest recommended first step.",
-        "A full campus launch with every space operating at once.",
-        "The first version should validate culture, demand, and logistics before adding regulated pieces.",
+        "First public move",
+        "A warm, no-commitment interest list.",
+        "A full campus launch, enrollment flow, or paid application.",
+        "The first move should validate interest before adding regulated or operationally heavy pieces.",
     ),
     ComparisonItem(
         "Teen contribution",
@@ -1038,28 +1054,28 @@ COMPARISON_ITEMS = [
 
 ASSUMPTION_ITEMS = [
     AssumptionItem(
-        "Cultivate can be framed as a homeschool family campus.",
-        "Owner-updated ecosystem docs describe a whole-family community around real-life skills and belonging.",
-        "Used as the private preview category and draft public direction.",
-        "Brooke must approve final public category wording.",
+        "Cultivate is a community space for homeschool families where everyone belongs.",
+        "Brooke approved this language on 2026-05-20.",
+        "Used as the public category and draft public direction.",
+        "No further category approval needed unless wording changes.",
     ),
     AssumptionItem(
-        "A limited founding cohort is the responsible first move.",
-        "Roadmap, readiness, approval, and operations pages all point toward proving rhythm before full-campus promises.",
-        "Used across owner brief, next actions, draft homepage, and cohort draft.",
-        "Brooke must approve first-cohort label, audience, schedule assumptions, and intake path.",
+        "Interest-list collection is the responsible first public move.",
+        "Brooke approved a warm, simple, no-commitment interest list.",
+        "Used across owner brief, next actions, draft homepage, and interest page.",
+        "The real form storage, privacy language, and follow-up workflow still need implementation choices.",
     ),
     AssumptionItem(
         "The Summit is the current teen-space name.",
         "Updated naming direction is reflected in current web memory while The Glade is preserved as earlier-source provenance.",
         "Used on preview pages as the current teen-space label.",
-        "Brooke must confirm final public name.",
+        "No further naming approval needed unless Brooke changes the public name.",
     ),
     AssumptionItem(
-        "The Sprout Space, Harvest Cafe, Foxtail, paid teen work, rentals, and The Wilds remain validation-first.",
+        "The Sprout Space, Harvest Cafe, Foxtail, paid teen work, rentals, full Wilds, and Garden Guild remain private or future-facing.",
         "Source docs support the vision, while approval and readiness pages identify operational and regulatory dependencies.",
         "Used as future-vision or internal planning language only.",
-        "Brooke must approve when, whether, and how each item can become public copy.",
+        "Brooke must approve when, whether, and how each item can become public copy after validation.",
     ),
     AssumptionItem(
         "Public pages can be drafted privately before they are approved.",
@@ -1082,8 +1098,8 @@ OWNER_INPUT_ITEMS = [
     OwnerInputItem(
         "Story and category",
         "What should Cultivate call itself in public copy?",
-        "The safest working phrase is homeschool family campus, but the final public category needs Brooke's approval.",
-        "One preferred category line plus two words or labels to avoid.",
+        "Brooke approved the public category line; this prompt is now for checking whether the translated page copy preserves that intent.",
+        "Any wording refinements plus labels to keep avoiding.",
         "Homepage headline support, FAQ language, and publish-ready navigation.",
         "what_cultivate_is",
     ),
@@ -1158,6 +1174,58 @@ OWNER_INPUT_ITEMS = [
         "Preferred CTA label, destination, contact method, and whether the page is invite-only, interest-only, or application-based.",
         "Draft homepage, cohort page, FAQ, and Railway test-domain review.",
         "public_draft_hub",
+    ),
+]
+
+
+OWNER_ANSWER_LOG = [
+    OwnerAnswerLogItem(
+        "Story and category",
+        "Founder story and public category",
+        "Approved",
+        "Brooke may be described as a homeschool parent of two teens who built Cultivate after years of looking for a community that truly fit. Cultivate should be described as a community space for homeschool families where everyone belongs.",
+        "Update draft Home, About, FAQ, and category language.",
+        "draft_about",
+    ),
+    OwnerAnswerLogItem(
+        "Day-one scope",
+        "Public-now spaces and first version",
+        "Approved",
+        "Public now: The Summit, The Grove with community coffee station, The Village Wall, conditional Stepping Stones, simple outdoor space aspirationally, and The Wilds as future vision only.",
+        "Update spaces, cohort, homepage, and approval matrix.",
+        "spaces",
+    ),
+    OwnerAnswerLogItem(
+        "Membership",
+        "Term model, passes, discounts, and scholarships",
+        "Approved direction",
+        "Use 5-week term billing, 1-, 2-, or 3-day weekly passes, 3-day best per-day value, contribution discounts, optional Community Fund, and Step Up only after provider status is confirmed.",
+        "Update membership model and FAQ while keeping exact prices blocked.",
+        "membership_model",
+    ),
+    OwnerAnswerLogItem(
+        "Public boundaries",
+        "What stays private or future-facing",
+        "Approved",
+        "Keep childcare/Sprout Space, Harvest Cafe/food sales, Foxtail, paid teen employment/apprenticeships, Commons rentals, full Wilds, Garden Guild, specific pricing, and unconsented family proof private or future-facing.",
+        "Update publish gates, concern responses, launch readiness, and draft pages.",
+        "approval_matrix",
+    ),
+    OwnerAnswerLogItem(
+        "Interest list",
+        "CTA and form fields",
+        "Approved direction",
+        "CTA is Join the interest list. Fields: name, email, zip code, ages of children, how they heard about Cultivate, and what matters most to their family.",
+        "Update interest draft; choose real form storage and privacy language before collecting data.",
+        "founding_family_interest",
+    ),
+    OwnerAnswerLogItem(
+        "Validation",
+        "What still needs work before public promises",
+        "Validate",
+        "Location, zoning, permitting, outdoor availability, Stepping Stones staff, Step Up approval, demand through questionnaires, consent forms, legal review, insurance, volunteer background checks, entity structure, and pricing all remain validation items.",
+        "Keep these as next actions and readiness gates.",
+        "launch_readiness",
     ),
 ]
 
@@ -1482,14 +1550,14 @@ DRAFT_NAV = (
 PUBLISH_GATES = (
     PublishGateItem(
         "Category language",
-        "Owner approval needed",
-        "Confirm the public one-line description for what Cultivate is and who it serves first.",
+        "Approved direction logged",
+        "Use: a community space for homeschool families where everyone belongs.",
         "brand_voice",
     ),
     PublishGateItem(
         "First offer scope",
-        "Owner approval needed",
-        "Confirm the founding cohort name, audience, schedule assumptions, and intake path.",
+        "Partly approved",
+        "Use interest-list-first language. Keep exact operating offer name, schedule, capacity, location, and pricing out until validated.",
         "cohort_blueprint",
     ),
     PublishGateItem(
@@ -1506,8 +1574,8 @@ PUBLISH_GATES = (
     ),
     PublishGateItem(
         "Intake and privacy",
-        "Process needed",
-        "Approve how family interest is collected, stored, followed up on, and described.",
+        "Fields approved / process needed",
+        "Brooke approved the fields. Choose form storage, privacy language, and follow-up ownership before collecting real data.",
         "founding_family_interest",
     ),
 )
@@ -1912,28 +1980,36 @@ DIRECTORY_NAV = (
 
 APPROVAL_ITEMS = [
     ApprovalItem(
-        "Cultivate is a homeschool family campus in Central Florida.",
-        "Ready for owner review",
-        "Owner-updated ecosystem source and current site strategy.",
-        "Can become public-facing after Brooke confirms the exact category language.",
-        "Approve or revise the category line.",
+        "Cultivate is a community space for homeschool families where everyone belongs.",
+        "Approved direction",
+        "Brooke's 2026-05-20 approved direction.",
+        "Use this as the public category line in private drafts.",
+        "Apply consistently across draft Home, About, FAQ, and interest pages.",
         "brand_voice",
     ),
     ApprovalItem(
-        "A limited founding cohort is the safest first launch.",
-        "Ready for owner review",
-        "Founding cohort recommendation, launch readiness, roadmap, and decision dashboard.",
-        "Can become public-facing only after scope, schedule, and intake process are approved.",
-        "Approve first cohort label, age range, and term shape.",
-        "founding_cohort",
+        "The public CTA is join the interest list.",
+        "Approved direction",
+        "Brooke's approved CTA and field list.",
+        "Use warm, simple, no-commitment interest-list language.",
+        "Choose form storage, privacy language, and follow-up workflow before collecting data.",
+        "founding_family_interest",
     ),
     ApprovalItem(
         "The Summit is the current teen-space name.",
-        "Needs confirmation",
+        "Approved direction",
         "Owner-updated naming direction; The Glade preserved as earlier-source provenance.",
-        "Hold public naming until Brooke confirms final name.",
-        "Confirm The Summit or choose the final public teen-space name.",
+        "Use The Summit publicly as the teen space for ages 13-18.",
+        "Keep paid work, apprenticeships, and childcare-supervision claims out.",
         "owner_decisions",
+    ),
+    ApprovalItem(
+        "Day-one spaces are The Summit, The Grove, The Village Wall, conditional Stepping Stones, and simple outdoor space.",
+        "Approved direction",
+        "Brooke's 2026-05-20 approved direction.",
+        "Use as public-now direction with Stepping Stones and outdoor space clearly conditional.",
+        "Validate qualified staff and site outdoor availability.",
+        "spaces",
     ),
     ApprovalItem(
         "The Sprout Space is a future childcare vision.",
@@ -1960,17 +2036,22 @@ APPROVAL_ITEMS = [
         "approval_matrix",
     ),
     ApprovalItem(
-        "Pricing and launch dates are not ready.",
+        "Membership direction is approved, but prices and launch dates are not ready.",
         "Blocked for public",
         "Membership model and roadmap rules.",
-        "Do not publish prices, opening dates, or enrollment claims.",
-        "Approve offer, schedule, cost model, and intake process first.",
+        "Publish term-model direction only; do not publish prices, opening dates, or enrollment claims.",
+        "Validate location, operating costs, schedule, and Step Up provider status first.",
         "membership_model",
     ),
 ]
 
 
 APPROVAL_STATUS_GUIDE = (
+    (
+        "Approved direction",
+        "Brooke has approved the direction, but the gated site still needs implementation and final publish review.",
+        "Apply the approved wording and keep the page private until the publish gate is complete.",
+    ),
     (
         "Ready for owner review",
         "Strong enough for Brooke to approve, revise, or move toward public-safe copy.",
@@ -2098,15 +2179,15 @@ IMPACT_SIGNALS = [
 BRIEF_SECTIONS = [
     BriefSection(
         "Concept",
-        "Cultivate is a homeschool family campus.",
-        "The strongest current frame is a whole-family campus for real-life skills, belonging, parent breathing room, and community contribution.",
+        "Cultivate is a community space for homeschool families where everyone belongs.",
+        "Brooke approved a frame that is bigger and more human than a school, tutoring center, STEAM program, or daycare.",
         "Owner preview, source evidence, brand voice, and ecosystem map.",
     ),
     BriefSection(
         "First move",
-        "Launch a limited founding cohort before the full campus.",
-        "The safest first version tests teen belonging, middle-kid projects, parent workspace, workshops, and reflection without depending on regulated or unvalidated pieces.",
-        "Founding cohort, cohort blueprint, launch readiness, and approval matrix.",
+        "Invite families to join the interest list.",
+        "The safest first public move is warm, simple, no-commitment interest collection while location, pricing, staffing, Step Up, insurance, and legal details stay in validation.",
+        "Founding family interest, launch readiness, and approval matrix.",
     ),
     BriefSection(
         "Hold back",
@@ -2116,8 +2197,8 @@ BRIEF_SECTIONS = [
     ),
     BriefSection(
         "Owner decision",
-        "The next approval is shape, not launch.",
-        "Brooke does not need to approve every future phase now. The important next approval is the first-cohort frame and what can move into public-safe draft copy.",
+        "The next decision is implementation, not positioning.",
+        "Brooke has given enough direction to refine the private public-site packet. The next choice is how to collect, store, and follow up on interest-list responses.",
         "Owner decisions, review command center, and next actions.",
     ),
 ]
@@ -2126,17 +2207,10 @@ BRIEF_SECTIONS = [
 NEXT_ACTIONS = [
     NextAction(
         "Owner approval",
-        "Confirm the public category line for Cultivate.",
-        "Everything public depends on whether Brooke approves the homeschool family campus framing.",
-        "Approved or revised one-sentence category statement.",
-        "brand_voice",
-    ),
-    NextAction(
-        "Owner approval",
-        "Confirm the first cohort label, audience, and rough term shape.",
-        "The founding cohort is the safest first launch, but it still needs an approved public frame.",
-        "Approved first-cohort scope for public draft work.",
-        "cohort_blueprint",
+        "Confirm the revised private draft packet after Brooke's direction is applied.",
+        "The positioning is approved; the next approval is whether the translated web pages feel right.",
+        "Brooke-ready draft Home, About, FAQ, and Interest pages.",
+        "public_draft_hub",
     ),
     NextAction(
         "Validation",
@@ -2154,9 +2228,9 @@ NEXT_ACTIONS = [
     ),
     NextAction(
         "Web build",
-        "Draft the private public-safe Home page next.",
-        "The site now has enough strategy, voice, journey, and approval structure to produce a careful first public draft.",
-        "Private `/draft-home` or equivalent page, still gated and unlaunched.",
+        "Build the interest-list preview around the approved field set.",
+        "Brooke approved interest-list collection, but the site still needs the form flow and privacy/storage decision.",
+        "Private `/founding-family-interest` draft with approved fields, still gated and not collecting data.",
         "public_draft_hub",
     ),
     NextAction(
@@ -2340,7 +2414,12 @@ def create_app() -> Flask:
     @app.get("/owner-answer-log")
     def owner_answer_log():
         return render_template(
-            "owner_answer_log.html", input_items=OWNER_INPUT_ITEMS
+            "owner_answer_log.html",
+            answer_items=OWNER_ANSWER_LOG,
+            approved_count=sum(
+                1 for item in OWNER_ANSWER_LOG if item.status.startswith("Approved")
+            ),
+            validate_count=sum(1 for item in OWNER_ANSWER_LOG if item.status == "Validate"),
         )
 
     @app.get("/post-meeting-update-plan")

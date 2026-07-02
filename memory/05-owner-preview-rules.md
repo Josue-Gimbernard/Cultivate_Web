@@ -1,6 +1,6 @@
 ---
 title: Owner Preview Rules
-last_updated: 2026-05-10
+last_updated: 2026-05-20
 ---
 # Owner Preview Rules
 
@@ -8,17 +8,17 @@ last_updated: 2026-05-10
 - Speak directly to Brooke on owner-facing and review-support pages so the site feels personal, not generic.
 - Keep Brooke-facing copy decision-oriented: what she needs to feel, approve, revise, hold, validate, or answer next.
 - Use Brooke's name intentionally, especially at page openings and decision points; avoid repeating it so often that the copy feels mechanical.
-- Do not invent Brooke's story, operating commitments, pricing, schedule, proof, or public promises to make copy feel more personal.
+- Brooke's founder story direction is approved at high level, but do not invent timeline details, proof, photos, quotes, operating commitments, prices, or public promises to make copy feel more personal.
 - Distinguish full vision from first launch.
 - Do not present unvalidated elements as available now.
-- Foxtail is a concept, not a partner.
-- The Summit is current teen-space naming unless corrected.
+- Foxtail is private/future-facing, not a public partner.
+- The Summit is the approved current public teen-space name.
 - Keep pages private/gated until public launch approval.
 - Use `/review-command-center` as the first stop when deciding which owner-review page to open.
 - Use `/owner-brief` as the compact post-walkthrough summary for owner review.
 - Use `/next-actions` to keep work artifact-based: approvals, validation checklists, draft pages, or evidence packets.
 - Keep `/launch-readiness` as an internal owner strategy page, not a family-facing page.
-- Keep `/founding-cohort` framed as recommendation until the founder/owner approves the public label and scope.
+- Keep `/founding-cohort` framed as planning until the post-interest-list operating offer name, schedule, capacity, and location are validated.
 - Keep `/cohort-blueprint` internal; it is a planning rhythm, not an approved schedule.
 - Use `/impact-signals` to plan evidence collection, not to make outcome guarantees.
 - Keep `/day-at-cultivate` framed as a narrative prototype, not an approved operating schedule.
@@ -37,7 +37,7 @@ last_updated: 2026-05-10
 - Keep `/draft-home`, `/draft-about`, `/draft-cohort`, and `/draft-faq` gated and clearly labeled as private drafts until owner approval.
 - Draft public pages must avoid launch dates, prices, enrollment claims, licensed childcare promises, cafe operation, Foxtail partnership, paid teen jobs, and public rental claims.
 - Use `/approval-matrix` as the publishing gate for sensitive claims before drafting or enabling public pages.
-- Keep `/founding-family-interest` disabled until privacy language, intake process, offer scope, and owner approval are ready.
+- Keep `/founding-family-interest` disabled until privacy language, storage, follow-up ownership, and real form handling are ready.
 - Use `/owner-review-packet` as the clean entry point for a full owner-review session.
 - Use `/owner-decisions` to drive approval conversations; it is not family-facing copy.
 - Use `/owner-review-prep` before an owner session so access, tabs, decision tools, and promise boundaries are ready.

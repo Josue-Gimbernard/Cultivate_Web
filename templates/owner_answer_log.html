@@ -5,41 +5,41 @@
   <div>
     <p class="eyebrow">Owner answer log</p>
     <h1>Track what has actually been approved.</h1>
-    <p>This log is the bridge between Brooke's meeting notes and website changes. Until an item has her answer, it stays pending and should not become public copy.</p>
+    <p>This log is the bridge between Brooke's approved direction and website changes. Approved direction can shape private drafts; validation items still stay out of public promises.</p>
   </div>
   <aside class="info-hero__note">
     <span>Current state</span>
-    <strong>Pending owner answers.</strong>
-    <p>The log is ready to fill after the worksheet conversation. It does not approve anything by itself.</p>
+    <strong>Brooke direction logged.</strong>
+    <p>The 2026-05-20 reply now gives the web repo enough to refine the draft public packet.</p>
   </aside>
 </section>
 
 <section class="section-band section-band--cream">
   <div class="section-inner answer-log-summary">
     <article>
-      <span>{{ input_items|length }}</span>
-      <h2>Pending answers</h2>
-      <p>Every item still needs Brooke's input before it can unlock public-facing copy.</p>
+      <span>{{ approved_count }}</span>
+      <h2>Approved directions</h2>
+      <p>These can shape gated draft copy and approval-matrix updates.</p>
     </article>
     <article>
-      <span>0</span>
-      <h2>Approved answers</h2>
-      <p>Approved counts should only change after Brooke confirms the answer and the approval matrix is updated.</p>
+      <span>{{ validate_count }}</span>
+      <h2>Validation tracks</h2>
+      <p>These need evidence, legal, facility, staffing, or process decisions before public promises.</p>
     </article>
     <article>
       <span>0</span>
       <h2>Public changes</h2>
-      <p>No public draft should change until the answer is logged and the publishing gate is cleared.</p>
+      <p>The preview remains gated. No public site, database, or live intake has changed.</p>
     </article>
   </div>
 </section>
 
 <section class="section-band">
   <div class="section-inner answer-log-list">
-    {% for item in input_items %}
+    {% for item in answer_items %}
     <article class="answer-log-card">
       <header>
-        <span>Pending</span>
+        <span>{{ item.status }}</span>
         <div>
           <p class="eyebrow">{{ item.category }}</p>
           <h2>{{ item.question }}</h2>
@@ -48,15 +48,15 @@
       <div class="answer-log-card__grid">
         <div>
           <h3>Owner answer</h3>
-          <p>Pending owner answer.</p>
+          <p>{{ item.answer }}</p>
         </div>
         <div>
-          <h3>Approval status</h3>
-          <p>Not approved for public use.</p>
+          <h3>Next update</h3>
+          <p>{{ item.next_update }}</p>
         </div>
         <div>
-          <h3>Site updates after approval</h3>
-          <p>{{ item.unlocks }}</p>
+          <h3>Public-use stance</h3>
+          <p>Use only through the gated draft packet until the publishing gate, privacy process, and validation items are complete.</p>
         </div>
       </div>
       <footer>

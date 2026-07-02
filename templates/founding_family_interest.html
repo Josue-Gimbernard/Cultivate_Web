@@ -5,7 +5,7 @@
   <div>
     <p class="eyebrow">Private draft / interest only</p>
     <h1>Help shape Cultivate from the beginning.</h1>
-    <p>Cultivate is forming a small founding family circle to help test the first rhythm of a homeschool family campus in Central Florida.</p>
+    <p>Cultivate is gathering input from homeschool families across Central Florida. Founding families are forming now, and the first step is a warm, no-commitment interest list.</p>
     <div class="hero__actions">
       <a class="button button--primary" href="#interest-preview">Preview interest flow</a>
       <a class="button button--quiet" href="{{ url_for('launch_readiness') }}">Readiness</a>
@@ -13,7 +13,7 @@
   </div>
   <aside class="interest-note">
     <strong>Not open enrollment</strong>
-    <span>This page is a draft for tone and structure. It should not collect real information until the founder approves the offer, privacy language, and process.</span>
+    <span>This page is a draft for tone and structure. Brooke approved the fields, but the site should not collect real information until storage, privacy language, and follow-up process are chosen.</span>
   </aside>
 </section>
 
@@ -39,23 +39,31 @@
     <div>
       <p class="eyebrow">Founding cohort interest</p>
       <h2>What we would ask families.</h2>
-      <p>The first interest flow should learn whether the founding cohort shape matches real family needs. It should not ask for payment or imply guaranteed acceptance.</p>
+      <p>The first interest flow should learn who is nearby, which ages they are bringing, how they found Cultivate, and what would matter most to their family. It should not ask for payment or imply guaranteed acceptance.</p>
     </div>
     <form class="interest-form" aria-label="Founding family interest preview">
       <label>
-        Family age groups
-        <select disabled>
-          <option>Teen, middle kid, both, or discovery only</option>
-        </select>
+        Name
+        <input type="text" disabled placeholder="Preview only. No data collected.">
       </label>
       <label>
-        Best weekly rhythm
-        <select disabled>
-          <option>Two days, three days, or still unsure</option>
-        </select>
+        Email
+        <input type="email" disabled placeholder="Preview only. No data collected.">
       </label>
       <label>
-        What would make Cultivate valuable?
+        Zip code
+        <input type="text" disabled placeholder="Central Florida">
+      </label>
+      <label>
+        Ages of children
+        <input type="text" disabled placeholder="Example: 8, 13, 16">
+      </label>
+      <label>
+        How did you hear about Cultivate?
+        <input type="text" disabled placeholder="Friend, group, co-op, social, other">
+      </label>
+      <label>
+        What would matter most to your family?
         <textarea disabled placeholder="Preview only. No data collected."></textarea>
       </label>
       <button class="button button--primary" type="button" disabled>Interest form disabled for preview</button>
@@ -70,12 +78,11 @@
       <h2>This page can be warm without overpromising.</h2>
     </div>
     <div class="interest-boundaries">
-      <div><strong>Say</strong><span>We are gathering interest for a small founding family cohort.</span></div>
-      <div><strong>Say</strong><span>Some parts of the full vision are still being validated.</span></div>
+      <div><strong>Say</strong><span>Join the interest list to help shape what Cultivate becomes.</span></div>
+      <div><strong>Say</strong><span>Founding family pricing will be announced once a location is confirmed.</span></div>
       <div><strong>Avoid</strong><span>Enrollment is open.</span></div>
-      <div><strong>Avoid</strong><span>Licensed childcare, cafe, or paid teen roles are available.</span></div>
+      <div><strong>Avoid</strong><span>Licensed childcare, cafe service, Foxtail, paid teen work, rentals, or specific pricing are available.</span></div>
     </div>
   </div>
 </section>
 {% endblock %}
-

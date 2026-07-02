@@ -1,6 +1,6 @@
 ---
 title: Cultivate Web Memory Index
-last_updated: 2026-05-10
+last_updated: 2026-05-20
 ---
 # Cultivate Web Memory Index
 
@@ -49,3 +49,5 @@ This folder is the durable Web Agent memory layer for the Cultivate website.
 - The current preview remains private/gated and is not public launch copy.
 - The current owner-facing copy is written for Brooke and should stay personal, decision-oriented, and careful around unapproved public promises.
 - Latest pushed web closeout commits include `09ab2b9 Prepare Railway deployment config`, `d51d250 Fix preview access gate sizing`, `90df654 Add Brooke AI interview packet`, `c89fadf Clarify Brooke Claude handoff`, and `a991b56 Add preview link to Brooke email draft`.
+- Brooke's 2026-05-20 direction is now logged in `memory/08-owner-answer-log.md` and reflected in `app.py`, the approval matrix, and the private public-draft packet.
+- Current approved direction: Cultivate is a community space for homeschool families where everyone belongs; immediate CTA is a warm, no-commitment interest list.

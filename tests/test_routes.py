@@ -84,7 +84,7 @@ class RouteTests(unittest.TestCase):
             "/public-draft-hub": b"Prepare the public site",
             "/draft-home": b"Draft public homepage",
             "/draft-about": b"Draft public About",
-            "/draft-cohort": b"Draft public Founding Cohort",
+            "/draft-cohort": b"Draft public first step",
             "/draft-faq": b"Draft public FAQ",
             "/approval-matrix": b"Separate ready claims",
             "/founding-family-interest": b"Help shape Cultivate",
@@ -95,7 +95,7 @@ class RouteTests(unittest.TestCase):
             "/cohort-blueprint": b"Make the first term feel buildable.",
             "/impact-signals": b"Decide what to measure",
             "/launch-readiness": b"Show the vision. Protect the promises.",
-            "/owner-input-packet": b"Collect the answers",
+            "/owner-input-packet": b"Refine what",
             "/owner-review-worksheet": b"Capture Brooke's answers",
             "/owner-answer-log": b"Track what has actually been approved",
             "/post-meeting-update-plan": b"Turn Brooke's answers into site changes",
@@ -185,8 +185,7 @@ class RouteTests(unittest.TestCase):
         response = self.client.get("/approval-matrix")
         for text in [
             b"Approval snapshot",
-            b"Ready for owner review",
-            b"Needs confirmation",
+            b"Approved direction",
             b"Validate first",
             b"Internal only",
             b"Blocked for public",
@@ -226,18 +225,18 @@ class RouteTests(unittest.TestCase):
                 b"Do not advertise childcare",
             ],
             "/glossary": [
-                b"Founding cohort",
+                b"Interest list",
                 b"The Summit",
                 b"Do not publish as available childcare",
             ],
             "/what-cultivate-is": [
                 b"Is not",
-                b"A licensed school, daycare",
+                b"A licensed school, tutoring center",
                 b"full-campus availability",
             ],
             "/assumptions-review": [
                 b"Assumptions are not approvals",
-                b"Brooke must approve final public category wording",
+                b"No further category approval needed",
                 b"Brooke must approve publishing gate items",
             ],
         }
@@ -273,12 +272,12 @@ class RouteTests(unittest.TestCase):
             with self.subTest(text=text):
                 self.assertIn(text, response.data)
 
-    def test_owner_answer_log_starts_pending(self):
+    def test_owner_answer_log_shows_logged_direction(self):
         response = self.client.get("/owner-answer-log")
         for text in [
-            b"Pending owner answers",
-            b"Pending owner answer",
-            b"Not approved for public use",
+            b"Brooke direction logged",
+            b"Approved directions",
+            b"Validation tracks",
             b"memory/08-owner-answer-log.md",
             b"Update approval matrix",
         ]:

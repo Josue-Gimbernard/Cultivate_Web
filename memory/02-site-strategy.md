@@ -1,12 +1,20 @@
 ---
 title: Site Strategy
-last_updated: 2026-05-10
+last_updated: 2026-05-20
 ---
 # Site Strategy
 
 ## Current Mode
 
-Private owner preview for Brooke.
+Private owner preview and gated public-draft refinement for Brooke.
+
+Brooke's 2026-05-20 direction is now logged. The site should move from broad owner-input collection toward a sharper draft packet built around approved positioning, approved day-one direction, and validation gates.
+
+Approved public frame:
+
+- Cultivate is a community space for homeschool families where everyone belongs.
+- It is not a school, tutoring center, STEAM program, or daycare.
+- The immediate CTA is join the interest list: warm, simple, and no commitment.
 
 ## Current Repo State
 
@@ -91,6 +99,7 @@ The approval matrix now starts with a status snapshot so owner review can begin 
 
 Current status categories:
 
+- Approved direction
 - Ready for owner review
 - Needs confirmation
 - Validate first
@@ -120,9 +129,9 @@ Current risk levels:
 
 ## Owner Input Packet
 
-`/owner-input-packet` turns the remaining Brooke-dependent blockers into a meeting packet. It asks for the founder story, public category line, first-cohort audience, schedule, pricing stance, day-one space availability, high-risk future-vision handling, teen contribution boundaries, intake/privacy process, proof assets, and public CTA.
+`/owner-input-packet` still shows the owner-decision framework, but several former blockers are now answered by Brooke's 2026-05-20 direction. Use `/owner-answer-log` as the current record before changing public-facing draft copy.
 
-`/owner-review-packet` is the single entry point for the before, during, and after owner-review workflow. `/owner-review-prep` should be used before Brooke sees the site. `/owner-meeting-script` gives facilitator language for the review itself. `/owner-meeting-recap` summarizes what was approved, revised, held, or sent to validation. `/owner-review-worksheet` is the printable companion for capturing answers during the meeting. `/owner-answer-log` is the pending ledger that should be updated after the meeting. `/post-meeting-update-plan` gives the safe order for turning answers into repo changes. Use these pages after the owner walkthrough and before editing draft public pages. Brooke's answers should update the answer log, approval matrix, and assumptions review first.
+`/owner-review-packet` is the single entry point for the before, during, and after owner-review workflow. `/owner-review-prep` should be used before Brooke sees the site. `/owner-meeting-script` gives facilitator language for the review itself. `/owner-meeting-recap` summarizes what was approved, revised, held, or sent to validation. `/owner-review-worksheet` is the printable companion for capturing answers during the meeting. `/owner-answer-log` is now the logged-answer ledger for Brooke's 2026-05-20 direction and future refinements. `/post-meeting-update-plan` gives the safe order for turning answers into repo changes. Use these pages after the owner walkthrough and before editing draft public pages. Brooke's answers should update the answer log, approval matrix, and assumptions review first.
 
 `BROOKE_AI_INTERVIEW_PACKET.md` is the off-platform version for Brooke's Claude app. It should be attached to an email, not linked through GitHub. Brooke's Claude summary should be treated as owner input, but still logged in `memory/08-owner-answer-log.md` before website copy changes.
 
@@ -135,7 +144,7 @@ The remaining source-safe informational pages have been added:
 - `/what-cultivate-is`: safe category comparison for what Cultivate is and is not.
 - `/assumptions-review`: working assumptions, safe basis, current site use, and owner approval needed.
 
-These pages do not replace owner approval. They complete the informational layer that can responsibly be filled without inventing founder story, pricing, schedule, final naming, intake rules, or operating commitments.
+These pages do not replace publish review. They now combine approved direction with validation boundaries, especially around pricing, location, childcare, cafe/food sales, Foxtail, paid teen work, Commons rentals, family proof, and outdoor availability.
 
 ## Goal
 
@@ -148,7 +157,7 @@ Show Cultivate as a complete, warm, professional ecosystem:
 
 ## Current Recommendation
 
-Lead with the ecosystem and founding cohort direction. Keep childcare, cafe, Foxtail, paid teen work, public rentals, and full outdoor campus as vision/validation items unless approved.
+Lead with the community-space positioning and interest-list CTA. Keep childcare, cafe, Foxtail, paid teen work, public rentals, exact pricing, and full outdoor campus as private/future-facing validation items.
 
 ## Current Rich Preview Surfaces
 
